@@ -24,13 +24,13 @@ These are the tasks to be completed for the spec detailed in @.agent-os/specs/20
   - [x] 2.5 Implement backup code regeneration functionality
   - [x] 2.6 Verify all backup code tests pass
 
-- [ ] 3. Create QR Code Generation and Display
-  - [ ] 3.1 Write tests for QR code URL generation
-  - [ ] 3.2 Implement otpauth:// URL generation
-  - [ ] 3.3 Create QR code image generation using Core Image
-  - [ ] 3.4 Add QR code display view with proper sizing
-  - [ ] 3.5 Implement QR code sharing functionality
-  - [ ] 3.6 Verify all QR code tests pass
+- [x] 3. Create QR Code Generation and Display
+  - [x] 3.1 Write tests for QR code URL generation
+  - [x] 3.2 Implement otpauth:// URL generation
+  - [x] 3.3 Create QR code image generation using Core Image
+  - [x] 3.4 Add QR code display view with proper sizing
+  - [x] 3.5 Implement QR code sharing functionality
+  - [x] 3.6 Verify all QR code tests pass
 
 - [ ] 4. Build MFA Setup Wizard
   - [ ] 4.1 Write tests for MFASetupView components

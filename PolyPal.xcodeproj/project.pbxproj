@@ -53,6 +53,8 @@
 		C9E8B2BF2C4F123400A1B2E5 /* MFAManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2BE2C4F123400A1B2E5 /* MFAManagerTests.swift */; };
 		C9E8B2C12C4F123400A1B2E5 /* BackupCodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2C02C4F123400A1B2E5 /* BackupCodeManager.swift */; };
 		C9E8B2C32C4F123400A1B2E5 /* BackupCodeManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2C22C4F123400A1B2E5 /* BackupCodeManagerTests.swift */; };
+		C9E8B2C52C4F123400A1B2E5 /* QRCodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2C42C4F123400A1B2E5 /* QRCodeManager.swift */; };
+		C9E8B2C72C4F123400A1B2E5 /* QRCodeManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2C62C4F123400A1B2E5 /* QRCodeManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +116,8 @@
 		C9E8B2BE2C4F123400A1B2E5 /* MFAManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFAManagerTests.swift; sourceTree = "<group>"; };
 		C9E8B2C02C4F123400A1B2E5 /* BackupCodeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupCodeManager.swift; sourceTree = "<group>"; };
 		C9E8B2C22C4F123400A1B2E5 /* BackupCodeManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupCodeManagerTests.swift; sourceTree = "<group>"; };
+		C9E8B2C42C4F123400A1B2E5 /* QRCodeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeManager.swift; sourceTree = "<group>"; };
+		C9E8B2C62C4F123400A1B2E5 /* QRCodeManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +169,7 @@
 			children = (
 				C9E8B2BC2C4F123400A1B2E5 /* MFAManager.swift */,
 				C9E8B2C02C4F123400A1B2E5 /* BackupCodeManager.swift */,
+				C9E8B2C42C4F123400A1B2E5 /* QRCodeManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -271,6 +276,7 @@
 				C9E8B2BA2C4F123400A1B2E5 /* IntegrationTests.swift */,
 				C9E8B2BE2C4F123400A1B2E5 /* MFAManagerTests.swift */,
 				C9E8B2C22C4F123400A1B2E5 /* BackupCodeManagerTests.swift */,
+				C9E8B2C62C4F123400A1B2E5 /* QRCodeManagerTests.swift */,
 			);
 			path = PolyPalTests;
 			sourceTree = "<group>";
@@ -419,6 +425,7 @@
 				C9E8B2B72C4F123400A1B2E5 /* AccountSettingsView.swift in Sources */,
 				C9E8B2BD2C4F123400A1B2E5 /* MFAManager.swift in Sources */,
 				C9E8B2C12C4F123400A1B2E5 /* BackupCodeManager.swift in Sources */,
+				C9E8B2C52C4F123400A1B2E5 /* QRCodeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +450,7 @@
 				C9E8B2BB2C4F123400A1B2E5 /* IntegrationTests.swift in Sources */,
 				C9E8B2BF2C4F123400A1B2E5 /* MFAManagerTests.swift in Sources */,
 				C9E8B2C32C4F123400A1B2E5 /* BackupCodeManagerTests.swift in Sources */,
+				C9E8B2C72C4F123400A1B2E5 /* QRCodeManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
