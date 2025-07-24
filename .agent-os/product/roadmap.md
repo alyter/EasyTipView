@@ -1,8 +1,8 @@
 # Product Roadmap
 
-> Last Updated: 2025-07-22
-> Version: 1.0.0
-> Status: Planning
+> Last Updated: 2025-07-24
+> Version: 1.1.0
+> Status: In Progress
 
 ## Phase 1: Core Foundation (4-6 weeks)
 
@@ -11,10 +11,10 @@
 
 ### Must-Have Features
 
-- [ ] **iOS App Shell** - Basic SwiftUI app structure with navigation `M`
-- [ ] **User Authentication** - Login/registration with JWT tokens `M`
+- [x] **iOS App Shell** - Basic SwiftUI app structure with navigation `M` ✅ *Completed 2025-07-22*
+- [x] **User Authentication** - Login/registration with JWT tokens `M` ✅ *Completed 2025-07-22*
 - [ ] **Multi-Factor Authentication (MFA)** - TOTP-based MFA for security `L`
-- [ ] **User Profile Management** - Profile creation, editing, and viewing `M`
+- [x] **User Profile Management** - Profile creation, editing, and viewing `M` ✅ *Completed 2025-07-24*
 - [ ] **Zoho Creator Integration** - Basic API connectivity and offer data fetching `L`
 - [ ] **Basic Offer List View** - Simple list displaying offers from Zoho `S`
 
