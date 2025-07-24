@@ -11,12 +11,42 @@
 		DD0000003A000000000000001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0000004A000000000000001 /* ContentView.swift */; };
 		DD0000005A000000000000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD0000006A000000000000001 /* Assets.xcassets */; };
 		DD0000007A000000000000001 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD0000008A000000000000001 /* Preview Assets.xcassets */; };
+		DD0000004CA000000000000001 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = DD0000005CA000000000000001 /* Images */; };
 		DD0000009A000000000000001 /* AuthenticationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000AA000000000000001 /* AuthenticationState.swift */; };
 		DD000000BA000000000000001 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000CA000000000000001 /* User.swift */; };
 		DD000000DA000000000000001 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000EA000000000000001 /* AuthenticationViewModel.swift */; };
 		DD000000FA000000000000001 /* AuthenticationStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000GA000000000000001 /* AuthenticationStateTests.swift */; };
 		DD000000HA000000000000001 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000IA000000000000001 /* UserTests.swift */; };
 		DD000000JA000000000000001 /* AuthenticationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000KA000000000000001 /* AuthenticationViewModelTests.swift */; };
+		DD000000LA000000000000002 /* AuthenticationFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000MA000000000000002 /* AuthenticationFlowTests.swift */; };
+		DD000000NA000000000000002 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000OA000000000000002 /* WelcomeView.swift */; };
+		DD000000PA000000000000002 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000QA000000000000002 /* LoginView.swift */; };
+		DD000000RA000000000000002 /* LoginViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000SA000000000000002 /* LoginViewTests.swift */; };
+		DD000000TA000000000000002 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000UA000000000000002 /* RegisterView.swift */; };
+		DD000000VA000000000000003 /* CustomTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000WA000000000000003 /* CustomTextFieldStyle.swift */; };
+		DD000000XA000000000000003 /* MFAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000YA000000000000003 /* MFAView.swift */; };
+		DD000000ZA000000000000003 /* PasswordResetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000AAA000000000000003 /* PasswordResetView.swift */; };
+		DD000000BBA000000000000003 /* MFAViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000CCA000000000000003 /* MFAViewTests.swift */; };
+		DD000000DDA000000000000003 /* PasswordResetViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000EEA000000000000003 /* PasswordResetViewTests.swift */; };
+		DD000000FFA000000000000003 /* NavigationCoordinationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000GGA000000000000003 /* NavigationCoordinationTests.swift */; };
+		DD000000HHA000000000000003 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000IIA000000000000003 /* MainViewModel.swift */; };
+		DD000000JJA000000000000003 /* MainViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000KKA000000000000003 /* MainViewModelTests.swift */; };
+		DD000000LLA000000000000004 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000MMA000000000000004 /* MainTabView.swift */; };
+		DD000000NNA000000000000004 /* BuyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000OOA000000000000004 /* BuyView.swift */; };
+		DD000000PPA000000000000004 /* SellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000QQA000000000000004 /* SellView.swift */; };
+		DD000000RRA000000000000004 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000SSA000000000000004 /* MessagesView.swift */; };
+		DD000000TTA000000000000004 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000UUA000000000000004 /* FavoritesView.swift */; };
+		DD000000VVA000000000000004 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000WWA000000000000004 /* AccountView.swift */; };
+		C9E8B2A52C4F123400A1B2E5 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2A42C4F123400A1B2E5 /* UserProfile.swift */; };
+		C9E8B2A72C4F123400A1B2E5 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2A62C4F123400A1B2E5 /* ProfileViewModel.swift */; };
+		C9E8B2A92C4F123400A1B2E5 /* ProfileCreationWizardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2A82C4F123400A1B2E5 /* ProfileCreationWizardView.swift */; };
+		C9E8B2AB2C4F123400A1B2E5 /* UserProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2AA2C4F123400A1B2E5 /* UserProfileTests.swift */; };
+		C9E8B2AD2C4F123400A1B2E5 /* ProfileViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2AC2C4F123400A1B2E5 /* ProfileViewModelTests.swift */; };
+		C9E8B2AF2C4F123400A1B2E5 /* ProfileCreationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2AE2C4F123400A1B2E5 /* ProfileCreationTests.swift */; };
+		C9E8B2B12C4F123400A1B2E5 /* ProfileDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2B02C4F123400A1B2E5 /* ProfileDisplayView.swift */; };
+		C9E8B2B32C4F123400A1B2E5 /* ProfileEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2B22C4F123400A1B2E5 /* ProfileEditView.swift */; };
+		C9E8B2B52C4F123400A1B2E5 /* ProfileDisplayViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2B42C4F123400A1B2E5 /* ProfileDisplayViewTests.swift */; };
+		C9E8B2B72C4F123400A1B2E5 /* AccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2B62C4F123400A1B2E5 /* AccountSettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +72,36 @@
 		DD000000GA000000000000001 /* AuthenticationStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationStateTests.swift; sourceTree = "<group>"; };
 		DD000000IA000000000000001 /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		DD000000KA000000000000001 /* AuthenticationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModelTests.swift; sourceTree = "<group>"; };
+		DD000000MA000000000000002 /* AuthenticationFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationFlowTests.swift; sourceTree = "<group>"; };
+		DD000000OA000000000000002 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		DD000000QA000000000000002 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		DD000000SA000000000000002 /* LoginViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewTests.swift; sourceTree = "<group>"; };
+		DD000000UA000000000000002 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		DD000000WA000000000000003 /* CustomTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldStyle.swift; sourceTree = "<group>"; };
+		DD000000YA000000000000003 /* MFAView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFAView.swift; sourceTree = "<group>"; };
+		DD000000AAA000000000000003 /* PasswordResetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetView.swift; sourceTree = "<group>"; };
+		DD000000CCA000000000000003 /* MFAViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFAViewTests.swift; sourceTree = "<group>"; };
+		DD000000EEA000000000000003 /* PasswordResetViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetViewTests.swift; sourceTree = "<group>"; };
+		DD000000GGA000000000000003 /* NavigationCoordinationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinationTests.swift; sourceTree = "<group>"; };
+		DD000000IIA000000000000003 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		DD000000KKA000000000000003 /* MainViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelTests.swift; sourceTree = "<group>"; };
+		DD000000MMA000000000000004 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		DD000000OOA000000000000004 /* BuyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyView.swift; sourceTree = "<group>"; };
+		DD000000QQA000000000000004 /* SellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellView.swift; sourceTree = "<group>"; };
+		DD000000SSA000000000000004 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
+		DD000000UUA000000000000004 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		DD000000WWA000000000000004 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		DD0000005CA000000000000001 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
+		C9E8B2A42C4F123400A1B2E5 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		C9E8B2A62C4F123400A1B2E5 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		C9E8B2A82C4F123400A1B2E5 /* ProfileCreationWizardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCreationWizardView.swift; sourceTree = "<group>"; };
+		C9E8B2AA2C4F123400A1B2E5 /* UserProfileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTests.swift; sourceTree = "<group>"; };
+		C9E8B2AC2C4F123400A1B2E5 /* ProfileViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModelTests.swift; sourceTree = "<group>"; };
+		C9E8B2AE2C4F123400A1B2E5 /* ProfileCreationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCreationTests.swift; sourceTree = "<group>"; };
+		C9E8B2B02C4F123400A1B2E5 /* ProfileDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDisplayView.swift; sourceTree = "<group>"; };
+		C9E8B2B22C4F123400A1B2E5 /* ProfileEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditView.swift; sourceTree = "<group>"; };
+		C9E8B2B42C4F123400A1B2E5 /* ProfileDisplayViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDisplayViewTests.swift; sourceTree = "<group>"; };
+		C9E8B2B62C4F123400A1B2E5 /* AccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +140,7 @@
 				DD000000XA000000000000001 /* ViewModels */,
 				DD000000YA000000000000001 /* Views */,
 				DD000000ZA000000000000001 /* Extensions */,
+				DD0000005CA000000000000001 /* Images */,
 				DD0000006A000000000000001 /* Assets.xcassets */,
 				DD0000001BA000000000000001 /* Preview Content */,
 			);
@@ -91,6 +152,7 @@
 			children = (
 				DD000000AA000000000000001 /* AuthenticationState.swift */,
 				DD000000CA000000000000001 /* User.swift */,
+				C9E8B2A42C4F123400A1B2E5 /* UserProfile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -99,6 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				DD000000EA000000000000001 /* AuthenticationViewModel.swift */,
+				DD000000IIA000000000000003 /* MainViewModel.swift */,
+				C9E8B2A62C4F123400A1B2E5 /* ProfileViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -108,13 +172,31 @@
 			children = (
 				DD0000002BA000000000000001 /* Authentication */,
 				DD0000003BA000000000000001 /* Main */,
+				DD0000004BA000000000000003 /* Shared */,
+				C9E8B2B02C4F123400A1B2E5 /* Profile */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		C9E8B2B02C4F123400A1B2E5 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				C9E8B2A82C4F123400A1B2E5 /* ProfileCreationWizardView.swift */,
+				C9E8B2B02C4F123400A1B2E5 /* ProfileDisplayView.swift */,
+				C9E8B2B22C4F123400A1B2E5 /* ProfileEditView.swift */,
+				C9E8B2B62C4F123400A1B2E5 /* AccountSettingsView.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		DD0000002BA000000000000001 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				DD000000OA000000000000002 /* WelcomeView.swift */,
+				DD000000QA000000000000002 /* LoginView.swift */,
+				DD000000UA000000000000002 /* RegisterView.swift */,
+				DD000000YA000000000000003 /* MFAView.swift */,
+				DD000000AAA000000000000003 /* PasswordResetView.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -122,8 +204,22 @@
 		DD0000003BA000000000000001 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				DD000000MMA000000000000004 /* MainTabView.swift */,
+				DD000000OOA000000000000004 /* BuyView.swift */,
+				DD000000QQA000000000000004 /* SellView.swift */,
+				DD000000SSA000000000000004 /* MessagesView.swift */,
+				DD000000UUA000000000000004 /* FavoritesView.swift */,
+				DD000000WWA000000000000004 /* AccountView.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		DD0000004BA000000000000003 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				DD000000WA000000000000003 /* CustomTextFieldStyle.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		DD000000ZA000000000000001 /* Extensions */ = {
@@ -139,6 +235,16 @@
 				DD000000GA000000000000001 /* AuthenticationStateTests.swift */,
 				DD000000IA000000000000001 /* UserTests.swift */,
 				DD000000KA000000000000001 /* AuthenticationViewModelTests.swift */,
+				DD000000MA000000000000002 /* AuthenticationFlowTests.swift */,
+				DD000000SA000000000000002 /* LoginViewTests.swift */,
+				DD000000CCA000000000000003 /* MFAViewTests.swift */,
+				DD000000EEA000000000000003 /* PasswordResetViewTests.swift */,
+				DD000000GGA000000000000003 /* NavigationCoordinationTests.swift */,
+				DD000000KKA000000000000003 /* MainViewModelTests.swift */,
+				C9E8B2AA2C4F123400A1B2E5 /* UserProfileTests.swift */,
+				C9E8B2AC2C4F123400A1B2E5 /* ProfileViewModelTests.swift */,
+				C9E8B2AE2C4F123400A1B2E5 /* ProfileCreationTests.swift */,
+				C9E8B2B42C4F123400A1B2E5 /* ProfileDisplayViewTests.swift */,
 			);
 			path = PolyPalTests;
 			sourceTree = "<group>";
@@ -243,6 +349,7 @@
 			files = (
 				DD0000007A000000000000001 /* Preview Assets.xcassets in Resources */,
 				DD0000005A000000000000001 /* Assets.xcassets in Resources */,
+				DD0000004CA000000000000001 /* Images in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +372,25 @@
 				DD000000BA000000000000001 /* User.swift in Sources */,
 				DD0000001A000000000000001 /* PolyPalApp.swift in Sources */,
 				DD0000009A000000000000001 /* AuthenticationState.swift in Sources */,
+				DD000000NA000000000000002 /* WelcomeView.swift in Sources */,
+				DD000000PA000000000000002 /* LoginView.swift in Sources */,
+				DD000000TA000000000000002 /* RegisterView.swift in Sources */,
+				DD000000VA000000000000003 /* CustomTextFieldStyle.swift in Sources */,
+				DD000000XA000000000000003 /* MFAView.swift in Sources */,
+				DD000000ZA000000000000003 /* PasswordResetView.swift in Sources */,
+				DD000000HHA000000000000003 /* MainViewModel.swift in Sources */,
+				DD000000LLA000000000000004 /* MainTabView.swift in Sources */,
+				DD000000NNA000000000000004 /* BuyView.swift in Sources */,
+				DD000000PPA000000000000004 /* SellView.swift in Sources */,
+				DD000000RRA000000000000004 /* MessagesView.swift in Sources */,
+				DD000000TTA000000000000004 /* FavoritesView.swift in Sources */,
+				DD000000VVA000000000000004 /* AccountView.swift in Sources */,
+				C9E8B2A52C4F123400A1B2E5 /* UserProfile.swift in Sources */,
+				C9E8B2A72C4F123400A1B2E5 /* ProfileViewModel.swift in Sources */,
+				C9E8B2A92C4F123400A1B2E5 /* ProfileCreationWizardView.swift in Sources */,
+				C9E8B2B12C4F123400A1B2E5 /* ProfileDisplayView.swift in Sources */,
+				C9E8B2B32C4F123400A1B2E5 /* ProfileEditView.swift in Sources */,
+				C9E8B2B72C4F123400A1B2E5 /* AccountSettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +401,16 @@
 				DD000000FA000000000000001 /* AuthenticationStateTests.swift in Sources */,
 				DD000000HA000000000000001 /* UserTests.swift in Sources */,
 				DD000000JA000000000000001 /* AuthenticationViewModelTests.swift in Sources */,
+				DD000000LA000000000000002 /* AuthenticationFlowTests.swift in Sources */,
+				DD000000RA000000000000002 /* LoginViewTests.swift in Sources */,
+				DD000000BBA000000000000003 /* MFAViewTests.swift in Sources */,
+				DD000000DDA000000000000003 /* PasswordResetViewTests.swift in Sources */,
+				DD000000FFA000000000000003 /* NavigationCoordinationTests.swift in Sources */,
+				DD000000JJA000000000000003 /* MainViewModelTests.swift in Sources */,
+				C9E8B2AB2C4F123400A1B2E5 /* UserProfileTests.swift in Sources */,
+				C9E8B2AD2C4F123400A1B2E5 /* ProfileViewModelTests.swift in Sources */,
+				C9E8B2AF2C4F123400A1B2E5 /* ProfileCreationTests.swift in Sources */,
+				C9E8B2B52C4F123400A1B2E5 /* ProfileDisplayViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,11 +15,13 @@ final class AuthenticationStateTests: XCTestCase {
     XCTAssertEqual(AuthenticationState.unauthenticated, AuthenticationState.unauthenticated)
     XCTAssertEqual(AuthenticationState.authenticating, AuthenticationState.authenticating)
     XCTAssertEqual(AuthenticationState.authenticated, AuthenticationState.authenticated)
+    XCTAssertEqual(AuthenticationState.mfaRequired, AuthenticationState.mfaRequired)
     XCTAssertEqual(AuthenticationState.error("test"), AuthenticationState.error("test"))
     
     // Test different states are not equal
     XCTAssertNotEqual(AuthenticationState.unauthenticated, AuthenticationState.authenticating)
-    XCTAssertNotEqual(AuthenticationState.authenticated, AuthenticationState.error("test"))
+    XCTAssertNotEqual(AuthenticationState.authenticated, AuthenticationState.mfaRequired)
+    XCTAssertNotEqual(AuthenticationState.mfaRequired, AuthenticationState.error("test"))
     XCTAssertNotEqual(AuthenticationState.error("test1"), AuthenticationState.error("test2"))
   }
   
@@ -49,6 +51,7 @@ final class AuthenticationStateTests: XCTestCase {
       .unauthenticated,
       .authenticating,
       .authenticated,
+      .mfaRequired,
       .error("Test error message")
     ]
     
@@ -70,12 +73,13 @@ final class AuthenticationStateTests: XCTestCase {
   
   func testAllCasesProperty() {
     let allCases = AuthenticationState.allCases
-    XCTAssertEqual(allCases.count, 4)
+    XCTAssertEqual(allCases.count, 5)
     
     // Verify all cases are present
     XCTAssertTrue(allCases.contains(.unauthenticated))
     XCTAssertTrue(allCases.contains(.authenticating))
     XCTAssertTrue(allCases.contains(.authenticated))
+    XCTAssertTrue(allCases.contains(.mfaRequired))
     XCTAssertTrue(allCases.contains { 
       if case .error = $0 { return true }
       return false 

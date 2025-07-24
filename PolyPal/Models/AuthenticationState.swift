@@ -11,10 +11,11 @@ enum AuthenticationState: CaseIterable {
   case unauthenticated
   case authenticating
   case authenticated
+  case mfaRequired
   case error(String)
   
   static var allCases: [AuthenticationState] {
-    return [.unauthenticated, .authenticating, .authenticated, .error("Test error")]
+    return [.unauthenticated, .authenticating, .authenticated, .mfaRequired, .error("Test error")]
   }
 }
 
@@ -23,7 +24,8 @@ extension AuthenticationState: Equatable {
     switch (lhs, rhs) {
     case (.unauthenticated, .unauthenticated),
          (.authenticating, .authenticating),
-         (.authenticated, .authenticated):
+         (.authenticated, .authenticated),
+         (.mfaRequired, .mfaRequired):
       return true
     case (.error(let lhsMessage), .error(let rhsMessage)):
       return lhsMessage == rhsMessage
@@ -43,6 +45,7 @@ extension AuthenticationState: Codable {
     case unauthenticated
     case authenticating
     case authenticated
+    case mfaRequired
     case error
   }
   
@@ -57,6 +60,8 @@ extension AuthenticationState: Codable {
       self = .authenticating
     case .authenticated:
       self = .authenticated
+    case .mfaRequired:
+      self = .mfaRequired
     case .error:
       let message = try container.decode(String.self, forKey: .errorMessage)
       self = .error(message)
@@ -73,6 +78,8 @@ extension AuthenticationState: Codable {
       try container.encode(StateType.authenticating, forKey: .type)
     case .authenticated:
       try container.encode(StateType.authenticated, forKey: .type)
+    case .mfaRequired:
+      try container.encode(StateType.mfaRequired, forKey: .type)
     case .error(let message):
       try container.encode(StateType.error, forKey: .type)
       try container.encode(message, forKey: .errorMessage)
