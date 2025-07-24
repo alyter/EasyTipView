@@ -47,6 +47,12 @@
 		C9E8B2B32C4F123400A1B2E5 /* ProfileEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2B22C4F123400A1B2E5 /* ProfileEditView.swift */; };
 		C9E8B2B52C4F123400A1B2E5 /* ProfileDisplayViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2B42C4F123400A1B2E5 /* ProfileDisplayViewTests.swift */; };
 		C9E8B2B72C4F123400A1B2E5 /* AccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2B62C4F123400A1B2E5 /* AccountSettingsView.swift */; };
+		C9E8B2B92C4F123400A1B2E5 /* AccountSettingsViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2B82C4F123400A1B2E5 /* AccountSettingsViewTests.swift */; };
+		C9E8B2BB2C4F123400A1B2E5 /* IntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2BA2C4F123400A1B2E5 /* IntegrationTests.swift */; };
+		C9E8B2BD2C4F123400A1B2E5 /* MFAManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2BC2C4F123400A1B2E5 /* MFAManager.swift */; };
+		C9E8B2BF2C4F123400A1B2E5 /* MFAManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2BE2C4F123400A1B2E5 /* MFAManagerTests.swift */; };
+		C9E8B2C12C4F123400A1B2E5 /* BackupCodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2C02C4F123400A1B2E5 /* BackupCodeManager.swift */; };
+		C9E8B2C32C4F123400A1B2E5 /* BackupCodeManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2C22C4F123400A1B2E5 /* BackupCodeManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +108,12 @@
 		C9E8B2B22C4F123400A1B2E5 /* ProfileEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditView.swift; sourceTree = "<group>"; };
 		C9E8B2B42C4F123400A1B2E5 /* ProfileDisplayViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDisplayViewTests.swift; sourceTree = "<group>"; };
 		C9E8B2B62C4F123400A1B2E5 /* AccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsView.swift; sourceTree = "<group>"; };
+		C9E8B2B82C4F123400A1B2E5 /* AccountSettingsViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsViewTests.swift; sourceTree = "<group>"; };
+		C9E8B2BA2C4F123400A1B2E5 /* IntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationTests.swift; sourceTree = "<group>"; };
+		C9E8B2BC2C4F123400A1B2E5 /* MFAManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFAManager.swift; sourceTree = "<group>"; };
+		C9E8B2BE2C4F123400A1B2E5 /* MFAManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFAManagerTests.swift; sourceTree = "<group>"; };
+		C9E8B2C02C4F123400A1B2E5 /* BackupCodeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupCodeManager.swift; sourceTree = "<group>"; };
+		C9E8B2C22C4F123400A1B2E5 /* BackupCodeManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupCodeManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,12 +151,22 @@
 				DD000000WA000000000000001 /* Models */,
 				DD000000XA000000000000001 /* ViewModels */,
 				DD000000YA000000000000001 /* Views */,
+				C9E8B2C42C4F123400A1B2E5 /* Services */,
 				DD000000ZA000000000000001 /* Extensions */,
 				DD0000005CA000000000000001 /* Images */,
 				DD0000006A000000000000001 /* Assets.xcassets */,
 				DD0000001BA000000000000001 /* Preview Content */,
 			);
 			path = PolyPal;
+			sourceTree = "<group>";
+		};
+		C9E8B2C42C4F123400A1B2E5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C9E8B2BC2C4F123400A1B2E5 /* MFAManager.swift */,
+				C9E8B2C02C4F123400A1B2E5 /* BackupCodeManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		DD000000WA000000000000001 /* Models */ = {
@@ -245,6 +267,10 @@
 				C9E8B2AC2C4F123400A1B2E5 /* ProfileViewModelTests.swift */,
 				C9E8B2AE2C4F123400A1B2E5 /* ProfileCreationTests.swift */,
 				C9E8B2B42C4F123400A1B2E5 /* ProfileDisplayViewTests.swift */,
+				C9E8B2B82C4F123400A1B2E5 /* AccountSettingsViewTests.swift */,
+				C9E8B2BA2C4F123400A1B2E5 /* IntegrationTests.swift */,
+				C9E8B2BE2C4F123400A1B2E5 /* MFAManagerTests.swift */,
+				C9E8B2C22C4F123400A1B2E5 /* BackupCodeManagerTests.swift */,
 			);
 			path = PolyPalTests;
 			sourceTree = "<group>";
@@ -391,6 +417,8 @@
 				C9E8B2B12C4F123400A1B2E5 /* ProfileDisplayView.swift in Sources */,
 				C9E8B2B32C4F123400A1B2E5 /* ProfileEditView.swift in Sources */,
 				C9E8B2B72C4F123400A1B2E5 /* AccountSettingsView.swift in Sources */,
+				C9E8B2BD2C4F123400A1B2E5 /* MFAManager.swift in Sources */,
+				C9E8B2C12C4F123400A1B2E5 /* BackupCodeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +439,10 @@
 				C9E8B2AD2C4F123400A1B2E5 /* ProfileViewModelTests.swift in Sources */,
 				C9E8B2AF2C4F123400A1B2E5 /* ProfileCreationTests.swift in Sources */,
 				C9E8B2B52C4F123400A1B2E5 /* ProfileDisplayViewTests.swift in Sources */,
+				C9E8B2B92C4F123400A1B2E5 /* AccountSettingsViewTests.swift in Sources */,
+				C9E8B2BB2C4F123400A1B2E5 /* IntegrationTests.swift in Sources */,
+				C9E8B2BF2C4F123400A1B2E5 /* MFAManagerTests.swift in Sources */,
+				C9E8B2C32C4F123400A1B2E5 /* BackupCodeManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

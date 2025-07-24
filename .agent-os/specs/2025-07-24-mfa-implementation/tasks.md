@@ -16,13 +16,13 @@ These are the tasks to be completed for the spec detailed in @.agent-os/specs/20
   - [x] 1.6 Add time window tolerance for clock drift
   - [x] 1.7 Verify all MFAManager tests pass
 
-- [ ] 2. Implement Backup Code System
-  - [ ] 2.1 Write tests for backup code generation and validation
-  - [ ] 2.2 Create backup code generation with secure randomization
-  - [ ] 2.3 Implement backup code validation and usage tracking
-  - [ ] 2.4 Add Keychain storage for backup codes
-  - [ ] 2.5 Implement backup code regeneration functionality
-  - [ ] 2.6 Verify all backup code tests pass
+- [x] 2. Implement Backup Code System
+  - [x] 2.1 Write tests for backup code generation and validation
+  - [x] 2.2 Create backup code generation with secure randomization
+  - [x] 2.3 Implement backup code validation and usage tracking
+  - [x] 2.4 Add Keychain storage for backup codes
+  - [x] 2.5 Implement backup code regeneration functionality
+  - [x] 2.6 Verify all backup code tests pass
 
 - [ ] 3. Create QR Code Generation and Display
   - [ ] 3.1 Write tests for QR code URL generation
