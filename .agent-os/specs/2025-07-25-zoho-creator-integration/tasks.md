@@ -15,23 +15,23 @@ These are the tasks to be completed for the spec detailed in @.agent-os/specs/20
   - [x] 1.5 Create ZohoConfiguration helper class for managing app settings
   - [x] 1.6 Verify SDK initialization and configuration tests pass
 
-- [ ] 2. Implement Core Data Models for Offers
-  - [ ] 2.1 Write tests for Offer data model and Codable conformance
-  - [ ] 2.2 Create Offer struct with all required fields matching Zoho Creator schema
-  - [ ] 2.3 Implement OfferFilters struct for search and filtering parameters
-  - [ ] 2.4 Create ZohoAPIResponse generic wrapper for API responses
-  - [ ] 2.5 Add date parsing utilities for ISO 8601 format handling
-  - [ ] 2.6 Implement specifications dictionary handling for flexible offer data
-  - [ ] 2.7 Verify all data model tests pass
+- [x] 2. Implement Core Data Models for Offers
+  - [x] 2.1 Write tests for Offer data model and Codable conformance
+  - [x] 2.2 Create Offer struct with all required fields matching Zoho Creator schema
+  - [x] 2.3 Implement OfferFilters struct for search and filtering parameters
+  - [x] 2.4 Create ZohoAPIResponse generic wrapper for API responses
+  - [x] 2.5 Add date parsing utilities for ISO 8601 format handling
+  - [x] 2.6 Implement specifications dictionary handling for flexible offer data
+  - [x] 2.7 Verify all data model tests pass
 
-- [ ] 3. Build Authentication and Token Management
-  - [ ] 3.1 Write tests for OAuth 2.0 authentication flow
-  - [ ] 3.2 Create ZohoAuthenticationManager class with OAuth 2.0 support
-  - [ ] 3.3 Implement secure token storage using iOS Keychain Services
-  - [ ] 3.4 Add automatic token refresh mechanism with expiration handling
-  - [ ] 3.5 Create authentication state management and error handling
-  - [ ] 3.6 Implement logout and token cleanup functionality
-  - [ ] 3.7 Verify all authentication tests pass
+- [x] 3. Build Authentication and Token Management
+  - [x] 3.1 Write tests for OAuth 2.0 authentication flow
+  - [x] 3.2 Create ZohoAuthenticationManager class with OAuth 2.0 support
+  - [x] 3.3 Implement secure token storage using iOS Keychain Services
+  - [x] 3.4 Add automatic token refresh mechanism with expiration handling
+  - [x] 3.5 Create authentication state management and error handling
+  - [x] 3.6 Implement logout and token cleanup functionality
+  - [x] 3.7 Verify all authentication tests pass
 
 - [x] 4. Implement Core API Service Layer
   - [x] 4.1 Write tests for ZohoCreatorService API interactions
