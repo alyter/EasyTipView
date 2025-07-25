@@ -44,7 +44,7 @@ final class PasswordResetViewTests: XCTestCase {
         let email = "invalid@example.com"
         
         // Test password reset with potentially invalid email
-        authViewModel.requestPasswordReset(email: email)
+        await authViewModel.resetPassword(email: email)
         
         // Should handle invalid email appropriately
         // In a real implementation, this might set an error state
@@ -70,7 +70,7 @@ final class PasswordResetViewTests: XCTestCase {
     func testPasswordResetSuccessState() async {
         let email = "test@example.com"
         
-        await authViewModel.requestPasswordReset(email: email)
+        await authViewModel.resetPassword(email: email)
         
         // Should handle success appropriately
         // In a real implementation, this might show a success message
@@ -82,7 +82,7 @@ final class PasswordResetViewTests: XCTestCase {
         // Test error handling for various scenarios
         let email = "error@example.com"
         
-        await authViewModel.requestPasswordReset(email: email)
+        await authViewModel.resetPassword(email: email)
         
         // Should handle errors appropriately
         // The actual error handling would depend on the implementation

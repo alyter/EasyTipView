@@ -17,7 +17,7 @@ enum ContactMethod: String, CaseIterable, Codable {
 
 // MARK: - UserProfile
 
-struct UserProfile: Codable, Identifiable, Equatable {
+struct UserProfile: Codable, Identifiable {
   let id: String
   var firstName: String
   var lastName: String
@@ -46,6 +46,7 @@ struct UserProfile: Codable, Identifiable, Equatable {
   // Settings
   var privacySettings: PrivacySettings = PrivacySettings()
   var notificationSettings: NotificationSettings = NotificationSettings()
+  var mfaSettings: MFASettings = MFASettings()
   
   // MARK: - Initializers
   
@@ -209,6 +210,14 @@ struct UserProfile: Codable, Identifiable, Equatable {
   }
 }
 
+// MARK: - Equatable Implementation
+
+extension UserProfile: Equatable {
+  static func == (lhs: UserProfile, rhs: UserProfile) -> Bool {
+    return lhs.id == rhs.id
+  }
+}
+
 // MARK: - Privacy Settings
 
 struct PrivacySettings: Codable, Equatable {
@@ -266,5 +275,44 @@ struct NotificationSettings: Codable, Equatable {
     self.newMessageNotifications = newMessageNotifications
     self.connectionRequestNotifications = connectionRequestNotifications
     self.systemUpdateNotifications = systemUpdateNotifications
+  }
+}
+
+// MARK: - MFA Settings
+
+struct MFASettings: Codable, Equatable {
+  var isEnabled: Bool
+  var setupDate: Date?
+  var remainingBackupCodes: Int
+  var lastBackupCodeUsedDate: Date?
+  var secretKey: String?
+  
+  init(
+    isEnabled: Bool = false,
+    setupDate: Date? = nil,
+    remainingBackupCodes: Int = 0,
+    lastBackupCodeUsedDate: Date? = nil,
+    secretKey: String? = nil
+  ) {
+    self.isEnabled = isEnabled
+    self.setupDate = setupDate
+    self.remainingBackupCodes = remainingBackupCodes
+    self.lastBackupCodeUsedDate = lastBackupCodeUsedDate
+    self.secretKey = secretKey
+  }
+  
+  // MARK: - Computed Properties
+  
+  var isSetupComplete: Bool {
+    return isEnabled && setupDate != nil && remainingBackupCodes > 0
+  }
+  
+  var needsBackupCodeRegeneration: Bool {
+    return isEnabled && remainingBackupCodes <= 3
+  }
+  
+  var daysSinceSetup: Int? {
+    guard let setupDate = setupDate else { return nil }
+    return Calendar.current.dateComponents([.day], from: setupDate, to: Date()).day
   }
 }

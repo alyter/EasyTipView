@@ -125,6 +125,13 @@ final class BackupCodeManager {
     return Set(usedCodesArray)
   }
   
+  /// Gets the array of used backup codes for a user (for testing)
+  /// - Parameter userId: The user ID
+  /// - Returns: Array of used backup codes
+  func getUsedBackupCodesArray(for userId: String) -> [String] {
+    return Array(getUsedBackupCodes(for: userId))
+  }
+  
   /// Stores used backup codes in Keychain
   /// - Parameters:
   ///   - usedCodes: Array of used backup codes

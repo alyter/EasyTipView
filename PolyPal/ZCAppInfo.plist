@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>AccountsDomain</key>
+    <string>accounts.zoho.com</string>
+    <key>PortalURL</key>
+    <string>https://clovelace1.zohocreatorportal.com</string>
+    <key>CreatorDomain</key>
+    <string>creator.zoho.com</string>
+    <key>AppOwnerName</key>
+    <string>clovelace1</string>
+    <key>AppLinkName</key>
+    <string>trading</string>
+  </dict>
+</plist>

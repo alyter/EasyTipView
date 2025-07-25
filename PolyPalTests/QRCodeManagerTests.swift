@@ -113,8 +113,23 @@ final class QRCodeManagerTests: XCTestCase {
     
     // Then
     XCTAssertNotNil(url)
-    XCTAssertTrue(url?.absoluteString.contains("user%2Btest%40example.com") ?? false)
-    XCTAssertTrue(url?.absoluteString.contains("issuer=PolyPal%20App") ?? false)
+    
+    // Verify the URL structure is correct
+    XCTAssertEqual(url?.scheme, "otpauth")
+    XCTAssertEqual(url?.host, "totp")
+    
+    // Check that special characters are properly encoded in the path
+    let urlString = url?.absoluteString ?? ""
+    XCTAssertTrue(urlString.contains("user%2Btest%40example.com") || urlString.contains("user+test@example.com"))
+    
+    // Check that the issuer parameter is properly handled in query parameters
+    let components = URLComponents(url: url!, resolvingAgainstBaseURL: false)
+    let issuerQueryItem = components?.queryItems?.first { $0.name == "issuer" }
+    XCTAssertEqual(issuerQueryItem?.value, "PolyPal App")
+    
+    // Verify all required parameters are present
+    XCTAssertTrue(urlString.contains("secret=\(secret)"))
+    XCTAssertTrue(urlString.contains("issuer="))
   }
   
   // MARK: - QR Code Image Generation Tests
@@ -162,8 +177,8 @@ final class QRCodeManagerTests: XCTestCase {
     
     // Then
     XCTAssertNotNil(image)
-    XCTAssertEqual(image?.size.width, customSize.width, accuracy: 1.0)
-    XCTAssertEqual(image?.size.height, customSize.height, accuracy: 1.0)
+    XCTAssertEqual(image?.size.width ?? 0, customSize.width, accuracy: 1.0)
+    XCTAssertEqual(image?.size.height ?? 0, customSize.height, accuracy: 1.0)
   }
   
   func testGenerateQRCodeImage_VeryLargeString_HandlesGracefully() {

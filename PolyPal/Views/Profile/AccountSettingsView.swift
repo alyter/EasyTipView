@@ -142,22 +142,10 @@ struct AccountSettingsView: View {
   
   private var securitySettingsSection: some View {
     Section("Security Settings") {
-      // Two-Factor Authentication Toggle
-      HStack {
-        VStack(alignment: .leading) {
-          Text("Two-Factor Authentication")
-            .font(.headline)
-          Text(viewModel.isTwoFactorEnabled ? "Enabled" : "Disabled")
-            .font(.caption)
-            .foregroundColor(viewModel.isTwoFactorEnabled ? .green : .secondary)
-        }
-        Spacer()
-        Toggle("", isOn: $viewModel.isTwoFactorEnabled)
-          .onChange(of: viewModel.isTwoFactorEnabled) { _ in
-            viewModel.toggleTwoFactorAuthentication()
-          }
-      }
-      .padding(.vertical, 4)
+      // Multi-Factor Authentication Section
+      mfaSettingsView
+      
+      Divider()
       
       // Password Management
       Button(action: {
@@ -314,6 +302,190 @@ struct AccountSettingsView: View {
     // Implementation for reviewing login sessions
     // This would typically show a list of active sessions
     print("Navigate to login sessions review...")
+  }
+  
+  // MARK: - MFA Settings View
+  
+  private var mfaSettingsView: some View {
+    VStack(alignment: .leading, spacing: 12) {
+      // MFA Status Header
+      HStack {
+        VStack(alignment: .leading) {
+          Text("Multi-Factor Authentication")
+            .font(.headline)
+          Text(viewModel.getMFAStatusText())
+            .font(.caption)
+            .foregroundColor(viewModel.profile.mfaSettings.isEnabled ? .green : .secondary)
+        }
+        Spacer()
+        
+        if viewModel.profile.mfaSettings.isEnabled {
+          Image(systemName: "checkmark.shield.fill")
+            .foregroundColor(.green)
+            .font(.title2)
+        } else {
+          Image(systemName: "shield")
+            .foregroundColor(.secondary)
+            .font(.title2)
+        }
+      }
+      .padding(.vertical, 4)
+      
+      // MFA Enable/Disable Button
+      if viewModel.profile.mfaSettings.isEnabled {
+        mfaEnabledView
+      } else {
+        mfaDisabledView
+      }
+      
+      // Backup Codes Warning
+      if viewModel.shouldShowBackupCodeWarning() {
+        HStack {
+          Image(systemName: "exclamationmark.triangle.fill")
+            .foregroundColor(.orange)
+          Text("Low backup codes remaining. Consider regenerating.")
+            .font(.caption)
+            .foregroundColor(.orange)
+        }
+        .padding(.vertical, 4)
+      }
+    }
+  }
+  
+  private var mfaEnabledView: some View {
+    VStack(alignment: .leading, spacing: 8) {
+      // Backup Codes Status
+      HStack {
+        Text(viewModel.getBackupCodesStatusText())
+          .font(.caption)
+          .foregroundColor(.secondary)
+        Spacer()
+      }
+      
+      // MFA Management Buttons
+      VStack(spacing: 8) {
+        // Regenerate Backup Codes
+        Button(action: {
+          regenerateBackupCodes()
+        }) {
+          HStack {
+            Image(systemName: "arrow.clockwise")
+              .foregroundColor(.blue)
+            Text("Regenerate Backup Codes")
+            Spacer()
+            Image(systemName: "chevron.right")
+              .foregroundColor(.secondary)
+              .font(.caption)
+          }
+        }
+        .foregroundColor(.primary)
+        
+        // Disable MFA
+        Button(action: {
+          disableMFA()
+        }) {
+          HStack {
+            Image(systemName: "shield.slash")
+              .foregroundColor(.red)
+            Text("Disable MFA")
+            Spacer()
+            Image(systemName: "chevron.right")
+              .foregroundColor(.secondary)
+              .font(.caption)
+          }
+        }
+        .foregroundColor(.red)
+      }
+    }
+  }
+  
+  private var mfaDisabledView: some View {
+    VStack(alignment: .leading, spacing: 8) {
+      Text("Secure your account with an additional layer of protection")
+        .font(.caption)
+        .foregroundColor(.secondary)
+      
+      Button(action: {
+        enableMFA()
+      }) {
+        HStack {
+          Image(systemName: "shield.checkered")
+            .foregroundColor(.blue)
+          Text("Enable MFA")
+          Spacer()
+          Image(systemName: "chevron.right")
+            .foregroundColor(.secondary)
+            .font(.caption)
+        }
+      }
+      .foregroundColor(.primary)
+    }
+  }
+  
+  // MARK: - MFA Actions
+  
+  private func enableMFA() {
+    Task {
+      await viewModel.enableMFA { success in
+        if success {
+          print("MFA enabled successfully")
+          // In a real app, this might navigate to MFA setup view
+          viewModel.isShowingMFASetup = true
+        } else {
+          print("Failed to enable MFA")
+        }
+      }
+    }
+  }
+  
+  private func disableMFA() {
+    // Show confirmation alert
+    let alert = UIAlertController(
+      title: "Disable Multi-Factor Authentication",
+      message: "Are you sure you want to disable MFA? This will make your account less secure.",
+      preferredStyle: .alert
+    )
+    
+    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+    alert.addAction(UIAlertAction(title: "Disable", style: .destructive) { _ in
+      Task {
+        await viewModel.disableMFA { success in
+          if success {
+            print("MFA disabled successfully")
+          } else {
+            print("Failed to disable MFA")
+          }
+        }
+      }
+    })
+    
+    // Present alert (in a real app, this would use proper SwiftUI alert)
+    print("Would show disable MFA confirmation alert")
+    
+    // For now, directly disable (in real app, this would be in the alert action)
+    Task {
+      await viewModel.disableMFA { success in
+        if success {
+          print("MFA disabled successfully")
+        } else {
+          print("Failed to disable MFA")
+        }
+      }
+    }
+  }
+  
+  private func regenerateBackupCodes() {
+    Task {
+      await viewModel.regenerateBackupCodes { success, newCodes in
+        if success, let codes = newCodes {
+          print("Backup codes regenerated successfully")
+          // In a real app, this might show the new codes to the user
+          viewModel.isShowingBackupCodeRegeneration = true
+        } else {
+          print("Failed to regenerate backup codes")
+        }
+      }
+    }
   }
 }
 

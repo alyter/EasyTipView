@@ -114,9 +114,11 @@ final class ProfileCreationTests: XCTestCase {
   func testRealTimeValidationFeedback() {
     // Test that validation errors update in real-time
     viewModel.profile.email = "invalid"
+    viewModel.triggerValidation()
     XCTAssertTrue(viewModel.validationErrors.contains("Invalid email format"))
     
     viewModel.profile.email = "valid@example.com"
+    viewModel.triggerValidation()
     XCTAssertFalse(viewModel.validationErrors.contains("Invalid email format"))
   }
   

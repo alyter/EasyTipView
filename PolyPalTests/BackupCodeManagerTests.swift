@@ -153,7 +153,7 @@ final class BackupCodeManagerTests: XCTestCase {
     _ = backupCodeManager.validateBackupCode(codes[0], for: "test-user")
     _ = backupCodeManager.validateBackupCode(codes[2], for: "test-user")
     
-    let usedCodes = backupCodeManager.getUsedBackupCodes(for: "test-user")
+    let usedCodes = backupCodeManager.getUsedBackupCodesArray(for: "test-user")
     XCTAssertEqual(usedCodes.count, 2, "Should track 2 used codes")
     XCTAssertTrue(usedCodes.contains(codes[0]), "Should contain first used code")
     XCTAssertTrue(usedCodes.contains(codes[2]), "Should contain second used code")

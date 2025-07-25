@@ -46,12 +46,12 @@ final class MFAManagerTests: XCTestCase {
     let encoded = mfaManager.base32Encode(testData)
     
     // Then
-    XCTAssertEqual(encoded, "JBSWY3DPEBLW64TMMQQQ====", "Base32 encoding should match expected value")
+    XCTAssertEqual(encoded, "JBSWY3DPEBLW64TMMQ======", "Base32 encoding should match expected value")
   }
   
   func testBase32Decode_ValidString() {
     // Given
-    let testString = "JBSWY3DPEBLW64TMMQQQ===="
+    let testString = "JBSWY3DPEBLW64TMMQ======"
     
     // When
     let decoded = mfaManager.base32Decode(testString)
@@ -174,12 +174,23 @@ final class MFAManagerTests: XCTestCase {
     let baseTime = Date().timeIntervalSince1970
     let validCode = mfaManager.generateTOTP(secretKey: secretKey, timestamp: baseTime)!
     
-    // When - Test with ±30 seconds (1 time window)
+    // When - Test with +30 seconds (1 time window drift)
     let validWithPastDrift = mfaManager.validateTOTP(code: validCode, secretKey: secretKey, timestamp: baseTime + 30)
-    let validWithFutureDrift = mfaManager.validateTOTP(code: validCode, secretKey: secretKey, timestamp: baseTime - 30)
     
     // Then
     XCTAssertTrue(validWithPastDrift, "TOTP should be valid with past clock drift")
+  }
+  
+  func testValidateTOTP_ClockDriftTolerance_Future() {
+    // Given
+    let secretKey = mfaManager.generateSecretKey()
+    let baseTime = Date().timeIntervalSince1970
+    let validCode = mfaManager.generateTOTP(secretKey: secretKey, timestamp: baseTime)!
+    
+    // When - Test with -30 seconds (1 time window drift)
+    let validWithFutureDrift = mfaManager.validateTOTP(code: validCode, secretKey: secretKey, timestamp: baseTime - 30)
+    
+    // Then
     XCTAssertTrue(validWithFutureDrift, "TOTP should be valid with future clock drift")
   }
   

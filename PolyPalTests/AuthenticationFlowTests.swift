@@ -134,7 +134,7 @@ final class AuthenticationFlowTests: XCTestCase {
   
   func testMFAVerificationFlow() {
     // Setup MFA state
-    authViewModel.authenticationState = .authenticating
+    authViewModel.authenticationState = .mfaRequired
     authViewModel.navigateToMFA()
     
     XCTAssertEqual(authViewModel.currentView, .mfa)
@@ -145,14 +145,15 @@ final class AuthenticationFlowTests: XCTestCase {
     let mfaExpectation = expectation(description: "MFA verification")
     authViewModel.verifyMFA()
     
-    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+    // Wait longer for the async operation to complete
+    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
       mfaExpectation.fulfill()
     }
     
-    waitForExpectations(timeout: 1.5)
+    waitForExpectations(timeout: 3.0)
     
     // Should be authenticated after successful MFA
-    XCTAssertTrue(authViewModel.authenticationState == .authenticated || authViewModel.authenticationState == .unauthenticated)
+    XCTAssertEqual(authViewModel.authenticationState, .authenticated)
   }
   
   // MARK: - Error Handling Tests

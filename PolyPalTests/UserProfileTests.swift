@@ -214,6 +214,8 @@ final class UserProfileTests: XCTestCase {
       lastName: "Name",
       email: "different@example.com",
       phoneNumber: "999-999-9999",
+      companyName: "Different Company",
+      jobTitle: "Different Job",
       address: "Different Address",
       city: "Different City",
       state: "NY",

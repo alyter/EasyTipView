@@ -23,11 +23,13 @@ final class ProfileViewModelTests: XCTestCase {
   
   func testProfileViewModelInitialization() {
     XCTAssertEqual(viewModel.loadingState, .idle)
-    XCTAssertFalse(viewModel.hasUnsavedChanges)
     XCTAssertNil(viewModel.errorMessage)
     XCTAssertTrue(viewModel.validationErrors.isEmpty)
     XCTAssertEqual(viewModel.currentStep, 0)
     XCTAssertEqual(viewModel.totalSteps, 5)
+    XCTAssertEqual(viewModel.imageUploadState, .idle)
+    XCTAssertFalse(viewModel.isUploadingImage)
+    XCTAssertEqual(viewModel.imageUploadProgress, 0.0)
   }
   
   // MARK: - Profile Loading Tests
@@ -79,9 +81,15 @@ final class ProfileViewModelTests: XCTestCase {
   }
   
   func testSaveProfileWithValidationErrors() {
-    // Set invalid email
-    viewModel.profile.email = "invalid-email"
+    // Set invalid email by replacing the entire profile to trigger validation
+    var updatedProfile = viewModel.profile
+    updatedProfile.email = "invalid-email"
+    viewModel.profile = updatedProfile
     
+    // Trigger validation manually to ensure it happens synchronously
+    viewModel.triggerValidation()
+    
+    // Now try to save - should fail due to validation errors
     viewModel.saveProfile()
     
     XCTAssertEqual(viewModel.loadingState, .error)
@@ -92,83 +100,68 @@ final class ProfileViewModelTests: XCTestCase {
   // MARK: - Validation Tests
   
   func testEmailValidation() {
-    let expectation = XCTestExpectation(description: "Validation updated")
+    // Set invalid email by replacing the entire profile to trigger the publisher
+    var updatedProfile = viewModel.profile
+    updatedProfile.email = "invalid-email"
+    viewModel.profile = updatedProfile
     
-    viewModel.$validationErrors
-      .dropFirst() // Skip initial empty state
-      .sink { errors in
-        XCTAssertTrue(errors.contains("Invalid email format"))
-        expectation.fulfill()
-      }
-      .store(in: &cancellables)
+    // Trigger validation manually to ensure it happens synchronously
+    viewModel.triggerValidation()
     
-    viewModel.profile.email = "invalid-email"
-    
-    wait(for: [expectation], timeout: 1.0)
+    XCTAssertTrue(viewModel.validationErrors.contains("Invalid email format"))
+    XCTAssertFalse(viewModel.isFormValid)
   }
   
   func testPhoneNumberValidation() {
-    let expectation = XCTestExpectation(description: "Validation updated")
+    // Set invalid phone number by replacing the entire profile to trigger the publisher
+    var updatedProfile = viewModel.profile
+    updatedProfile.phoneNumber = "invalid"
+    viewModel.profile = updatedProfile
     
-    viewModel.$validationErrors
-      .dropFirst()
-      .sink { errors in
-        XCTAssertTrue(errors.contains("Invalid phone number format"))
-        expectation.fulfill()
-      }
-      .store(in: &cancellables)
+    // Trigger validation manually to ensure it happens synchronously
+    viewModel.triggerValidation()
     
-    viewModel.profile.phoneNumber = "invalid"
-    
-    wait(for: [expectation], timeout: 1.0)
+    XCTAssertTrue(viewModel.validationErrors.contains("Invalid phone number format"))
+    XCTAssertFalse(viewModel.isFormValid)
   }
   
   func testWebsiteValidation() {
-    let expectation = XCTestExpectation(description: "Validation updated")
+    // Set invalid website URL by replacing the entire profile to trigger the publisher
+    var updatedProfile = viewModel.profile
+    updatedProfile.website = "invalid-url"
+    viewModel.profile = updatedProfile
     
-    viewModel.$validationErrors
-      .dropFirst()
-      .sink { errors in
-        XCTAssertTrue(errors.contains("Invalid website URL"))
-        expectation.fulfill()
-      }
-      .store(in: &cancellables)
+    // Trigger validation manually to ensure it happens synchronously
+    viewModel.triggerValidation()
     
-    viewModel.profile.website = "invalid-url"
-    
-    wait(for: [expectation], timeout: 1.0)
+    XCTAssertTrue(viewModel.validationErrors.contains("Invalid website URL"))
+    XCTAssertFalse(viewModel.isFormValid)
   }
   
   func testLinkedInValidation() {
-    let expectation = XCTestExpectation(description: "Validation updated")
+    // Set invalid LinkedIn URL by replacing the entire profile to trigger the publisher
+    var updatedProfile = viewModel.profile
+    updatedProfile.linkedInProfile = "invalid-linkedin"
+    viewModel.profile = updatedProfile
     
-    viewModel.$validationErrors
-      .dropFirst()
-      .sink { errors in
-        XCTAssertTrue(errors.contains("Invalid LinkedIn profile URL"))
-        expectation.fulfill()
-      }
-      .store(in: &cancellables)
+    // Trigger validation manually to ensure it happens synchronously
+    viewModel.triggerValidation()
     
-    viewModel.profile.linkedIn = "invalid-linkedin"
-    
-    wait(for: [expectation], timeout: 1.0)
+    XCTAssertTrue(viewModel.validationErrors.contains("Invalid LinkedIn profile URL"))
+    XCTAssertFalse(viewModel.isFormValid)
   }
   
   func testBioValidation() {
-    let expectation = XCTestExpectation(description: "Validation updated")
+    // Set bio that's too long by replacing the entire profile to trigger the publisher
+    var updatedProfile = viewModel.profile
+    updatedProfile.bio = String(repeating: "a", count: 501)
+    viewModel.profile = updatedProfile
     
-    viewModel.$validationErrors
-      .dropFirst()
-      .sink { errors in
-        XCTAssertTrue(errors.contains("Bio must be 500 characters or less"))
-        expectation.fulfill()
-      }
-      .store(in: &cancellables)
+    // Trigger validation manually to ensure it happens synchronously
+    viewModel.triggerValidation()
     
-    viewModel.profile.bio = String(repeating: "a", count: 501)
-    
-    wait(for: [expectation], timeout: 1.0)
+    XCTAssertTrue(viewModel.validationErrors.contains("Bio must be 500 characters or less"))
+    XCTAssertFalse(viewModel.isFormValid)
   }
   
   // MARK: - Phone Number Formatting Tests

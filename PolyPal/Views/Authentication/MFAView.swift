@@ -10,7 +10,10 @@ import SwiftUI
 struct MFAView: View {
   @EnvironmentObject var authViewModel: AuthenticationViewModel
   @State private var localMFACode: String = ""
+  @State private var backupCode: String = ""
+  @State private var showingBackupCodeInput: Bool = false
   @FocusState private var isCodeFieldFocused: Bool
+  @FocusState private var isBackupCodeFieldFocused: Bool
   
   var body: some View {
     VStack(spacing: 32) {
@@ -75,6 +78,31 @@ struct MFAView: View {
   
   private var codeInputSection: some View {
     VStack(spacing: 16) {
+      if showingBackupCodeInput {
+        backupCodeInputSection
+      } else {
+        totpCodeInputSection
+      }
+      
+      Button(showingBackupCodeInput ? "Use authenticator code instead" : "Use backup code instead") {
+        withAnimation(.easeInOut(duration: 0.3)) {
+          showingBackupCodeInput.toggle()
+          if showingBackupCodeInput {
+            isBackupCodeFieldFocused = true
+            isCodeFieldFocused = false
+          } else {
+            isCodeFieldFocused = true
+            isBackupCodeFieldFocused = false
+          }
+        }
+      }
+      .font(.caption)
+      .foregroundColor(.blue)
+    }
+  }
+  
+  private var totpCodeInputSection: some View {
+    VStack(spacing: 16) {
       TextField("Enter 6-digit code", text: $localMFACode)
         .textFieldStyle(CustomTextFieldStyle())
         .keyboardType(.numberPad)
@@ -88,23 +116,48 @@ struct MFAView: View {
     }
   }
   
+  private var backupCodeInputSection: some View {
+    VStack(spacing: 16) {
+      TextField("Enter backup code", text: $backupCode)
+        .textFieldStyle(CustomTextFieldStyle())
+        .textInputAutocapitalization(.characters)
+        .multilineTextAlignment(.center)
+        .font(.title2)
+        .focused($isBackupCodeFieldFocused)
+        .onChange(of: backupCode) { newValue in
+          backupCode = authViewModel.formatBackupCode(newValue)
+        }
+      
+      Text("Format: XXXX-XXXX")
+        .font(.caption)
+        .foregroundColor(.secondary)
+    }
+  }
+  
   private var actionButtons: some View {
     VStack(spacing: 16) {
-      Button("Verify Code") {
+      Button(showingBackupCodeInput ? "Verify Backup Code" : "Verify Code") {
         Task {
-          await authViewModel.verifyMFA(authViewModel.mfaCode)
+          if showingBackupCodeInput {
+            await authViewModel.verifyBackupCode(backupCode)
+          } else {
+            await authViewModel.verifyMFAWithTOTP(localMFACode)
+          }
         }
       }
       .buttonStyle(PrimaryButtonStyle())
-      .disabled(!authViewModel.canAuthenticate || !authViewModel.isValidMFACode(localMFACode))
+      .disabled(!authViewModel.canAuthenticate || 
+                (showingBackupCodeInput ? !authViewModel.isValidBackupCode(backupCode) : !authViewModel.isValidMFACode(localMFACode)))
       
-      Button("Resend Code") {
-        Task {
-          await authViewModel.resendMFACode()
+      if !showingBackupCodeInput {
+        Button("Resend Code") {
+          Task {
+            await authViewModel.resendMFACode()
+          }
         }
+        .buttonStyle(SecondaryButtonStyle())
+        .disabled(!authViewModel.canAuthenticate)
       }
-      .buttonStyle(SecondaryButtonStyle())
-      .disabled(!authViewModel.canAuthenticate)
     }
   }
 }

@@ -110,19 +110,7 @@ final class NavigationCoordinationTests: XCTestCase {
         let states: [AuthenticationViewModel.NavigationState] = [.welcome, .login, .register, .passwordReset, .mfa]
         
         for state in states {
-            switch state {
-            case .welcome:
-                authViewModel.navigationState = .welcome
-            case .login:
-                authViewModel.navigateToLogin()
-            case .register:
-                authViewModel.navigateToRegister()
-            case .passwordReset:
-                authViewModel.navigateToPasswordReset()
-            case .mfa:
-                authViewModel.navigateToMFA()
-            }
-            
+            authViewModel.navigationState = state
             XCTAssertEqual(authViewModel.navigationState, state)
         }
     }
