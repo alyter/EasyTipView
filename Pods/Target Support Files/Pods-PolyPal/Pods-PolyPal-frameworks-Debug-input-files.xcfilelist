@@ -1,0 +1,15 @@
+${PODS_ROOT}/Target Support Files/Pods-PolyPal/Pods-PolyPal-frameworks.sh
+${BUILT_PRODUCTS_DIR}/CropViewController/CropViewController.framework
+${BUILT_PRODUCTS_DIR}/EasyTipView/EasyTipView.framework
+${BUILT_PRODUCTS_DIR}/GLTFSceneKitTemp/GLTFSceneKitTemp.framework
+${BUILT_PRODUCTS_DIR}/PhoneNumberKit/PhoneNumberKit.framework
+${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework
+${BUILT_PRODUCTS_DIR}/PromisesSwift/Promises.framework
+${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework
+${PODS_ROOT}/SQLite.Wrapper/SQLiteWrapper.framework
+${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework
+${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework
+${PODS_ROOT}/ZCCoreFramework/ZCCoreFramework.framework
+${PODS_ROOT}/ZCUIFramework/ZCUIFramework.framework
+${PODS_ROOT}/ZMLKit/ZMLKit.framework
+${BUILT_PRODUCTS_DIR}/Zip/Zip.framework

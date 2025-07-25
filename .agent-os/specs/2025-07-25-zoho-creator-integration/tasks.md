@@ -9,9 +9,9 @@ These are the tasks to be completed for the spec detailed in @.agent-os/specs/20
 
 - [x] 1. Set Up Zoho Creator SDK and Configuration
   - [x] 1.1 Write tests for Zoho SDK configuration and initialization
-  - [ ] 1.2 Add Zoho Mobile SDK dependency to Xcode project
+  - [x] 1.2 Add Zoho Mobile SDK dependency to Xcode project
   - [x] 1.3 Configure ZCAppInfo.plist with existing portal settings (clovelace1.zohocreatorportal.com)
-  - [ ] 1.4 Initialize Zoho SDK in PolyPalApp.swift with proper error handling
+  - [x] 1.4 Initialize Zoho SDK in PolyPalApp.swift with proper error handling
   - [x] 1.5 Create ZohoConfiguration helper class for managing app settings
   - [x] 1.6 Verify SDK initialization and configuration tests pass
 
@@ -40,7 +40,7 @@ These are the tasks to be completed for the spec detailed in @.agent-os/specs/20
   - [x] 4.4 Add fetchOffer method for individual offer retrieval
   - [x] 4.5 Implement searchOffers method with filtering capabilities
   - [x] 4.6 Add comprehensive error handling for all API scenarios
-  - [ ] 4.7 Implement rate limiting and retry logic with exponential backoff
+  - [x] 4.7 Implement rate limiting and retry logic with exponential backoff
   - [x] 4.8 Verify all API service tests pass
 
 - [ ] 5. Build Caching and Offline Support

@@ -1,0 +1,11 @@
+framework module ZMLKit {
+  umbrella header "ZMLKit.h"
+  export *
+
+  module * { export * }
+}
+
+module ZMLKit.Swift {
+  header "ZMLKit-Swift.h"
+  requires objc
+}

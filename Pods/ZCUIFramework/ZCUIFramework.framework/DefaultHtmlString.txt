@@ -1,0 +1,248 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Zoho&#x20;Creator - <---COMPONENTDISPLAYNAME---></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta property="og:image" content="https://www.zoho.com/creator/images/logo-med.png" />
+<!-- $Id$ -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1.0,maximum-scale=1.0" />
+
+
+<link href="/appcreator/live/common/css/dialog.css" rel="stylesheet" type="text/css" /><link href="https://css.zohostatic.com/creator/37192/css/l2t4c4.css" rel="stylesheet" type="text/css" />
+
+<link href='/images/database_fav_small.ico' rel="SHORTCUT ICON">
+<!-- $Id$ -->
+
+<script type="text/javascript" src=https://js.zohostatic.com/zohosecurity/v3/js/security.js></script><script>function getConfig()
+{
+var confprop={"cssStaticServer":'css.zohostatic.com',"jsStaticServer":'js.zohostatic.com',"domainVal":'zoho.com',"production":'true'};
+return confprop;
+}
+var jsLocale = "en";
+var googledocurl = "https://gadgets.zoho.com/gdocs?maxDocs=1&frameorigin=https://creator.zoho.com&serURL=https://creator.zoho.com/googledocresponse.jsp&bgcolor=E8E8E8&brcolor=AAAAAA&searchColor=1E1E1E&border=1E1E1E&hFontColor=FFFFFF";
+var zohodocurl = "https://docs.zoho.com/index.do?service=creator";
+var googlesheeturl = "https://gadgets.zoho.com/gdocs/sheets?maxDocs=1&serURL=https://creator.zoho.com/googledocresponse.jsp";
+var clouddocurl = "https://gadgets.zoho.com/CloudPicker?attachLimit=1&sources=gdrive,zohodocs,skydrive,dropbox,box&originUrl=https://creator.zoho.com&zservice=zcreator&check=true";
+var fileCloudUrl = "https://gadgets.zoho.com/CloudPicker?ZC_PARAMS=&serURL=https://creator.zoho.com/gadgetsreponsefileupload.jsp"; </script>
+<script type="text/javascript" src="https://js.zohostatic.com/creator/37192//js//zcliveapp.js"></script>
+
+
+<link href="https://js.zohostatic.com/creator/37192//appedit/other/css//zc_appedit_other.css" rel="stylesheet" type="text/css"/>
+
+<!--      <link rel='stylesheet' type='text/css' href='/appcreator/live/common/css/jquery.handsontable.full.css' />-->
+<!-- <link rel='stylesheet' type='text/css' href='/appcreator/live/common/css/sheetview.css' />-->
+
+
+<script type="text/javascript" src="https://js.zohostatic.com/creator/37192//appedit/other/js//zc_appedit_other.js"></script>
+
+<!-- <script type="text/javascript" src="/appcreator/live/common/js/jquery-ui.js"></script>-->
+<!-- <script type="text/javascript" src="/appcreator/live/common/js/fullcalendar.min.js"></script>-->
+
+<script type="text/javascript" src="https://js.zohostatic.com/storehandler/v8/js/zswidget.js"></script>
+<link type="text/css" href="https://css.zohostatic.com/storehandler/v8/css/zswidget.css" rel="stylesheet"/>
+<link type="text/css" href="/zohocreator/userhome/common/css/upgradepopup.css" rel="stylesheet"/>
+
+
+<script>var i18n =
+{
+"NameLookup":"Name Lookup",
+"ZohoCRM":"Zoho CRM",
+"duplinfomsg":"Duplicating Records",
+"bulkeditinfo":"Please select at least one record to be edited",
+"deleteinfomsg":"Deleting Records",
+"duplerrormsg":"Please select at least one record to be duplicated",
+"delerrormsg":"Please select at least one record to be deleted",
+"loadingmsg":"Loading",  //NO I18N
+"loadingform":"Loading\x20Form",  //NO I18N
+"formulacalc":"Data in this form is being processed for Formula calculation.\nYou cannot add/modify/delete data in this form till the process is completed.\nPlease wait till it gets over",
+"showdetails":"Show Details",
+"hidedetails":"Hide Details",
+"failedreq":"Failed to process your request.\nKindly refresh the page and try again later.\nIf the problem persists, please notify to support@zohocreator.com",
+"errormsg":"Error occurred. Please refresh the page and try again later.",
+"apprating":"You have to be logged in to rate this application.",
+"appreview":"You have to be logged in to write a review for this application.",
+"reviewtitleandcontent":"Enter the title and content for your review.",
+"reviewtitle":"Enter the title for your review.",
+"reviewcontent":"Enter the content for your review.",
+"addreview":"Adding Review",
+"reviewadded":"Review added successfully",
+"loadingdot":"Loading...",
+"updratings":"Updating Ratings",
+"pastedata":"Please Paste your Data",
+"dataerror":"An Error occurred with adding the data",
+"submitform":"Submitting Form",
+"importing":"Importing Data",
+"pleasewait":"Please\x20wait",  //NO I18N
+"viewsave":"View saved successfully. \nDo you want to navigate to the new view.",
+"custact":"Select at least one record(matching criteria) upon which the custom action has to be invoked.",
+"saving":"Saving",
+"saverec":"Saving Records",
+"successmsg":"Data\x20Added\x20Successfully\x21",  //NO I18N
+"delfailmsg":"Record(s) could not be deleted, since delete validate action failed.",
+"delsuccmsg":"Record(s) deleted successfully.",
+"custactfailmsg":"Execution failed for",
+"custactsuccmsg":"Successfully executed for",
+"funcsuccmsg":"Function executed successfully",
+"recsuccmsg":"record(s) updated successfully.",
+"recfailmsg":"record(s) could not be updated.",
+"deleterecord":"Do you really want to delete this record ?",
+"reallywantto":"Do you really want to [0] the selected [1] record(s)?",
+"reallywanttorecord":"Do you really want to [0] this record?",
+"delete1":"delete",
+"duplicate1":"duplicate",
+"ascending":"Asc",
+"descending":"Desc",
+"invalidmsg":"Invalid\x20entries\x20found.\x20Please\x20correct\x20and\x20submit\x20again.",  //NO I18N
+"noMsg":"There is no such [0] in ZohoCreator.",
+"deleteMsg":"Do you really want to delete the selected record?",
+"selectcolumn":"Select another column to edit",
+"recCount":"Record Count",
+"fetchCount":"Fetching Count",
+"bulkEditMsg":'This will update [0] selected record(s) with the given value.\nPress OK to proceed or press Cancel to return.',
+"showfield":"One or more fields were dynamically changed.<br>Please resubmit the form.",
+"onuserinputexecute":"On User Input action is being executed for one of the field in this form.<br>Please wait till it gets over and submit again.",
+"invalidsubmission":"Form submission failed.",
+"applystyleMsg":"Applying Styles",
+"iframeSnippet":"Get Iframe Snippet",
+"javascriptSnippet":"Get JavaScript Snippet",
+"selectOption":"Select",
+"disablePublic":"Enabling public access is not allowed for the Trial and Free edition users. <a href='/upgradeplan'>Upgrade</a> to use this feature.",
+"regensuccmsg1":"Scheduled for regenerating this report. This may take few minutes based on the view's data.",
+"regensuccmsg2":"Please refresh the view after sometime.",
+"regenfailmsg":"Sorry. We are unable to regenerate the report.",
+"deniedmsg1":"This report is currently disabled for this account.",
+"noComponent":"There is no form or view in this section. Please click on  someother Tab/Component...",
+"viewlogdetails":"View Log Details",
+"backtoform":"Back to Form",
+"viewerrordetails":"View Error Details",
+"nofldtomatch":"Please select the field(s) to match with existing record(s)",
+"plzpastedata":"Please provide input for file content",
+"importerror":"Error occurred while uploading the file. Kindly report this problem to support@zohocreator.com",
+"nofiletoimport":"Please select a file with data.",
+"emptyfiletoimport":"Please provide a file with data",
+"largefiletoimport":"Please provide a file of size less than 5MB",
+"uploadmore":"To upload more, contact support@zohocreator.com",
+"importingmsg":"Importing Data ...",
+"selcols4imp":"Please select columns to import",
+"view":"View",
+"form":"Form",
+"report":"Report",
+"page":"Page",
+"component":"component",
+"showimperrors":"Show Errors",
+"hideimperrors":"Hide Errors",
+"publicstatusmsg1":"Public Access Feature needs to be enabled in your account. [0]Your request for this feature is pending.",
+"publicstatusmsg2":"Public Access Feature needs to be enabled in your account. [0]Click here[1] to request for this feature.",
+"requestpublic":"Request for Public Access",
+"publicaccessupgrademsg1":"Trial and Free edition users are not allowed to publish.",
+"publicaccessupgrademsg2":"Please contact <a href='mailto:support@zohocreator.com'>support@zohocreator.com</a>",
+"publishmaxlimitreachedmsg1":"Maximum number of components allowed to publish for your account has been exceeded. ",
+"publishmaxlimitreachedmsg2":"Please contact <a href='mailto:support@zohocreator.com'>support@zohocreator.com</a>",
+"publishmaxplanmaxlimitreached":"Maximum number of components allowed to publish for your account has been exceeded.",
+"nomultiple":"You Are Not Allowed to Enter More Than One Record for This Form",
+"headererrormsg":"Error",
+"failedtoadd":"Failed to add data.",
+"stylecustomization":"Style Customization",
+"stylerestrict":"Style Customization is not available for Free Edition",
+"getthisfeature":'Upgrade to get this feature in your account.',
+"alreadyfileuploaded":"You have already uploaded a file.",
+
+"paymentstatusmsg":"The payment process has finished with the status '[0]'.",
+"paymentcancelled":"Payment has been cancelled...",
+"viewinvalidmsg":"Invalid entries found. Please correct and save again.",
+"valueforn":"Enter the value for N",
+"correctvalueforn":"Please enter a valid number for N",
+"correctvaluetosearch":"Please enter a valid number to search",
+"entervaluetosearch":"Please enter a value to search records",
+"selectfieldtosearch":"Please select any field to search records",
+"correctvaluetodecisioncheckbox":"Please enter true or false to search with decision checkbox field ",
+"entervalidemail":"Please enter a valid email address.",
+"entervaliddateformat":"Please enter valid date format",
+"entervaliddatetimeformat":"Please enter valid date time format",
+"cannoraddsubformrowmsg":"You have reached maximum number of rows. You can not add further.",
+"duplicateheader":"Duplicate value",
+"duplicateerror":"Duplicate values found for 'null'",
+"zc.viewedit.advcritlink":"(Advanced)",
+"zc.viewedit.uicritlink":"(Back to Normal)",
+"zc.viewedit.setcritmsg":"By default your view will display all the records. You can restrict the display of records by setting criteria.",
+"zc.viewedit.setcritmsg1":"For eg: <strong>Name &raquo; Starts With &raquo; John</strong> to see records only related to <em>John</em>",
+"zc.viewedit.critmodealert1":"The Deluge criteria specified cannot be displayed in GUI mode.",
+"zc.viewedit.critmodealert2":"All the changes you made since the last save will be lost. Do you want to continue?",
+"zc.viewedit.multiselcrirepmsg1":"Please delete the above reports and try again.",
+"zc.viewlive.1recordsel":"1 record selected",
+"alreadyselected":"This value has been selected already.",
+"replacing":"Replacing...",
+"spreadsheetcnfm1":"Do you really want to leave this page? Unsaved changes will be lost.",
+"unconfirmeduserpublish": "The email address of the application owner is not yet verified. Please verify the email address to publish this component.",
+"formliveclose": "Close"
+};
+i18n['zc.support.chatsupport.weekends'] = 'Our Chat Support is only available Monday-Friday. You can leave us an email to support@zohocreator.com and we will get back to you soon.';
+i18n['zc.support.chatsupport.restrictionmsg'] = 'All our reps are busy. You can leave us an email to support@zohocreator.com and we will get back to you soon.';
+i18n['zc.viewlive.selectatleastone'] =  'You should select atleast one record to print the record summary.';
+i18n['zc.viewlive.selectatleastonefield'] =  'You should select atleast one field to apply.';
+i18n['zc.viewedit.setcritmsg2'] = 'For eg: Name == "John" to see records only related to <em>John</em>';
+i18n['zc.viewedit.multiselcrirepmsg'] = 'You are trying to set criteria involving "Multi-Select" field(s). This criteria cannot be applied to the following reports.';
+i18n['zc.viewedit.nameforview'] = 'Please specify a name for the View';
+i18n['zc.viewedit.shortnameforview'] = 'Please specify a View name which does not exceed 50 characters.';
+i18n['zc.viewedit.emptyreportname'] = 'Report name cannot be empty.';
+i18n['zc.viewedit.emptyfiltername'] = "Custom filter's name cannot be empty.";
+i18n['zc.viewedit.reportnameexceedchar'] = 'Report name cannot exceed 50 characters. Provide a different name.';
+i18n['zc.viewedit.filternameexceedchar'] = "Custom filter's name cannot exceed 50 characters. Provide a different name.";
+i18n['zc.viewedit.formforview'] = 'Please select a Form for this View';
+i18n['zc.viewedit.confirmdelete1msg'] = 'Do you really want to delete this view?';
+i18n['zc.viewedit.confirmdelete2msg'] = 'Press OK to delete or press Cancel to return.';
+i18n['zc.calendar.nextmonth'] = 'Next Month';
+i18n['zc.calendar.nextweek'] = 'Next Week';
+i18n['zc.calendar.nextday'] = 'Next Day';
+i18n['zc.calendar.previousmonth'] = 'Previous Month';
+i18n['zc.calendar.previousweek'] = 'Previous Week';
+i18n['zc.calendar.previousday'] = 'Previous Day';
+i18n['zc.viewlive.thanksfortryingui'] = 'Thank you for trying the new UI';
+i18n['zc.viewlive.download'] = 'Download';
+i18n['zc.formval.entervalidnumber'] = 'Enter a valid number for <strong> null </strong>';
+i18n['zc.uploadfile.invalidname'] = 'Invalid file name';
+var integrationCRMUrl ="https://crm.zoho.com";
+var documentdomain = "creator.zoho.com";   </script>
+<script>$(window).scroll(function(){ZCApp.scroll();});
+$(window).resize(function(){ZCApp.resize();});
+$(document).ready(function()
+{
+ZCView.addToViewArr("", "", "", "<cu:encode object=''  contexts='javascript'/>");
+ZCApp.setGlobals("638885493", "<---APPOWNER--->", "new-page", "3205425000001031003", "638670394", "638670394", "2", "", "");
+ZCApp.setCSRFParams("zccpn", getCookie("zccpn"));
+ZCApp.regGlobalEvents();
+});</script>
+<script type="text/javascript">var c = getCookie('ZCNEWLIVEUI');if(c == '' && true && location.host === 'creator.zohopublic.com' && true) {location.href = location.href.replace(location.host, "creatorl.zohopublic.com");}if(c != null && c != undefined && c == 'true'){location.href = location.href.replace(location.host, "app.zohocreator.com");}</script></head><body class="body-class" onclick="ZCApp.hideViewPermaContent(event);" onload="ZCApp.fixMobileHeader();ZCApp.scrollToPageTop();getBannerCookie();">
+
+
+
+<div id="zc-component"><table id="zc-pane" width="100%" cellspacing="0" cellpadding="0" border="0"><tr>
+<td id="zc-pane-right" class="zc-perma-pane-right">
+
+
+<div elName="zc-component-<---COMPONENTLINKNAME--->" comElName="zc-component">
+
+
+
+
+<!-- $Id$ -->
+
+
+
+<table width="100%" elName ="zc-maincontent" height="100%" cellpadding="0" cellspacing="0" border="0" style="white-space: normal;"><tr><td valign="top" id="zc-viewcontainer_<---COMPONENTLINKNAME--->"> <html>
+<head></head>
+<body>
+<—---DSPSTRING---—>
+</body>
+</html>
+<div elName="zc-linkinfo-div" privateLink="" isIcalEnable=""  exportServerPrefix="creatorexport.zoho.com" scheme="https" serverprefix="https://creator.zoho.com" critStr="" style="display:none;"></div> </td></tr></table>
+<script>$(document).ready(function()
+{
+ZCApp.currZCComp = "<---COMPONENTLINKNAME--->";
+ZCApp.loadZCCompsInHTML();
+});</script>
+
+</div><div id="zc-loading" class="zc-loading" msg="Loading"><table cellpadding="0" cellspacing="0" border="0"><tr><td class="zc-loading-td"><img src="/appcreator/live/common/images/loading.gif"/></td><td class="zc-loading-td-text" loading="true"></td></tr></table></div><div id="zc-fadding" class="zc-loading" msg="Loading"><table cellpadding="0" cellspacing="0" border="0"><tr><td class="zc-loading-td-text  zc-loading-td-text-align" loading="true"></td></tr></table></div></td></tr></table></div>
+
+
+
+</body></html>

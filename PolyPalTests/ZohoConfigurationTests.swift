@@ -149,18 +149,3 @@ final class ZohoConfigurationTests: XCTestCase {
     }
   }
 }
-
-// MARK: - Mock Errors for Testing
-
-enum ZohoConfigurationError: Error, Equatable {
-  case plistNotFound
-  case invalidConfigurationData
-  case missingRequiredKey(String)
-  case invalidURL(String)
-}
-
-enum ZohoSDKError: Error {
-  case initializationFailed(String)
-  case authenticationFailed
-  case networkError
-}

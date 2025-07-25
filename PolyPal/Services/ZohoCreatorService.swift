@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import ZohoPortalAuth
+import ZCUIFramework
 import Combine
 
 /// Service for interacting with Zoho Creator APIs
@@ -20,12 +22,112 @@ class ZohoCreatorService: ObservableObject {
     @Published var isAuthenticated = false
     @Published var authToken: String?
     
+    // Rate limiting properties
+    private let maxRetries: Int = 3
+    private let baseDelay: TimeInterval = 1.0
+    private let maxDelay: TimeInterval = 60.0
+    private var requestQueue = DispatchQueue(label: "zoho.api.requests", qos: .utility)
+    private var lastRequestTime: Date = Date.distantPast
+    private let minimumRequestInterval: TimeInterval = 0.1 // 100ms between requests
+    
     // MARK: - Initialization
     
     init(configuration: ZohoConfiguration = ZohoConfiguration.shared, 
          session: URLSession = .shared) {
         self.configuration = configuration
         self.session = session
+    }
+    
+    // MARK: - Rate Limiting and Retry Logic
+    
+    /// Executes a network request with rate limiting and exponential backoff retry
+    private func executeWithRetry<T>(_ operation: @escaping () -> AnyPublisher<T, Error>) -> AnyPublisher<T, Error> {
+        return operation()
+            .catch { error -> AnyPublisher<T, Error> in
+                if self.shouldRetry(error: error) {
+                    return self.retryWithExponentialBackoff(operation, attempt: 1)
+                } else {
+                    return Fail(error: error).eraseToAnyPublisher()
+                }
+            }
+            .eraseToAnyPublisher()
+    }
+    
+    /// Retries an operation with exponential backoff
+    private func retryWithExponentialBackoff<T>(_ operation: @escaping () -> AnyPublisher<T, Error>, attempt: Int) -> AnyPublisher<T, Error> {
+        guard attempt <= maxRetries else {
+            return Fail(error: ZohoCreatorError.maxRetriesExceeded).eraseToAnyPublisher()
+        }
+        
+        let delay = min(baseDelay * pow(2.0, Double(attempt - 1)), maxDelay)
+        
+        return Future<T, Error> { promise in
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+                operation()
+                    .sink(
+                        receiveCompletion: { completion in
+                            if case .failure(let error) = completion {
+                                if self.shouldRetry(error: error) && attempt < self.maxRetries {
+                                    self.retryWithExponentialBackoff(operation, attempt: attempt + 1)
+                                        .sink(
+                                            receiveCompletion: { promise(.failure($0.error ?? error)) },
+                                            receiveValue: { promise(.success($0)) }
+                                        )
+                                        .store(in: &self.cancellables)
+                                } else {
+                                    promise(.failure(error))
+                                }
+                            }
+                        },
+                        receiveValue: { value in
+                            promise(.success(value))
+                        }
+                    )
+                    .store(in: &self.cancellables)
+            }
+        }
+        .eraseToAnyPublisher()
+    }
+    
+    /// Determines if an error should trigger a retry
+    private func shouldRetry(error: Error) -> Bool {
+        if let urlError = error as? URLError {
+            switch urlError.code {
+            case .timedOut, .cannotConnectToHost, .networkConnectionLost, .notConnectedToInternet:
+                return true
+            default:
+                return false
+            }
+        }
+        
+        if let httpResponse = (error as NSError).userInfo["response"] as? HTTPURLResponse {
+            // Retry on server errors (5xx) and rate limiting (429)
+            return httpResponse.statusCode >= 500 || httpResponse.statusCode == 429
+        }
+        
+        return false
+    }
+    
+    /// Enforces rate limiting between requests
+    private func enforceRateLimit() -> AnyPublisher<Void, Never> {
+        return Future<Void, Never> { promise in
+            self.requestQueue.async {
+                let now = Date()
+                let timeSinceLastRequest = now.timeIntervalSince(self.lastRequestTime)
+                
+                if timeSinceLastRequest < self.minimumRequestInterval {
+                    let delay = self.minimumRequestInterval - timeSinceLastRequest
+                    DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+                        self.lastRequestTime = Date()
+                        promise(.success(()))
+                    }
+                } else {
+                    self.lastRequestTime = now
+                    promise(.success(()))
+                }
+            }
+        }
+        .eraseToAnyPublisher()
     }
     
     // MARK: - Authentication
@@ -73,10 +175,22 @@ class ZohoCreatorService: ObservableObject {
                 .eraseToAnyPublisher()
         }
         
+        return enforceRateLimit()
+            .flatMap { _ in
+                self.executeWithRetry {
+                    self.performFetchRecords(formName: formName, criteria: criteria, token: token)
+                }
+            }
+            .eraseToAnyPublisher()
+    }
+    
+    /// Internal method to perform the actual fetch records request
+    private func performFetchRecords(formName: String, criteria: String?, token: String) -> AnyPublisher<[ZohoRecord], Error> {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
-        urlComponents.host = configuration.creatorDomain
-        urlComponents.path = "/api/v2/\(configuration.appOwnerName)/\(configuration.appLinkName)/report/\(formName)"
+        let configData = try! configuration.loadConfiguration()
+        urlComponents.host = configData.creatorDomain
+        urlComponents.path = "/api/v2/\(configData.appOwnerName)/\(configData.appLinkName)/report/\(formName)"
         
         if let criteria = criteria {
             urlComponents.queryItems = [URLQueryItem(name: "criteria", value: criteria)]
@@ -108,8 +222,9 @@ class ZohoCreatorService: ObservableObject {
         
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
-        urlComponents.host = configuration.creatorDomain
-        urlComponents.path = "/api/v2/\(configuration.appOwnerName)/\(configuration.appLinkName)/form/\(formName)"
+        let configData = try! configuration.loadConfiguration()
+        urlComponents.host = configData.creatorDomain
+        urlComponents.path = "/api/v2/\(configData.appOwnerName)/\(configData.appLinkName)/form/\(formName)"
         
         guard let url = urlComponents.url else {
             return Fail(error: ZohoCreatorError.invalidURL)
@@ -146,8 +261,9 @@ class ZohoCreatorService: ObservableObject {
         
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
-        urlComponents.host = configuration.creatorDomain
-        urlComponents.path = "/api/v2/\(configuration.appOwnerName)/\(configuration.appLinkName)/report/\(formName)/\(recordId)"
+        let configData = try! configuration.loadConfiguration()
+        urlComponents.host = configData.creatorDomain
+        urlComponents.path = "/api/v2/\(configData.appOwnerName)/\(configData.appLinkName)/report/\(formName)/\(recordId)"
         
         guard let url = urlComponents.url else {
             return Fail(error: ZohoCreatorError.invalidURL)
@@ -184,8 +300,9 @@ class ZohoCreatorService: ObservableObject {
         
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
-        urlComponents.host = configuration.creatorDomain
-        urlComponents.path = "/api/v2/\(configuration.appOwnerName)/\(configuration.appLinkName)/report/\(formName)/\(recordId)"
+        let configData = try! configuration.loadConfiguration()
+        urlComponents.host = configData.creatorDomain
+        urlComponents.path = "/api/v2/\(configData.appOwnerName)/\(configData.appLinkName)/report/\(formName)/\(recordId)"
         
         guard let url = urlComponents.url else {
             return Fail(error: ZohoCreatorError.invalidURL)
@@ -200,6 +317,7 @@ class ZohoCreatorService: ObservableObject {
             .map { response in
                 return (response.response as? HTTPURLResponse)?.statusCode == 200
             }
+            .mapError { $0 as Error }
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
@@ -319,15 +437,19 @@ struct AnyCodable: Codable {
 
 enum ZohoCreatorError: Error, LocalizedError {
     case notAuthenticated
+    case configurationError
     case invalidURL
     case invalidResponse
     case networkError(Error)
     case apiError(String)
+    case maxRetriesExceeded
     
     var errorDescription: String? {
         switch self {
         case .notAuthenticated:
             return "Not authenticated with Zoho Creator"
+        case .configurationError:
+            return "Failed to load Zoho Creator configuration"
         case .invalidURL:
             return "Invalid URL for Zoho Creator API"
         case .invalidResponse:
@@ -336,6 +458,8 @@ enum ZohoCreatorError: Error, LocalizedError {
             return "Network error: \(error.localizedDescription)"
         case .apiError(let message):
             return "Zoho Creator API error: \(message)"
+        case .maxRetriesExceeded:
+            return "Maximum retry attempts exceeded"
         }
     }
 }

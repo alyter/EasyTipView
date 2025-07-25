@@ -33,12 +33,21 @@ This is the technical specification for the spec detailed in @.agent-os/specs/20
 
 ## External Dependencies
 
-- **Zoho Mobile SDK for iOS** - Official SDK for Zoho Creator integration
-  - **Justification:** Provides optimized mobile integration with built-in authentication and error handling
-- **Alamofire** - HTTP networking library for Swift
-  - **Justification:** Robust networking with built-in retry logic and request/response handling
-- **SwiftyJSON** - JSON parsing library
-  - **Justification:** Simplifies JSON parsing and reduces boilerplate code for API responses
+### ZohoPortalAuth (Official Zoho Authentication SDK)
+- **Purpose**: Handle OAuth 2.0 authentication with Zoho services
+- **Version**: Latest stable via CocoaPods
+- **Justification**: Official Zoho SDK provides secure, tested authentication flow with built-in token management, refresh handling, and proper security practices. Using the official SDK ensures compatibility and reduces security risks.
+
+### ZCUIFramework (Zoho Creator iOS UI Framework)
+- **Purpose**: Pre-built UI components for Zoho Creator forms and reports
+- **Version**: Latest stable via CocoaPods
+- **Justification**: Official Zoho Creator iOS framework provides native UI components optimized for Creator apps, including form views, report views, and data management. This eliminates the need for custom API integration and provides a consistent user experience.
+
+### iOS System Requirements
+- **Minimum iOS Version**: iOS 15.0+
+- **Xcode Version**: 16.0+
+- **Swift Version**: 5.0+
+- **CocoaPods**: Required for dependency management
 
 ## Data Models
 

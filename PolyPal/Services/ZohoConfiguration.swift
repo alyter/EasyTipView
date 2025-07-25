@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import ZohoPortalAuth
 
 // MARK: - Configuration Data Structure
 
@@ -20,6 +21,10 @@ struct ZohoConfigurationData {
 // MARK: - ZohoConfiguration Class
 
 class ZohoConfiguration {
+  
+  // MARK: - Singleton
+  
+  static let shared = ZohoConfiguration()
   
   // MARK: - Properties
   

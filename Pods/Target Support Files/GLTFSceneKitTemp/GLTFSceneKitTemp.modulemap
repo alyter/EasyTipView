@@ -1,0 +1,6 @@
+framework module GLTFSceneKitTemp {
+  umbrella header "GLTFSceneKitTemp-umbrella.h"
+
+  export *
+  module * { export * }
+}

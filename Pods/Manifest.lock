@@ -1,0 +1,80 @@
+PODS:
+  - CropViewController (2.7.4)
+  - EasyTipView (2.1.0)
+  - GLTFSceneKitTemp (0.3.0)
+  - PhoneNumberKit (3.1.0):
+    - PhoneNumberKit/PhoneNumberKitCore (= 3.1.0)
+    - PhoneNumberKit/UIKit (= 3.1.0)
+  - PhoneNumberKit/PhoneNumberKitCore (3.1.0)
+  - PhoneNumberKit/UIKit (3.1.0):
+    - PhoneNumberKit/PhoneNumberKitCore
+  - PromisesObjC (1.2.8)
+  - PromisesSwift (1.2.8):
+    - PromisesObjC (= 1.2.8)
+  - ReachabilitySwift (4.3.0)
+  - SQLite.swift (0.11.5):
+    - SQLite.swift/standard (= 0.11.5)
+  - SQLite.swift/standard (0.11.5)
+  - SQLite.Wrapper (2.3.2):
+    - PromisesSwift (~> 1.2.8)
+  - SwiftSoup (1.7.4)
+  - ZCCoreFramework (2.3.2):
+    - PhoneNumberKit (= 3.1)
+    - PromisesSwift (= 1.2.8)
+    - ReachabilitySwift (= 4.3.0)
+    - SQLite.swift (= 0.11.5)
+    - SQLite.Wrapper (= 2.3.2)
+    - SwiftSoup (= 1.7.4)
+    - ZMLKit (= 2.3.2)
+  - ZCUIFramework (2.3.2):
+    - CropViewController
+    - EasyTipView
+    - GLTFSceneKitTemp
+    - ZCCoreFramework (= 2.3.2)
+    - Zip
+  - Zip (2.1.2)
+  - ZMLKit (2.3.2)
+  - ZohoPortalAuth (1.0.4)
+
+DEPENDENCIES:
+  - ZCUIFramework
+  - ZohoPortalAuth
+
+SPEC REPOS:
+  trunk:
+    - CropViewController
+    - EasyTipView
+    - GLTFSceneKitTemp
+    - PhoneNumberKit
+    - PromisesObjC
+    - PromisesSwift
+    - ReachabilitySwift
+    - SQLite.swift
+    - SQLite.Wrapper
+    - SwiftSoup
+    - ZCCoreFramework
+    - ZCUIFramework
+    - Zip
+    - ZMLKit
+    - ZohoPortalAuth
+
+SPEC CHECKSUMS:
+  CropViewController: 3489bbf95a3e11c654382b0bae08ac645cdf1b93
+  EasyTipView: a92b6edc377b81c5ac18e9fd35d5ee78e9409488
+  GLTFSceneKitTemp: b9b93a11d8ab69d015735dc57ea88067899ccaff
+  PhoneNumberKit: adffe4e128af1918386e09e7421d3d851a2987af
+  PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
+  PromisesSwift: 37bad6f4daddb02f7c9c531efe91e8b21c13ee2f
+  ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
+  SQLite.swift: 6e5356850bb1791459f8c16d6ee9195b28714a2e
+  SQLite.Wrapper: c332c4a493f23d9de2027fafdaebb07a43ba5ce3
+  SwiftSoup: 92f5b348c131aed8af04f4326db1579ab19fa08c
+  ZCCoreFramework: 38a607392ecbe0e9cd35c32f36749e3f05824a9f
+  ZCUIFramework: b03dd0865de5a97c6ae27b5a3bf473418c743de7
+  Zip: b3fef584b147b6e582b2256a9815c897d60ddc67
+  ZMLKit: abf908b782ddaa14a81997fb2eafc2c35dcd8f56
+  ZohoPortalAuth: d13b474e8380b593f18f2e70ec5af62aac0e60c7
+
+PODFILE CHECKSUM: 4bd6a37f510e975ce58fdabbdafb9bc05bbaec06
+
+COCOAPODS: 1.16.2

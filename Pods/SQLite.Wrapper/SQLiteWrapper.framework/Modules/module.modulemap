@@ -1,0 +1,11 @@
+framework module SQLiteWrapper {
+  umbrella header "SQLiteWrapper.h"
+  export *
+
+  module * { export * }
+}
+
+module SQLiteWrapper.Swift {
+  header "SQLiteWrapper-Swift.h"
+  requires objc
+}

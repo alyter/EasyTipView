@@ -1,0 +1,11 @@
+framework module ZCUIFramework {
+  umbrella header "ZCUIFramework.h"
+  export *
+
+  module * { export * }
+}
+
+module ZCUIFramework.Swift {
+  header "ZCUIFramework-Swift.h"
+  requires objc
+}
