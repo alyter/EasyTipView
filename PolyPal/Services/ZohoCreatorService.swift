@@ -18,9 +18,15 @@ class ZohoCreatorService: ObservableObject {
     private let configuration: ZohoConfiguration
     private let session: URLSession
     private var cancellables = Set<AnyCancellable>()
+    private let certificatePinningManager: CertificatePinningManager
     
     @Published var isAuthenticated = false
     @Published var authToken: String?
+    
+    /// Public access to the URLSession for testing purposes
+    var urlSession: URLSession {
+        return session
+    }
     
     // Rate limiting properties
     private let maxRetries: Int = 3
@@ -33,9 +39,25 @@ class ZohoCreatorService: ObservableObject {
     // MARK: - Initialization
     
     init(configuration: ZohoConfiguration = ZohoConfiguration.shared, 
-         session: URLSession = .shared) {
+         session: URLSession? = nil,
+         enableCertificatePinning: Bool = true) {
         self.configuration = configuration
-        self.session = session
+        self.certificatePinningManager = CertificatePinningManager(enablePinning: enableCertificatePinning)
+        
+        if let session = session {
+            self.session = session
+        } else {
+            // Create custom URLSession with certificate pinning
+            let sessionConfiguration = URLSessionConfiguration.default
+            sessionConfiguration.timeoutIntervalForRequest = 30.0
+            sessionConfiguration.timeoutIntervalForResource = 60.0
+            
+            self.session = URLSession(
+                configuration: sessionConfiguration,
+                delegate: self.certificatePinningManager,
+                delegateQueue: nil
+            )
+        }
     }
     
     // MARK: - Rate Limiting and Retry Logic

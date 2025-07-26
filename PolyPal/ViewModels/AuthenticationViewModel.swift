@@ -14,6 +14,11 @@ class AuthenticationViewModel: ObservableObject {
   @Published var isLoading: Bool = false
   @Published var errorMessage: String?
   
+  // Zoho authentication integration - temporarily disabled due to build issues
+  @Published var isZohoAuthenticated: Bool = false
+  @Published var zohoAuthenticationError: String?
+  // private var zohoAuthManager: ZohoAuthenticationManager?
+  
   // Navigation state
   @Published var showingLogin: Bool = false
   @Published var showingRegister: Bool = false
@@ -57,6 +62,11 @@ class AuthenticationViewModel: ObservableObject {
         }
       }
       .store(in: &cancellables)
+    
+    // Initialize Zoho authentication manager on main actor - temporarily disabled
+    // Task { @MainActor in
+    //   self.zohoAuthManager = ZohoAuthenticationManager()
+    // }
   }
   
   // MARK: - Navigation Actions
@@ -703,5 +713,128 @@ class AuthenticationViewModel: ObservableObject {
     
     // Clear sensitive data
     clearSensitiveData()
+  }
+  
+  // MARK: - Zoho Authentication Integration
+  
+  func authenticateWithZoho() async {
+    // Temporarily disabled due to build issues
+    // guard let authManager = zohoAuthManager else {
+    await MainActor.run {
+      zohoAuthenticationError = "Authentication manager not initialized"
+      isLoading = false
+    }
+    return
+    // }
+    
+    await MainActor.run {
+      zohoAuthenticationError = nil
+      isLoading = true
+    }
+    
+    // Temporarily disabled due to build issues
+    // do {
+    //   try await authManager.authenticateWithOAuth()
+    //   await MainActor.run {
+    //     isZohoAuthenticated = true
+    //     isLoading = false
+    //     logSecurityEvent(.mfaVerificationAttempt, details: ["action": "zoho_auth_success"])
+    //   }
+    // } catch {
+    //   await MainActor.run {
+    //     isZohoAuthenticated = false
+    //     zohoAuthenticationError = error.localizedDescription
+    //     isLoading = false
+    //     logSecurityEvent(.mfaVerificationAttempt, details: ["action": "zoho_auth_failure", "error": error.localizedDescription])
+    //   }
+    // }
+  }
+  
+  func refreshZohoToken() async {
+    // Temporarily disabled due to build issues
+    // guard let authManager = zohoAuthManager, isZohoAuthenticated else { return }
+    return
+    
+    // do {
+    //   try await authManager.refreshToken()
+    //   await MainActor.run {
+    //     isZohoAuthenticated = true
+    //     zohoAuthenticationError = nil
+    //   }
+    // } catch {
+    //   await MainActor.run {
+    //     isZohoAuthenticated = false
+    //     zohoAuthenticationError = error.localizedDescription
+    //   }
+    // }
+  }
+  
+  func logoutFromZoho() async {
+    // Temporarily disabled due to build issues
+    // guard let authManager = zohoAuthManager else { return }
+    return
+    
+    // await authManager.logout()
+    await MainActor.run {
+      isZohoAuthenticated = false
+      zohoAuthenticationError = nil
+    }
+  }
+  
+  func integratedLogout() async {
+    // Logout from both JWT and Zoho systems
+    enhancedLogout()
+    await logoutFromZoho()
+  }
+  
+  func checkZohoAuthenticationStatus() {
+    // Temporarily disabled due to build issues
+    // isZohoAuthenticated = zohoAuthManager?.isAuthenticated ?? false
+    isZohoAuthenticated = false
+  }
+  
+  func clearZohoError() {
+    zohoAuthenticationError = nil
+  }
+  
+  // MARK: - Dual Authentication Management
+  
+  var isBothSystemsAuthenticated: Bool {
+    return isAuthenticated && isZohoAuthenticated
+  }
+  
+  var hasAnyAuthentication: Bool {
+    return isAuthenticated || isZohoAuthenticated
+  }
+  
+  func getAuthenticationStatus() -> (jwt: Bool, zoho: Bool) {
+    return (jwt: isAuthenticated, zoho: isZohoAuthenticated)
+  }
+  
+  func handleAuthenticationConflict() async {
+    // Handle conflicts between JWT and Zoho authentication
+    if isAuthenticated && !isZohoAuthenticated {
+      // JWT is authenticated but Zoho is not - attempt Zoho auth
+      await authenticateWithZoho()
+    } else if !isAuthenticated && isZohoAuthenticated {
+      // Zoho is authenticated but JWT is not - this is an unusual state
+      // Log this for monitoring
+      logSecurityEvent(.mfaVerificationAttempt, details: ["action": "auth_conflict", "state": "zoho_only"])
+    }
+  }
+  
+  func validateDualAuthentication() -> Bool {
+    // Validate that both authentication systems are in a consistent state
+    let jwtValid = isAuthenticated && currentUser != nil
+    let zohoValid = isZohoAuthenticated
+    
+    // Log validation results
+    logSecurityEvent(.mfaVerificationAttempt, details: [
+      "action": "dual_auth_validation",
+      "jwt_valid": String(jwtValid),
+      "zoho_valid": String(zohoValid)
+    ])
+    
+    return jwtValid || zohoValid // At least one should be valid
   }
 }
