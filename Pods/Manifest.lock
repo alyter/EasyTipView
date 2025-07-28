@@ -2,49 +2,56 @@ PODS:
   - CropViewController (2.7.4)
   - EasyTipView (2.1.0)
   - GLTFSceneKitTemp (0.3.0)
-  - PhoneNumberKit (3.1.0):
-    - PhoneNumberKit/PhoneNumberKitCore (= 3.1.0)
-    - PhoneNumberKit/UIKit (= 3.1.0)
-  - PhoneNumberKit/PhoneNumberKitCore (3.1.0)
-  - PhoneNumberKit/UIKit (3.1.0):
+  - PhoneNumberKit (3.7.10):
+    - PhoneNumberKit/PhoneNumberKitCore (= 3.7.10)
+    - PhoneNumberKit/UIKit (= 3.7.10)
+  - PhoneNumberKit/PhoneNumberKitCore (3.7.10)
+  - PhoneNumberKit/UIKit (3.7.10):
     - PhoneNumberKit/PhoneNumberKitCore
-  - PromisesObjC (1.2.8)
-  - PromisesSwift (1.2.8):
-    - PromisesObjC (= 1.2.8)
-  - ReachabilitySwift (4.3.0)
-  - SQLite.swift (0.11.5):
-    - SQLite.swift/standard (= 0.11.5)
-  - SQLite.swift/standard (0.11.5)
-  - SQLite.Wrapper (2.3.2):
-    - PromisesSwift (~> 1.2.8)
+  - PromisesObjC (2.4.0)
+  - PromisesSwift (2.4.0):
+    - PromisesObjC (= 2.4.0)
+  - ReachabilitySwift (5.2.4)
+  - SQLite.swift (0.15.3):
+    - SQLite.swift/standard (= 0.15.3)
+  - SQLite.swift/standard (0.15.3)
+  - SQLite.Wrapper (3.0-beta16.0):
+    - PromisesSwift (~> 2.4.0)
   - SwiftSoup (1.7.4)
-  - ZCCoreFramework (2.3.2):
-    - PhoneNumberKit (= 3.1)
-    - PromisesSwift (= 1.2.8)
-    - ReachabilitySwift (= 4.3.0)
-    - SQLite.swift (= 0.11.5)
-    - SQLite.Wrapper (= 2.3.2)
+  - ZCCoreFramework (3.0-beta16.0):
+    - PhoneNumberKit (= 3.7.10)
+    - PromisesSwift (= 2.4.0)
+    - ReachabilitySwift (= 5.2.4)
+    - SQLite.swift (= 0.15.3)
+    - SQLite.Wrapper (= 3.0-beta16.0)
     - SwiftSoup (= 1.7.4)
-    - ZMLKit (= 2.3.2)
-  - ZCUIFramework (2.3.2):
-    - CropViewController
-    - EasyTipView
-    - GLTFSceneKitTemp
-    - ZCCoreFramework (= 2.3.2)
-    - Zip
+    - ZMLKit (= 3.0-beta16.0)
+  - ZCUIFramework (3.0-beta16.0)
   - Zip (2.1.2)
-  - ZMLKit (2.3.2)
+  - ZIPFoundation (0.9.19)
+  - ZMLKit (3.0-beta16.0)
   - ZohoPortalAuth (1.0.4)
 
 DEPENDENCIES:
-  - ZCUIFramework
-  - ZohoPortalAuth
+  - CropViewController
+  - EasyTipView
+  - GLTFSceneKitTemp (from `local-pods/GLTFSceneKit`)
+  - PhoneNumberKit
+  - PromisesObjC
+  - PromisesSwift
+  - ReachabilitySwift
+  - SQLite.swift
+  - SwiftSoup
+  - ZCCoreFramework (from `local-pods/ZCCoreFramework`)
+  - ZCUIFramework (from `local-pods/ZCUIFramework`)
+  - Zip (~> 2.1)
+  - ZIPFoundation (~> 0.9)
+  - ZohoPortalAuth (from `local-pods/ZohoPortalAuth`)
 
 SPEC REPOS:
   trunk:
     - CropViewController
     - EasyTipView
-    - GLTFSceneKitTemp
     - PhoneNumberKit
     - PromisesObjC
     - PromisesSwift
@@ -52,29 +59,38 @@ SPEC REPOS:
     - SQLite.swift
     - SQLite.Wrapper
     - SwiftSoup
-    - ZCCoreFramework
-    - ZCUIFramework
     - Zip
+    - ZIPFoundation
     - ZMLKit
-    - ZohoPortalAuth
+
+EXTERNAL SOURCES:
+  GLTFSceneKitTemp:
+    :path: local-pods/GLTFSceneKit
+  ZCCoreFramework:
+    :path: local-pods/ZCCoreFramework
+  ZCUIFramework:
+    :path: local-pods/ZCUIFramework
+  ZohoPortalAuth:
+    :path: local-pods/ZohoPortalAuth
 
 SPEC CHECKSUMS:
   CropViewController: 3489bbf95a3e11c654382b0bae08ac645cdf1b93
   EasyTipView: a92b6edc377b81c5ac18e9fd35d5ee78e9409488
-  GLTFSceneKitTemp: b9b93a11d8ab69d015735dc57ea88067899ccaff
-  PhoneNumberKit: adffe4e128af1918386e09e7421d3d851a2987af
-  PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
-  PromisesSwift: 37bad6f4daddb02f7c9c531efe91e8b21c13ee2f
-  ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
-  SQLite.swift: 6e5356850bb1791459f8c16d6ee9195b28714a2e
-  SQLite.Wrapper: c332c4a493f23d9de2027fafdaebb07a43ba5ce3
+  GLTFSceneKitTemp: 39b37e47130ef30675903f4843c9b364dc312242
+  PhoneNumberKit: 3d9a20cfe8ee68f35c2a3ae9474093133f72a8a1
+  PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
+  PromisesSwift: 9d77319bbe72ebf6d872900551f7eeba9bce2851
+  ReachabilitySwift: 32793e867593cfc1177f5d16491e3a197d2fccda
+  SQLite.swift: 8d054987f02728cc912b0eb5a9659650573a65a2
+  SQLite.Wrapper: 1e092fdc0633e7aa97e980de83c84f66f59e448a
   SwiftSoup: 92f5b348c131aed8af04f4326db1579ab19fa08c
-  ZCCoreFramework: 38a607392ecbe0e9cd35c32f36749e3f05824a9f
-  ZCUIFramework: b03dd0865de5a97c6ae27b5a3bf473418c743de7
+  ZCCoreFramework: 48c2cf48eae73a83eacc22537a22afede0f6e08b
+  ZCUIFramework: b1f6b049e4a2dd9cb8a747daf58cd51e3913f559
   Zip: b3fef584b147b6e582b2256a9815c897d60ddc67
-  ZMLKit: abf908b782ddaa14a81997fb2eafc2c35dcd8f56
-  ZohoPortalAuth: d13b474e8380b593f18f2e70ec5af62aac0e60c7
+  ZIPFoundation: b8c29ea7ae353b309bc810586181fd073cb3312c
+  ZMLKit: b810dc457ca27c6550bcafc4dcc1d582c922ec48
+  ZohoPortalAuth: 58b03ad112947abb5eed2e9f44e26b054ea1bede
 
-PODFILE CHECKSUM: ed35a6deadb919ffce10562b5b03ef4a4cb4c8ba
+PODFILE CHECKSUM: 1ba83f2379643d48da92da976aea741943330b2b
 
 COCOAPODS: 1.16.2

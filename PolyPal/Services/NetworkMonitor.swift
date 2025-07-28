@@ -51,13 +51,8 @@ class NetworkMonitor: ObservableObject {
     setupApplicationStateObservers()
   }
   
-  convenience init(pathMonitor: MockNWPathMonitor) {
-    // This initializer is used for testing with mock objects
-    self.init()
-  }
-  
   deinit {
-    stopMonitoring()
+    pathMonitor.cancel()
     NotificationCenter.default.removeObserver(self)
   }
   

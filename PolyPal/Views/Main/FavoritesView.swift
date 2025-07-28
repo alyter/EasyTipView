@@ -28,8 +28,10 @@ struct FavoritesView: View {
           .cornerRadius(8)
       }
       .padding()
-      .navigationTitle("Favorites")
-      .navigationBarTitleDisplayMode(.large)
+    .navigationTitle("Favorites")
+    #if os(iOS)
+    .navigationBarTitleDisplayMode(.large)
+    #endif
     }
     .accessibilityLabel("Favorites section")
     .accessibilityHint("Your saved items and preferred sellers")

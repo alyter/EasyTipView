@@ -6,6 +6,7 @@
 //  Copyright © 2019 Xenonium. All rights reserved.
 //
 
+#if canImport(ObjectiveC)
 import Foundation
 
 open class PhoneNumberFormatter: Foundation.Formatter {
@@ -57,7 +58,7 @@ open class PhoneNumberFormatter: Foundation.Formatter {
 // MARK: NSFormatter implementation
 
 extension PhoneNumberFormatter {
-    open override func string(for obj: Any?) -> String? {
+    override open func string(for obj: Any?) -> String? {
         if let pn = obj as? PhoneNumber {
             return self.phoneNumberKit.format(pn, toType: self.withPrefix ? .international : .national)
         }
@@ -67,12 +68,12 @@ extension PhoneNumberFormatter {
         return nil
     }
 
-    open override func getObjectValue(_ obj: AutoreleasingUnsafeMutablePointer<AnyObject?>?, for string: String, errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>?) -> Bool {
+    override open func getObjectValue(_ obj: AutoreleasingUnsafeMutablePointer<AnyObject?>?, for string: String, errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>?) -> Bool {
         if self.generatesPhoneNumber {
             do {
                 obj?.pointee = try self.phoneNumberKit.parse(string) as AnyObject?
                 return true
-            } catch (let e) {
+            } catch let e {
                 error?.pointee = e.localizedDescription as NSString
                 return false
             }
@@ -84,9 +85,7 @@ extension PhoneNumberFormatter {
 
     // MARK: Phone number formatting
 
-    /**
-     *  To keep the cursor position, we find the character immediately after the cursor and count the number of times it repeats in the remaining string as this will remain constant in every kind of editing.
-     */
+    ///  To keep the cursor position, we find the character immediately after the cursor and count the number of times it repeats in the remaining string as this will remain constant in every kind of editing.
     private struct CursorPosition {
         let numberAfterCursor: unichar
         let repetitionCountFromEnd: Int
@@ -108,7 +107,7 @@ extension PhoneNumberFormatter {
         repeat {
             char = text.character(at: cursorEnd) // should work even if char is start of compound sequence
             cursorEnd += 1
-            // We considere only digit as other caracters may be inserted by the formatter (especially spaces)
+            // We consider only digit as other characters may be inserted by the formatter (especially spaces)
         } while !char.isDigit() && cursorEnd < text.length
 
         guard cursorEnd < text.length else {
@@ -145,7 +144,7 @@ extension PhoneNumberFormatter {
         return .replace
     }
 
-    open override func isPartialStringValid(
+    override open func isPartialStringValid(
         _ partialStringPtr: AutoreleasingUnsafeMutablePointer<NSString>,
         proposedSelectedRange proposedSelRangePtr: NSRangePointer?,
         originalString origString: String,
@@ -219,3 +218,4 @@ private extension unichar {
         return self >= 0x30 && self <= 0x39 // '0' < '9'
     }
 }
+#endif

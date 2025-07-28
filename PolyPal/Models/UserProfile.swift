@@ -46,7 +46,6 @@ struct UserProfile: Codable, Identifiable {
   // Settings
   var privacySettings: PrivacySettings = PrivacySettings()
   var notificationSettings: NotificationSettings = NotificationSettings()
-  var mfaSettings: MFASettings = MFASettings()
   
   // MARK: - Initializers
   
@@ -275,44 +274,5 @@ struct NotificationSettings: Codable, Equatable {
     self.newMessageNotifications = newMessageNotifications
     self.connectionRequestNotifications = connectionRequestNotifications
     self.systemUpdateNotifications = systemUpdateNotifications
-  }
-}
-
-// MARK: - MFA Settings
-
-struct MFASettings: Codable, Equatable {
-  var isEnabled: Bool
-  var setupDate: Date?
-  var remainingBackupCodes: Int
-  var lastBackupCodeUsedDate: Date?
-  var secretKey: String?
-  
-  init(
-    isEnabled: Bool = false,
-    setupDate: Date? = nil,
-    remainingBackupCodes: Int = 0,
-    lastBackupCodeUsedDate: Date? = nil,
-    secretKey: String? = nil
-  ) {
-    self.isEnabled = isEnabled
-    self.setupDate = setupDate
-    self.remainingBackupCodes = remainingBackupCodes
-    self.lastBackupCodeUsedDate = lastBackupCodeUsedDate
-    self.secretKey = secretKey
-  }
-  
-  // MARK: - Computed Properties
-  
-  var isSetupComplete: Bool {
-    return isEnabled && setupDate != nil && remainingBackupCodes > 0
-  }
-  
-  var needsBackupCodeRegeneration: Bool {
-    return isEnabled && remainingBackupCodes <= 3
-  }
-  
-  var daysSinceSetup: Int? {
-    guard let setupDate = setupDate else { return nil }
-    return Calendar.current.dateComponents([.day], from: setupDate, to: Date()).day
   }
 }

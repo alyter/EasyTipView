@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import ZohoPortalAuth
-
+import ZCUIFramework
+import Combine
 // MARK: - Configuration Data Structure
 
 struct ZohoConfigurationData {
@@ -20,7 +20,7 @@ struct ZohoConfigurationData {
 
 // MARK: - ZohoConfiguration Class
 
-class ZohoConfiguration {
+class ZohoConfiguration: @unchecked Sendable {
   
   // MARK: - Singleton
   

@@ -59,7 +59,9 @@ struct AccountView: View {
       }
       .padding()
       .navigationTitle("Account")
+      #if os(iOS)
       .navigationBarTitleDisplayMode(.large)
+      #endif
     }
     .accessibilityLabel("Account section")
     .accessibilityHint("Manage your profile and settings")

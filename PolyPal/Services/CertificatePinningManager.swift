@@ -10,7 +10,7 @@ import Security
 import CommonCrypto
 
 /// Manager for handling SSL certificate pinning for secure API communications
-class CertificatePinningManager: NSObject {
+class CertificatePinningManager: NSObject, @unchecked Sendable {
     
     // MARK: - Properties
     

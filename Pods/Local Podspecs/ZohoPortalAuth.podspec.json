@@ -1,0 +1,40 @@
+{
+  "name": "ZohoPortalAuth",
+  "version": "1.0.4",
+  "summary": "Zoho Client Portal Apps user login OAuth framework",
+  "homepage": "https://www.zoho.com/accounts/help/",
+  "authors": {
+    "ZOHO": "support@zoho.com"
+  },
+  "license": {
+    "type": "MIT"
+  },
+  "platforms": {
+    "ios": "15.0"
+  },
+  "swift_versions": [
+    "4.2",
+    "5.0",
+    "5.1",
+    "5.2",
+    "5.3",
+    "5.4",
+    "5.5",
+    "5.6",
+    "5.7",
+    "5.8",
+    "5.9",
+    "5.10"
+  ],
+  "source": {
+    "path": "."
+  },
+  "vendored_frameworks": "ZohoPortalAuthKit.framework",
+  "pod_target_xcconfig": {
+    "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+  },
+  "user_target_xcconfig": {
+    "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+  },
+  "swift_version": "5.10"
+}

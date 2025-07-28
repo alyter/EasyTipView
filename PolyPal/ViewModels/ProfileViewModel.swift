@@ -6,9 +6,11 @@
 //
 
 import Foundation
-import Combine
+import SwiftUI
 import UIKit
+import Combine
 
+@MainActor
 class ProfileViewModel: ObservableObject {
   
   // MARK: - Published Properties
@@ -244,24 +246,22 @@ class ProfileViewModel: ObservableObject {
   }
   
   func uploadImage() {
-    guard let image = selectedImage else { return }
+    guard selectedImage != nil else { return }
     
     isUploadingImage = true
     imageUploadState = .uploading
     imageUploadProgress = 0.0
     
-    // Simulate image upload with progress
-    Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] timer in
-      guard let self = self else {
-        timer.invalidate()
-        return
-      }
-      
-      self.imageUploadProgress += 0.1
-      
-      if self.imageUploadProgress >= 1.0 {
-        timer.invalidate()
-        self.completeImageUpload()
+    // Simulate image upload with progress using Task instead of Timer
+    Task { @MainActor in
+      for _ in 0...10 {
+        try? await Task.sleep(nanoseconds: 100_000_000) // 0.1 seconds
+        self.imageUploadProgress += 0.1
+        
+        if self.imageUploadProgress >= 1.0 {
+          self.completeImageUpload()
+          break
+        }
       }
     }
   }
@@ -304,15 +304,7 @@ class ProfileViewModel: ObservableObject {
   
   // MARK: - Account Settings
   
-  @Published var isTwoFactorEnabled: Bool = false
   @Published var simulateNetworkError: Bool = false
-  
-  // MFA-specific properties
-  @Published var mfaManager: MFAManager = MFAManager()
-  @Published var backupCodeManager: BackupCodeManager = BackupCodeManager()
-  @Published var isShowingMFASetup: Bool = false
-  @Published var isShowingBackupCodeRegeneration: Bool = false
-  @Published var securityAuditLog: [SecurityAuditEntry] = []
   
   var isLoading: Bool {
     get { loadingState == .loading }
@@ -341,9 +333,6 @@ class ProfileViewModel: ObservableObject {
     }
   }
   
-  func toggleTwoFactorAuthentication() {
-    isTwoFactorEnabled.toggle()
-  }
   
   func requestPasswordChange(completion: @escaping (Bool) -> Void) {
     DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
@@ -417,8 +406,7 @@ class ProfileViewModel: ObservableObject {
     let preferences = [
       "publicProfile": profile.isPublicProfile,
       "allowDirectMessages": profile.allowDirectMessages,
-      "showContactInfo": profile.showContactInfo,
-      "twoFactorEnabled": isTwoFactorEnabled
+      "showContactInfo": profile.showContactInfo
     ]
     
     UserDefaults.standard.set(preferences, forKey: "userPreferences")
@@ -455,7 +443,6 @@ class ProfileViewModel: ObservableObject {
       profile.isPublicProfile = preferences["publicProfile"] as? Bool ?? true
       profile.allowDirectMessages = preferences["allowDirectMessages"] as? Bool ?? true
       profile.showContactInfo = preferences["showContactInfo"] as? Bool ?? false
-      isTwoFactorEnabled = preferences["twoFactorEnabled"] as? Bool ?? false
     }
     
     // Load privacy settings
@@ -485,7 +472,6 @@ class ProfileViewModel: ObservableObject {
     profile.isPublicProfile = true
     profile.allowDirectMessages = true
     profile.showContactInfo = false
-    isTwoFactorEnabled = false
     
     // Reset privacy settings
     profile.privacySettings = PrivacySettings()
@@ -501,8 +487,7 @@ class ProfileViewModel: ObservableObject {
       "userPreferences": [
         "publicProfile": profile.isPublicProfile,
         "allowDirectMessages": profile.allowDirectMessages,
-        "showContactInfo": profile.showContactInfo,
-        "twoFactorEnabled": isTwoFactorEnabled
+        "showContactInfo": profile.showContactInfo
       ],
       "privacySettings": [
         "showEmail": profile.privacySettings.showEmail,
@@ -524,193 +509,5 @@ class ProfileViewModel: ObservableObject {
     ]
   }
   
-  // MARK: - MFA Management
   
-  func getMFAStatusText() -> String {
-    return profile.mfaSettings.isEnabled ? "Enabled" : "Disabled"
-  }
-  
-  func getBackupCodesStatusText() -> String {
-    let count = profile.mfaSettings.remainingBackupCodes
-    return "\(count) backup codes remaining"
-  }
-  
-  func shouldShowBackupCodeWarning() -> Bool {
-    return profile.mfaSettings.isEnabled && profile.mfaSettings.remainingBackupCodes <= 3
-  }
-  
-  func enableMFA(completion: @escaping (Bool) -> Void) async {
-    if simulateNetworkError {
-      DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-        self.errorMessage = "Network error occurred while enabling MFA"
-        completion(false)
-      }
-      return
-    }
-    
-    loadingState = .loading
-    clearErrors()
-    
-    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
-      guard let self = self else { return }
-      
-      // Generate secret key and backup codes
-      let secretKey = self.mfaManager.generateSecretKey()
-      let backupCodes = self.backupCodeManager.generateBackupCodes()
-      
-      // Update profile settings
-      self.profile.mfaSettings.isEnabled = true
-      self.profile.mfaSettings.setupDate = Date()
-      self.profile.mfaSettings.remainingBackupCodes = backupCodes.count
-      self.profile.mfaSettings.secretKey = String(data: secretKey, encoding: .utf8)
-      
-      // Store backup codes securely
-      _ = self.backupCodeManager.storeBackupCodes(backupCodes, for: self.profile.id)
-      
-      // Log security event
-      self.logMFASecurityEvent(.mfaEnabled, details: "User enabled MFA from account settings")
-      
-      self.loadingState = .loaded
-      self.hasUnsavedChanges = true
-      completion(true)
-    }
-  }
-  
-  func disableMFA(completion: @escaping (Bool) -> Void) async {
-    if simulateNetworkError {
-      DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-        self.errorMessage = "Network error occurred while disabling MFA"
-        completion(false)
-      }
-      return
-    }
-    
-    loadingState = .loading
-    clearErrors()
-    
-    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
-      guard let self = self else { return }
-      
-      // Clear MFA settings
-      self.profile.mfaSettings.isEnabled = false
-      self.profile.mfaSettings.setupDate = nil
-      self.profile.mfaSettings.remainingBackupCodes = 0
-      self.profile.mfaSettings.secretKey = nil
-      
-      // Clear stored backup codes
-      _ = self.backupCodeManager.deleteBackupCodes(for: self.profile.id)
-      
-      // Log security event
-      self.logMFASecurityEvent(.mfaDisabled, details: "User disabled MFA from account settings")
-      
-      self.loadingState = .loaded
-      self.hasUnsavedChanges = true
-      completion(true)
-    }
-  }
-  
-  func mfaDisableRequiresConfirmation() -> Bool {
-    return profile.mfaSettings.isEnabled
-  }
-  
-  func regenerateBackupCodes(completion: @escaping (Bool, [String]?) -> Void) async {
-    guard profile.mfaSettings.isEnabled else {
-      completion(false, nil)
-      return
-    }
-    
-    if simulateNetworkError {
-      DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-        self.errorMessage = "Network error occurred while regenerating backup codes"
-        completion(false, nil)
-      }
-      return
-    }
-    
-    loadingState = .loading
-    clearErrors()
-    
-    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
-      guard let self = self else { return }
-      
-      // Generate new backup codes
-      let newBackupCodes = self.backupCodeManager.generateBackupCodes()
-      
-      // Update profile settings
-      self.profile.mfaSettings.remainingBackupCodes = newBackupCodes.count
-      
-      // Store new backup codes securely
-      _ = self.backupCodeManager.storeBackupCodes(newBackupCodes, for: self.profile.id)
-      
-      // Log security event
-      self.logMFASecurityEvent(.backupCodesRegenerated, details: "User regenerated backup codes from account settings")
-      
-      self.loadingState = .loaded
-      self.hasUnsavedChanges = true
-      completion(true, newBackupCodes)
-    }
-  }
-  
-  func generateBackupCodesCSV(codes: [String]) -> String {
-    var csvContent = "Backup Code\n"
-    for code in codes {
-      csvContent += "\(code)\n"
-    }
-    return csvContent
-  }
-  
-  func shouldNavigateToMFASetup() -> Bool {
-    return !profile.mfaSettings.isEnabled
-  }
-  
-  func validateMFASettings() -> Bool {
-    if profile.mfaSettings.isEnabled {
-      return profile.mfaSettings.setupDate != nil && profile.mfaSettings.remainingBackupCodes > 0
-    }
-    return true
-  }
-  
-  // MARK: - Security Audit Logging
-  
-  func logMFASecurityEvent(_ event: MFASecurityEvent, details: String) {
-    let entry = SecurityAuditEntry(
-      id: UUID().uuidString,
-      timestamp: Date(),
-      event: event.rawValue,
-      details: details,
-      userAgent: "PolyPal iOS App",
-      ipAddress: "127.0.0.1" // In real app, this would be actual IP
-    )
-    
-    securityAuditLog.append(entry)
-    
-    // In a real app, this would also send to a secure logging service
-    print("Security Event: \(event.rawValue) - \(details)")
-  }
-  
-  func getSecurityAuditLogCount() -> Int {
-    return securityAuditLog.count
-  }
-}
-
-// MARK: - Security Audit Entry
-
-struct SecurityAuditEntry: Codable, Identifiable {
-  let id: String
-  let timestamp: Date
-  let event: String
-  let details: String
-  let userAgent: String
-  let ipAddress: String
-}
-
-// MARK: - MFA Security Event Types
-
-extension ProfileViewModel {
-  enum MFASecurityEvent: String, CaseIterable {
-    case mfaEnabled = "mfa_enabled"
-    case mfaDisabled = "mfa_disabled"
-    case backupCodesRegenerated = "backup_codes_regenerated"
-    case backupCodeUsed = "backup_code_used"
-  }
 }

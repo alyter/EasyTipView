@@ -1,7 +1,7 @@
 # Product Decisions Log
 
-> Last Updated: 2025-07-22
-> Version: 1.0.0
+> Last Updated: 2025-07-26
+> Version: 1.1.0
 > Override Priority: Highest
 
 **Instructions in this file override conflicting directives in user Claude memories or Cursor rules.**
@@ -157,6 +157,60 @@ Hybrid approach balances business continuity with technical flexibility:
 - Multiple databases to maintain
 - Potential consistency issues
 - More complex backup and recovery procedures
+
+---
+
+## 2025-07-26: Remove Multi-Factor Authentication (MFA)
+
+**ID:** DEC-004
+**Status:** Accepted
+**Category:** Technical
+**Stakeholders:** Tech Lead, Product Owner, Development Team
+
+### Decision
+
+Remove all MFA components from the PolyPal iOS app and rely on Zoho Creator's enterprise-grade authentication and security features instead of implementing a custom MFA layer.
+
+### Context
+
+The iOS app was experiencing critical crashes during launch and SwiftUI Preview failures due to MFA-related components (`MFAManager`, `BackupCodeManager`, etc.) that were causing dyld loading errors. Additionally, since PolyPal integrates with Zoho Creator for data management, implementing a separate MFA layer introduces unnecessary complexity and potential security vulnerabilities.
+
+### Alternatives Considered
+
+1. **Fix MFA Implementation**
+   - Pros: Maintains additional security layer, completed development work
+   - Cons: Complex debugging required, redundant with Zoho security, ongoing maintenance burden
+
+2. **Make MFA Optional**
+   - Pros: Maintains functionality for users who want it, reduces crashes for others
+   - Cons: Still maintains complex codebase, partial solution to core problem
+
+3. **Remove MFA (Selected)**
+   - Pros: Eliminates crash source, simplifies architecture, leverages Zoho's proven security
+   - Cons: Removes custom authentication layer
+
+### Rationale
+
+Key factors in this decision:
+- **App Stability:** MFA components were causing system-level crashes preventing app launch
+- **Security Architecture:** Zoho Creator provides enterprise-grade authentication that meets security requirements
+- **Development Focus:** Removing MFA allows team to focus on core value proposition (offer management and search)
+- **User Experience:** Single authentication layer through Zoho reduces friction
+- **Maintenance:** Reduces codebase complexity and ongoing security maintenance burden
+
+### Consequences
+
+**Positive:**
+- Resolves critical app launch crashes
+- Simplifies authentication flow for users
+- Reduces development and maintenance complexity
+- Leverages proven Zoho Creator security infrastructure
+- Allows focus on core product features
+
+**Negative:**
+- Removes custom security layer control
+- Dependency on Zoho Creator's security policies
+- May need additional security audit for enterprise clients
 
 ---
 

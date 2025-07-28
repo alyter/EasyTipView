@@ -25,7 +25,7 @@ class OfflineManager: ObservableObject {
   private let networkMonitor: NetworkMonitor
   private let cacheManager: CacheManager
   private var cancellables = Set<AnyCancellable>()
-  private var offlineTimer: Timer?
+  nonisolated(unsafe) private var offlineTimer: Timer?
   
   // MARK: - Initialization
   
@@ -233,7 +233,9 @@ class OfflineManager: ObservableObject {
     
     // Update offline duration periodically
     offlineTimer = Timer.scheduledTimer(withTimeInterval: 60.0, repeats: true) { [weak self] _ in
-      self?.updateOfflineIndicator()
+      Task { @MainActor in
+        self?.updateOfflineIndicator()
+      }
     }
   }
   
@@ -399,22 +401,26 @@ extension Notification.Name {
 // MARK: - CacheManager Extensions
 
 extension CacheManager {
+  @MainActor
   func hasCachedData() -> Bool {
     return getCachedOfferCount() > 0
   }
   
+  @MainActor
   func getCachedOfferCount() -> Int {
     // This would be implemented to return actual cached offer count
     // For now, return a placeholder
     return 0
   }
   
+  @MainActor
   func getLastCacheUpdate() -> Date? {
     // This would be implemented to return actual last update time
     // For now, return a placeholder
     return Date().addingTimeInterval(-300) // 5 minutes ago
   }
   
+  @MainActor
   func getCacheSize() -> Int64 {
     // This would be implemented to return actual cache size
     // For now, return a placeholder

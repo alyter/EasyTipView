@@ -84,7 +84,7 @@ struct Offer: Codable, Identifiable, Equatable {
         
         // Handle specifications dictionary
         if let specsString = try? container.decode(String.self, forKey: .specifications) {
-            specifications = parseSpecificationsString(specsString)
+            specifications = Self.parseSpecificationsString(specsString)
         } else {
             specifications = try container.decodeIfPresent([String: String].self, forKey: .specifications) ?? [:]
         }
@@ -139,7 +139,7 @@ struct Offer: Codable, Identifiable, Equatable {
         try container.encode(tags, forKey: .tags)
     }
     
-    private func parseSpecificationsString(_ string: String) -> [String: String] {
+    private static func parseSpecificationsString(_ string: String) -> [String: String] {
         var specs: [String: String] = [:]
         let pairs = string.components(separatedBy: ";")
         
@@ -153,6 +153,76 @@ struct Offer: Codable, Identifiable, Equatable {
         }
         
         return specs
+    }
+    
+    // Factory method for creating offers from cache data
+    static func fromCache(
+        id: String,
+        title: String,
+        description: String,
+        price: Double,
+        currency: String,
+        category: String,
+        subcategory: String?,
+        condition: String,
+        location: String,
+        sellerID: String,
+        sellerName: String,
+        sellerRating: Double?,
+        images: [String],
+        specifications: [String: String],
+        createdDate: Date,
+        updatedDate: Date,
+        expiryDate: Date?,
+        status: OfferStatus,
+        viewCount: Int,
+        favoriteCount: Int,
+        isNegotiable: Bool,
+        shippingOptions: [ShippingOption],
+        tags: [String]
+    ) -> Offer {
+        // Create a temporary JSON representation and decode it
+        let json: [String: Any] = [
+            "ID": id,
+            "Title": title,
+            "Description": description,
+            "Price": price,
+            "Currency": currency,
+            "Category": category,
+            "Subcategory": subcategory as Any,
+            "Condition": condition,
+            "Location": location,
+            "Seller_ID": sellerID,
+            "Seller_Name": sellerName,
+            "Seller_Rating": sellerRating as Any,
+            "Images": images,
+            "Specifications": specifications,
+            "Created_Time": DateParser.formatDate(createdDate),
+            "Modified_Time": DateParser.formatDate(updatedDate),
+            "Expiry_Date": expiryDate.map(DateParser.formatDate) as Any,
+            "Status": status.rawValue,
+            "View_Count": viewCount,
+            "Favorite_Count": favoriteCount,
+            "Is_Negotiable": isNegotiable,
+            "Shipping_Options": shippingOptions.map { option in
+                [
+                    "Method": option.method,
+                    "Cost": option.cost,
+                    "Estimated_Days": option.estimatedDays,
+                    "Description": option.description as Any
+                ]
+            },
+            "Tags": tags
+        ]
+        
+        do {
+            let data = try JSONSerialization.data(withJSONObject: json)
+            let decoder = JSONDecoder()
+            return try decoder.decode(Offer.self, from: data)
+        } catch {
+            // Fallback to a minimal offer if decoding fails
+            fatalError("Failed to create offer from cache data: \(error)")
+        }
     }
 }
 
@@ -290,7 +360,7 @@ struct OfferFilters: Codable, Equatable {
 }
 
 // MARK: - Sort Options
-enum SortOption: String, Codable, CaseIterable {
+enum SortOption: String, Codable, CaseIterable, Equatable {
     case createdDate = "Created_Time"
     case updatedDate = "Modified_Time"
     case price = "Price"
@@ -354,7 +424,7 @@ struct ZohoAPIResponse<T: Codable>: Codable {
 
 // MARK: - Date Parser Utility
 struct DateParser {
-    private static let iso8601Formatter: ISO8601DateFormatter = {
+    private static nonisolated(unsafe) let iso8601Formatter: ISO8601DateFormatter = {
         let formatter = ISO8601DateFormatter()
         formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
         return formatter

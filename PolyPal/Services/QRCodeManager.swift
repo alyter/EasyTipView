@@ -1,6 +1,13 @@
 import Foundation
-import UIKit
 import CoreImage
+
+#if canImport(UIKit)
+import UIKit
+typealias PlatformImage = UIImage
+#elseif canImport(AppKit)
+import AppKit
+typealias PlatformImage = NSImage
+#endif
 
 /// Manages QR code generation for MFA setup
 class QRCodeManager {
@@ -69,8 +76,8 @@ class QRCodeManager {
   /// - Parameters:
   ///   - url: The URL to encode
   ///   - size: Desired image size (default: 200x200)
-  /// - Returns: UIImage containing the QR code or nil if generation fails
-  func generateQRCodeImage(from url: URL, size: CGSize = CGSize(width: 200, height: 200)) -> UIImage? {
+  /// - Returns: PlatformImage containing the QR code or nil if generation fails
+  func generateQRCodeImage(from url: URL, size: CGSize = CGSize(width: 200, height: 200)) -> PlatformImage? {
     return generateQRCodeImage(from: url.absoluteString, size: size)
   }
   
@@ -78,8 +85,8 @@ class QRCodeManager {
   /// - Parameters:
   ///   - string: The string to encode
   ///   - size: Desired image size (default: 200x200)
-  /// - Returns: UIImage containing the QR code or nil if generation fails
-  func generateQRCodeImage(from string: String, size: CGSize = CGSize(width: 200, height: 200)) -> UIImage? {
+  /// - Returns: PlatformImage containing the QR code or nil if generation fails
+  func generateQRCodeImage(from string: String, size: CGSize = CGSize(width: 200, height: 200)) -> PlatformImage? {
     guard !string.isEmpty else { return nil }
     
     // Convert string to data
@@ -98,30 +105,48 @@ class QRCodeManager {
     let scaleY = size.height / qrCodeImage.extent.height
     let scaledImage = qrCodeImage.transformed(by: CGAffineTransform(scaleX: scaleX, y: scaleY))
     
-    // Convert to UIImage
+    // Convert to platform image
     guard let cgImage = context.createCGImage(scaledImage, from: scaledImage.extent) else { return nil }
     
+    #if canImport(AppKit)
+    return NSImage(cgImage: cgImage, size: size)
+    #else
     return UIImage(cgImage: cgImage)
+    #endif
   }
   
   // MARK: - Image Data Conversion
   
-  /// Converts a QR code UIImage to PNG data
-  /// - Parameter image: The UIImage to convert
+  /// Converts a QR code PlatformImage to PNG data
+  /// - Parameter image: The PlatformImage to convert
   /// - Returns: PNG data or nil if conversion fails
-  func qrCodeImageToPNGData(_ image: UIImage?) -> Data? {
+  func qrCodeImageToPNGData(_ image: PlatformImage?) -> Data? {
     guard let image = image else { return nil }
+    
+    #if canImport(AppKit)
+    guard let cgImage = image.cgImage(forProposedRect: nil, context: nil, hints: nil) else { return nil }
+    let bitmapRep = NSBitmapImageRep(cgImage: cgImage)
+    return bitmapRep.representation(using: .png, properties: [:])
+    #else
     return image.pngData()
+    #endif
   }
   
-  /// Converts a QR code UIImage to JPEG data
+  /// Converts a QR code PlatformImage to JPEG data
   /// - Parameters:
-  ///   - image: The UIImage to convert
+  ///   - image: The PlatformImage to convert
   ///   - compressionQuality: JPEG compression quality (0.0 to 1.0)
   /// - Returns: JPEG data or nil if conversion fails
-  func qrCodeImageToJPEGData(_ image: UIImage?, compressionQuality: CGFloat = 0.8) -> Data? {
+  func qrCodeImageToJPEGData(_ image: PlatformImage?, compressionQuality: CGFloat = 0.8) -> Data? {
     guard let image = image else { return nil }
+    
+    #if canImport(AppKit)
+    guard let cgImage = image.cgImage(forProposedRect: nil, context: nil, hints: nil) else { return nil }
+    let bitmapRep = NSBitmapImageRep(cgImage: cgImage)
+    return bitmapRep.representation(using: .jpeg, properties: [.compressionFactor: compressionQuality])
+    #else
     return image.jpegData(compressionQuality: compressionQuality)
+    #endif
   }
   
   // MARK: - Utility Methods

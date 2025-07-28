@@ -42,8 +42,6 @@ struct AuthenticationFlowView: View {
           LoginView()
         } else if authViewModel.showingRegister {
           RegisterView()
-        } else if authViewModel.showingMFA {
-          MFAView()
         } else if authViewModel.showingPasswordReset {
           PasswordResetView()
         } else {

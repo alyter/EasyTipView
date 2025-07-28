@@ -119,7 +119,9 @@ enum NetworkError: Error, LocalizedError, Equatable {
   /// Indicates whether this error is recoverable through retry
   var isRetryable: Bool {
     switch self {
-    case .noConnection, .timeout, .serverError(let code):
+    case .noConnection, .timeout:
+      return true
+    case .serverError(let code):
       return code >= 500 || code == 408 || code == 429
     case .rateLimited, .tooManyRequests, .serverUnavailable:
       return true

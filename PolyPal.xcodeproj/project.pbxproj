@@ -3,430 +3,284 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9BA5808BE8AAF46FC2F74ACA /* Pods_PolyPal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A287E8049111AF9DB72CB4 /* Pods_PolyPal.framework */; };
-		A489FD40BA6580602C161086 /* Pods_PolyPalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD433F7C4A813820A76A987 /* Pods_PolyPalTests.framework */; };
-		C9E8B2A52C4F123400A1B2E5 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2A42C4F123400A1B2E5 /* UserProfile.swift */; };
-		C9E8B2A72C4F123400A1B2E5 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2A62C4F123400A1B2E5 /* ProfileViewModel.swift */; };
-		C9E8B2A92C4F123400A1B2E5 /* ProfileCreationWizardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2A82C4F123400A1B2E5 /* ProfileCreationWizardView.swift */; };
-		C9E8B2AB2C4F123400A1B2E5 /* UserProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2AA2C4F123400A1B2E5 /* UserProfileTests.swift */; };
-		C9E8B2AD2C4F123400A1B2E5 /* ProfileViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2AC2C4F123400A1B2E5 /* ProfileViewModelTests.swift */; };
-		C9E8B2AF2C4F123400A1B2E5 /* ProfileCreationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2AE2C4F123400A1B2E5 /* ProfileCreationTests.swift */; };
-		C9E8B2B12C4F123400A1B2E5 /* Profile in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2B02C4F123400A1B2E5 /* Profile */; };
-		C9E8B2B32C4F123400A1B2E5 /* ProfileEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2B22C4F123400A1B2E5 /* ProfileEditView.swift */; };
-		C9E8B2B52C4F123400A1B2E5 /* ProfileDisplayViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2B42C4F123400A1B2E5 /* ProfileDisplayViewTests.swift */; };
-		C9E8B2B72C4F123400A1B2E5 /* AccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2B62C4F123400A1B2E5 /* AccountSettingsView.swift */; };
-		C9E8B2B92C4F123400A1B2E5 /* AccountSettingsViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2B82C4F123400A1B2E5 /* AccountSettingsViewTests.swift */; };
-		C9E8B2BB2C4F123400A1B2E5 /* IntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2BA2C4F123400A1B2E5 /* IntegrationTests.swift */; };
-		C9E8B2BD2C4F123400A1B2E5 /* MFAManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2BC2C4F123400A1B2E5 /* MFAManager.swift */; };
-		C9E8B2BF2C4F123400A1B2E5 /* MFAManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2BE2C4F123400A1B2E5 /* MFAManagerTests.swift */; };
-		C9E8B2C12C4F123400A1B2E5 /* BackupCodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2C02C4F123400A1B2E5 /* BackupCodeManager.swift */; };
-		C9E8B2C32C4F123400A1B2E5 /* BackupCodeManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2C22C4F123400A1B2E5 /* BackupCodeManagerTests.swift */; };
-		C9E8B2C52C4F123400A1B2E5 /* QRCodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2C42C4F123400A1B2E5 /* QRCodeManager.swift */; };
-		C9E8B2C72C4F123400A1B2E5 /* QRCodeManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2C62C4F123400A1B2E5 /* QRCodeManagerTests.swift */; };
-		C9E8B2C92C4F123400A1B2E5 /* MFASetupViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2C82C4F123400A1B2E5 /* MFASetupViewTests.swift */; };
-		C9E8B2CB2C4F123400A1B2E5 /* MFASetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B2CA2C4F123400A1B2E5 /* MFASetupView.swift */; };
-		DD0000001A000000000000001 /* PolyPalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0000002A000000000000001 /* PolyPalApp.swift */; };
-		DD0000003A000000000000001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0000004A000000000000001 /* ContentView.swift */; };
-		DD0000004CA000000000000001 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = DD0000005CA000000000000001 /* Images */; };
-		DD0000005A000000000000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD0000006A000000000000001 /* Assets.xcassets */; };
-		DD0000007A000000000000001 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD0000008A000000000000001 /* Preview Assets.xcassets */; };
-		DD0000009A000000000000001 /* AuthenticationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000AA000000000000001 /* AuthenticationState.swift */; };
-		DD000000BA000000000000001 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000CA000000000000001 /* User.swift */; };
-		DD000000BBA000000000000003 /* MFAViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000CCA000000000000003 /* MFAViewTests.swift */; };
-		DD000000DA000000000000001 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000EA000000000000001 /* AuthenticationViewModel.swift */; };
-		DD000000DDA000000000000003 /* PasswordResetViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000EEA000000000000003 /* PasswordResetViewTests.swift */; };
-		DD000000FA000000000000001 /* AuthenticationStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000GA000000000000001 /* AuthenticationStateTests.swift */; };
-		DD000000FFA000000000000003 /* NavigationCoordinationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000GGA000000000000003 /* NavigationCoordinationTests.swift */; };
-		DD000000HA000000000000001 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000IA000000000000001 /* UserTests.swift */; };
-		DD000000HHA000000000000003 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000IIA000000000000003 /* MainViewModel.swift */; };
-		DD000000JA000000000000001 /* AuthenticationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000KA000000000000001 /* AuthenticationViewModelTests.swift */; };
-		DD000000JJA000000000000003 /* MainViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000KKA000000000000003 /* MainViewModelTests.swift */; };
-		DD000000LA000000000000002 /* AuthenticationFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000MA000000000000002 /* AuthenticationFlowTests.swift */; };
-		DD000000LLA000000000000004 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000MMA000000000000004 /* MainTabView.swift */; };
-		DD000000NA000000000000002 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000OA000000000000002 /* WelcomeView.swift */; };
-		DD000000NNA000000000000004 /* BuyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000OOA000000000000004 /* BuyView.swift */; };
-		DD000000PA000000000000002 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000QA000000000000002 /* LoginView.swift */; };
-		DD000000PPA000000000000004 /* SellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000QQA000000000000004 /* SellView.swift */; };
-		DD000000RA000000000000002 /* LoginViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000SA000000000000002 /* LoginViewTests.swift */; };
-		DD000000RRA000000000000004 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000SSA000000000000004 /* MessagesView.swift */; };
-		DD000000TA000000000000002 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000UA000000000000002 /* RegisterView.swift */; };
-		DD000000TTA000000000000004 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000UUA000000000000004 /* FavoritesView.swift */; };
-		DD000000VA000000000000003 /* CustomTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000WA000000000000003 /* CustomTextFieldStyle.swift */; };
-		DD000000VVA000000000000004 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000WWA000000000000004 /* AccountView.swift */; };
-		DD000000XA000000000000003 /* MFAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000YA000000000000003 /* MFAView.swift */; };
-		DD000000ZA000000000000003 /* PasswordResetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000AAA000000000000003 /* PasswordResetView.swift */; };
+		38A0583D3F0E6197FA75F189 /* Pods_PolyPalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 335317B837EC8479983247A2 /* Pods_PolyPalTests.framework */; };
+		5D81D2572E36D748002F2893 /* ZohoPortalAuthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D6668412E36CC0E00019344 /* ZohoPortalAuthKit.framework */; };
+		5D81D2582E36D748002F2893 /* ZohoPortalAuthKit.framework in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 5D6668412E36CC0E00019344 /* ZohoPortalAuthKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C7E72DEECDE5D982CCE51A41 /* Pods_PolyPal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FED1CE92FF971314EF28699F /* Pods_PolyPal.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DD000000LA000000000000001 /* PBXContainerItemProxy */ = {
+		5DEF04912E3699EF00639990 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = DD000000MA000000000000001 /* Project object */;
+			containerPortal = 5DEF047A2E3699ED00639990 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = DD000000NA000000000000001;
+			remoteGlobalIDString = 5DEF04812E3699ED00639990;
+			remoteInfo = PolyPal;
+		};
+		5DEF049B2E3699EF00639990 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5DEF047A2E3699ED00639990 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5DEF04812E3699ED00639990;
 			remoteInfo = PolyPal;
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5D20590E2E36A7FD00B8F5AC /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5D81D2582E36D748002F2893 /* ZohoPortalAuthKit.framework in Embed Libraries */,
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		40C46C91F0B643D895E47F66 /* Pods-PolyPalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PolyPalTests.debug.xcconfig"; path = "Target Support Files/Pods-PolyPalTests/Pods-PolyPalTests.debug.xcconfig"; sourceTree = "<group>"; };
-		8319BA118D41A1B318E57732 /* Pods-PolyPal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PolyPal.release.xcconfig"; path = "Target Support Files/Pods-PolyPal/Pods-PolyPal.release.xcconfig"; sourceTree = "<group>"; };
-		909DA4AD18DF0F919DAE075E /* Pods-PolyPalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PolyPalTests.release.xcconfig"; path = "Target Support Files/Pods-PolyPalTests/Pods-PolyPalTests.release.xcconfig"; sourceTree = "<group>"; };
-		9DD433F7C4A813820A76A987 /* Pods_PolyPalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PolyPalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BB03E03AB3CB93D2A66C5649 /* Pods-PolyPal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PolyPal.debug.xcconfig"; path = "Target Support Files/Pods-PolyPal/Pods-PolyPal.debug.xcconfig"; sourceTree = "<group>"; };
-		C3A287E8049111AF9DB72CB4 /* Pods_PolyPal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PolyPal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C9E8B2A42C4F123400A1B2E5 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
-		C9E8B2A62C4F123400A1B2E5 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
-		C9E8B2A82C4F123400A1B2E5 /* ProfileCreationWizardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCreationWizardView.swift; sourceTree = "<group>"; };
-		C9E8B2AA2C4F123400A1B2E5 /* UserProfileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTests.swift; sourceTree = "<group>"; };
-		C9E8B2AC2C4F123400A1B2E5 /* ProfileViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModelTests.swift; sourceTree = "<group>"; };
-		C9E8B2AE2C4F123400A1B2E5 /* ProfileCreationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCreationTests.swift; sourceTree = "<group>"; };
-		C9E8B2B22C4F123400A1B2E5 /* ProfileEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditView.swift; sourceTree = "<group>"; };
-		C9E8B2B42C4F123400A1B2E5 /* ProfileDisplayViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDisplayViewTests.swift; sourceTree = "<group>"; };
-		C9E8B2B62C4F123400A1B2E5 /* AccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsView.swift; sourceTree = "<group>"; };
-		C9E8B2B82C4F123400A1B2E5 /* AccountSettingsViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsViewTests.swift; sourceTree = "<group>"; };
-		C9E8B2BA2C4F123400A1B2E5 /* IntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationTests.swift; sourceTree = "<group>"; };
-		C9E8B2BC2C4F123400A1B2E5 /* MFAManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFAManager.swift; sourceTree = "<group>"; };
-		C9E8B2BE2C4F123400A1B2E5 /* MFAManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFAManagerTests.swift; sourceTree = "<group>"; };
-		C9E8B2C02C4F123400A1B2E5 /* BackupCodeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupCodeManager.swift; sourceTree = "<group>"; };
-		C9E8B2C22C4F123400A1B2E5 /* BackupCodeManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupCodeManagerTests.swift; sourceTree = "<group>"; };
-		C9E8B2C42C4F123400A1B2E5 /* QRCodeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeManager.swift; sourceTree = "<group>"; };
-		C9E8B2C62C4F123400A1B2E5 /* QRCodeManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeManagerTests.swift; sourceTree = "<group>"; };
-		C9E8B2C82C4F123400A1B2E5 /* MFASetupViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFASetupViewTests.swift; sourceTree = "<group>"; };
-		C9E8B2CA2C4F123400A1B2E5 /* MFASetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFASetupView.swift; sourceTree = "<group>"; };
-		DD0000002A000000000000001 /* PolyPalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolyPalApp.swift; sourceTree = "<group>"; };
-		DD0000004A000000000000001 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		DD0000005CA000000000000001 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
-		DD0000006A000000000000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DD0000008A000000000000001 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		DD000000AA000000000000001 /* AuthenticationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationState.swift; sourceTree = "<group>"; };
-		DD000000AAA000000000000003 /* PasswordResetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetView.swift; sourceTree = "<group>"; };
-		DD000000CA000000000000001 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		DD000000CCA000000000000003 /* MFAViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFAViewTests.swift; sourceTree = "<group>"; };
-		DD000000EA000000000000001 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
-		DD000000EEA000000000000003 /* PasswordResetViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetViewTests.swift; sourceTree = "<group>"; };
-		DD000000GA000000000000001 /* AuthenticationStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationStateTests.swift; sourceTree = "<group>"; };
-		DD000000GGA000000000000003 /* NavigationCoordinationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinationTests.swift; sourceTree = "<group>"; };
-		DD000000IA000000000000001 /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
-		DD000000IIA000000000000003 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		DD000000KA000000000000001 /* AuthenticationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModelTests.swift; sourceTree = "<group>"; };
-		DD000000KKA000000000000003 /* MainViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelTests.swift; sourceTree = "<group>"; };
-		DD000000MA000000000000002 /* AuthenticationFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationFlowTests.swift; sourceTree = "<group>"; };
-		DD000000MMA000000000000004 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
-		DD000000OA000000000000001 /* PolyPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PolyPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DD000000OA000000000000002 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
-		DD000000OOA000000000000004 /* BuyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyView.swift; sourceTree = "<group>"; };
-		DD000000PA000000000000001 /* PolyPalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PolyPalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DD000000QA000000000000002 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		DD000000QQA000000000000004 /* SellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellView.swift; sourceTree = "<group>"; };
-		DD000000SA000000000000002 /* LoginViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewTests.swift; sourceTree = "<group>"; };
-		DD000000SSA000000000000004 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
-		DD000000UA000000000000002 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
-		DD000000UUA000000000000004 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
-		DD000000WA000000000000003 /* CustomTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldStyle.swift; sourceTree = "<group>"; };
-		DD000000WWA000000000000004 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
-		DD000000YA000000000000003 /* MFAView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFAView.swift; sourceTree = "<group>"; };
+		335317B837EC8479983247A2 /* Pods_PolyPalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PolyPalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53BF8C1A3C06E47896E19939 /* Pods-PolyPalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PolyPalTests.debug.xcconfig"; path = "Target Support Files/Pods-PolyPalTests/Pods-PolyPalTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5D6668412E36CC0E00019344 /* ZohoPortalAuthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZohoPortalAuthKit.framework; path = "local-pods/ZohoPortalAuth/ZohoPortalAuthKit.framework"; sourceTree = "<group>"; };
+		5DEF04822E3699ED00639990 /* PolyPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PolyPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DEF04902E3699EF00639990 /* PolyPalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PolyPalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DEF049A2E3699EF00639990 /* PolyPalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PolyPalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		707E17C620B83F0BE2570845 /* Pods-PolyPal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PolyPal.debug.xcconfig"; path = "Target Support Files/Pods-PolyPal/Pods-PolyPal.debug.xcconfig"; sourceTree = "<group>"; };
+		D7CAEB1FFB76567D6A9EB485 /* Pods-PolyPalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PolyPalTests.release.xcconfig"; path = "Target Support Files/Pods-PolyPalTests/Pods-PolyPalTests.release.xcconfig"; sourceTree = "<group>"; };
+		FB9D083D88EBE77FE5E7B7AF /* Pods-PolyPal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PolyPal.release.xcconfig"; path = "Target Support Files/Pods-PolyPal/Pods-PolyPal.release.xcconfig"; sourceTree = "<group>"; };
+		FED1CE92FF971314EF28699F /* Pods_PolyPal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PolyPal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		5DEF04842E3699ED00639990 /* PolyPal */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			path = PolyPal;
+			sourceTree = "<group>";
+		};
+		5DEF04932E3699EF00639990 /* PolyPalTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			path = PolyPalTests;
+			sourceTree = "<group>";
+		};
+		5DEF049D2E3699EF00639990 /* PolyPalUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			path = PolyPalUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
-		DD000000QA000000000000001 /* Frameworks */ = {
+		5DEF047F2E3699ED00639990 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BA5808BE8AAF46FC2F74ACA /* Pods_PolyPal.framework in Frameworks */,
+				5D81D2572E36D748002F2893 /* ZohoPortalAuthKit.framework in Frameworks */,
+				C7E72DEECDE5D982CCE51A41 /* Pods_PolyPal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DD000000RA000000000000001 /* Frameworks */ = {
+		5DEF048D2E3699EF00639990 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A489FD40BA6580602C161086 /* Pods_PolyPalTests.framework in Frameworks */,
+				38A0583D3F0E6197FA75F189 /* Pods_PolyPalTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DEF04972E3699EF00639990 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5137FA4408E22433248DFDE9 /* Frameworks */ = {
+		5DEF04792E3699ED00639990 = {
 			isa = PBXGroup;
 			children = (
-				C3A287E8049111AF9DB72CB4 /* Pods_PolyPal.framework */,
-				9DD433F7C4A813820A76A987 /* Pods_PolyPalTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C9E8B2B02C4F123400A1B2E5 /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				C9E8B2A82C4F123400A1B2E5 /* ProfileCreationWizardView.swift */,
-				C9E8B2B02C4F123400A1B2E5 /* Profile */,
-				C9E8B2B22C4F123400A1B2E5 /* ProfileEditView.swift */,
-				C9E8B2B62C4F123400A1B2E5 /* AccountSettingsView.swift */,
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
-		C9E8B2CC2C4F123400A1B2E5 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				C9E8B2BC2C4F123400A1B2E5 /* MFAManager.swift */,
-				C9E8B2C02C4F123400A1B2E5 /* BackupCodeManager.swift */,
-				C9E8B2C42C4F123400A1B2E5 /* QRCodeManager.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		CE306BE0508D6322F2CFC253 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				BB03E03AB3CB93D2A66C5649 /* Pods-PolyPal.debug.xcconfig */,
-				8319BA118D41A1B318E57732 /* Pods-PolyPal.release.xcconfig */,
-				40C46C91F0B643D895E47F66 /* Pods-PolyPalTests.debug.xcconfig */,
-				909DA4AD18DF0F919DAE075E /* Pods-PolyPalTests.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		DD0000001BA000000000000001 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				DD0000008A000000000000001 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		DD0000002BA000000000000001 /* Authentication */ = {
-			isa = PBXGroup;
-			children = (
-				DD000000OA000000000000002 /* WelcomeView.swift */,
-				DD000000QA000000000000002 /* LoginView.swift */,
-				DD000000UA000000000000002 /* RegisterView.swift */,
-				DD000000YA000000000000003 /* MFAView.swift */,
-				C9E8B2CA2C4F123400A1B2E5 /* MFASetupView.swift */,
-				DD000000AAA000000000000003 /* PasswordResetView.swift */,
-			);
-			path = Authentication;
-			sourceTree = "<group>";
-		};
-		DD0000003BA000000000000001 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				DD000000MMA000000000000004 /* MainTabView.swift */,
-				DD000000OOA000000000000004 /* BuyView.swift */,
-				DD000000QQA000000000000004 /* SellView.swift */,
-				DD000000SSA000000000000004 /* MessagesView.swift */,
-				DD000000UUA000000000000004 /* FavoritesView.swift */,
-				DD000000WWA000000000000004 /* AccountView.swift */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		DD0000004BA000000000000003 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				DD000000WA000000000000003 /* CustomTextFieldStyle.swift */,
-			);
-			path = Shared;
-			sourceTree = "<group>";
-		};
-		DD000000SA000000000000001 = {
-			isa = PBXGroup;
-			children = (
-				DD000000TA000000000000001 /* PolyPal */,
-				DD000000UA000000000000001 /* PolyPalTests */,
-				DD000000VA000000000000001 /* Products */,
-				CE306BE0508D6322F2CFC253 /* Pods */,
-				5137FA4408E22433248DFDE9 /* Frameworks */,
+				5DEF04842E3699ED00639990 /* PolyPal */,
+				5DEF04932E3699EF00639990 /* PolyPalTests */,
+				5DEF049D2E3699EF00639990 /* PolyPalUITests */,
+				5DEF04832E3699ED00639990 /* Products */,
+				841004CA264AD2B67C23D90C /* Pods */,
+				BEAE1B48C0E34546B46E88E4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		DD000000TA000000000000001 /* PolyPal */ = {
+		5DEF04832E3699ED00639990 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DD0000002A000000000000001 /* PolyPalApp.swift */,
-				DD0000004A000000000000001 /* ContentView.swift */,
-				DD000000WA000000000000001 /* Models */,
-				DD000000XA000000000000001 /* ViewModels */,
-				DD000000YA000000000000001 /* Views */,
-				C9E8B2CC2C4F123400A1B2E5 /* Services */,
-				DD000000ZA000000000000001 /* Extensions */,
-				DD0000005CA000000000000001 /* Images */,
-				DD0000006A000000000000001 /* Assets.xcassets */,
-				DD0000001BA000000000000001 /* Preview Content */,
-			);
-			path = PolyPal;
-			sourceTree = "<group>";
-		};
-		DD000000UA000000000000001 /* PolyPalTests */ = {
-			isa = PBXGroup;
-			children = (
-				DD000000GA000000000000001 /* AuthenticationStateTests.swift */,
-				DD000000IA000000000000001 /* UserTests.swift */,
-				DD000000KA000000000000001 /* AuthenticationViewModelTests.swift */,
-				DD000000MA000000000000002 /* AuthenticationFlowTests.swift */,
-				DD000000SA000000000000002 /* LoginViewTests.swift */,
-				DD000000CCA000000000000003 /* MFAViewTests.swift */,
-				C9E8B2C82C4F123400A1B2E5 /* MFASetupViewTests.swift */,
-				DD000000EEA000000000000003 /* PasswordResetViewTests.swift */,
-				DD000000GGA000000000000003 /* NavigationCoordinationTests.swift */,
-				DD000000KKA000000000000003 /* MainViewModelTests.swift */,
-				C9E8B2AA2C4F123400A1B2E5 /* UserProfileTests.swift */,
-				C9E8B2AC2C4F123400A1B2E5 /* ProfileViewModelTests.swift */,
-				C9E8B2AE2C4F123400A1B2E5 /* ProfileCreationTests.swift */,
-				C9E8B2B42C4F123400A1B2E5 /* ProfileDisplayViewTests.swift */,
-				C9E8B2B82C4F123400A1B2E5 /* AccountSettingsViewTests.swift */,
-				C9E8B2BA2C4F123400A1B2E5 /* IntegrationTests.swift */,
-				C9E8B2BE2C4F123400A1B2E5 /* MFAManagerTests.swift */,
-				C9E8B2C22C4F123400A1B2E5 /* BackupCodeManagerTests.swift */,
-				C9E8B2C62C4F123400A1B2E5 /* QRCodeManagerTests.swift */,
-			);
-			path = PolyPalTests;
-			sourceTree = "<group>";
-		};
-		DD000000VA000000000000001 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DD000000OA000000000000001 /* PolyPal.app */,
-				DD000000PA000000000000001 /* PolyPalTests.xctest */,
+				5DEF04822E3699ED00639990 /* PolyPal.app */,
+				5DEF04902E3699EF00639990 /* PolyPalTests.xctest */,
+				5DEF049A2E3699EF00639990 /* PolyPalUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DD000000WA000000000000001 /* Models */ = {
+		841004CA264AD2B67C23D90C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				DD000000AA000000000000001 /* AuthenticationState.swift */,
-				DD000000CA000000000000001 /* User.swift */,
-				C9E8B2A42C4F123400A1B2E5 /* UserProfile.swift */,
+				707E17C620B83F0BE2570845 /* Pods-PolyPal.debug.xcconfig */,
+				FB9D083D88EBE77FE5E7B7AF /* Pods-PolyPal.release.xcconfig */,
+				53BF8C1A3C06E47896E19939 /* Pods-PolyPalTests.debug.xcconfig */,
+				D7CAEB1FFB76567D6A9EB485 /* Pods-PolyPalTests.release.xcconfig */,
 			);
-			path = Models;
+			path = Pods;
 			sourceTree = "<group>";
 		};
-		DD000000XA000000000000001 /* ViewModels */ = {
+		BEAE1B48C0E34546B46E88E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DD000000EA000000000000001 /* AuthenticationViewModel.swift */,
-				DD000000IIA000000000000003 /* MainViewModel.swift */,
-				C9E8B2A62C4F123400A1B2E5 /* ProfileViewModel.swift */,
+				5D6668412E36CC0E00019344 /* ZohoPortalAuthKit.framework */,
+				FED1CE92FF971314EF28699F /* Pods_PolyPal.framework */,
+				335317B837EC8479983247A2 /* Pods_PolyPalTests.framework */,
 			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		DD000000YA000000000000001 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				DD0000002BA000000000000001 /* Authentication */,
-				DD0000003BA000000000000001 /* Main */,
-				DD0000004BA000000000000003 /* Shared */,
-				C9E8B2B02C4F123400A1B2E5 /* Profile */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		DD000000ZA000000000000001 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DD0000007BA000000000000001 /* PolyPalTests */ = {
+		5DEF04812E3699ED00639990 /* PolyPal */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DD0000008BA000000000000001 /* Build configuration list for PBXNativeTarget "PolyPalTests" */;
+			buildConfigurationList = 5DEF04A42E3699EF00639990 /* Build configuration list for PBXNativeTarget "PolyPal" */;
 			buildPhases = (
-				C26C7C0AFE0133197A385288 /* [CP] Check Pods Manifest.lock */,
-				DD0000009BA000000000000001 /* Sources */,
-				DD000000RA000000000000001 /* Frameworks */,
-				DD000000ABA000000000000001 /* Resources */,
+				7E856374FC8EA26423FEF525 /* [CP] Check Pods Manifest.lock */,
+				5DEF047E2E3699ED00639990 /* Sources */,
+				5DEF047F2E3699ED00639990 /* Frameworks */,
+				5DEF04802E3699ED00639990 /* Resources */,
+				5D20590E2E36A7FD00B8F5AC /* Embed Libraries */,
+				D7A90AFC35388A4EF7948D17 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				DD000000BBA000000000000001 /* PBXTargetDependency */,
 			);
-			name = PolyPalTests;
-			productName = PolyPalTests;
-			productReference = DD000000PA000000000000001 /* PolyPalTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		DD000000NA000000000000001 /* PolyPal */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DD0000004BA000000000000001 /* Build configuration list for PBXNativeTarget "PolyPal" */;
-			buildPhases = (
-				F4F239AD7460612C0B477477 /* [CP] Check Pods Manifest.lock */,
-				DD0000005BA000000000000001 /* Sources */,
-				DD000000QA000000000000001 /* Frameworks */,
-				DD0000006BA000000000000001 /* Resources */,
-				0E4172032CB8E9EEBE216175 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
+			fileSystemSynchronizedGroups = (
+				5DEF04842E3699ED00639990 /* PolyPal */,
 			);
 			name = PolyPal;
 			productName = PolyPal;
-			productReference = DD000000OA000000000000001 /* PolyPal.app */;
+			productReference = 5DEF04822E3699ED00639990 /* PolyPal.app */;
 			productType = "com.apple.product-type.application";
+		};
+		5DEF048F2E3699EF00639990 /* PolyPalTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DEF04A72E3699EF00639990 /* Build configuration list for PBXNativeTarget "PolyPalTests" */;
+			buildPhases = (
+				D532EB3DA54B50546F8583CC /* [CP] Check Pods Manifest.lock */,
+				5DEF048C2E3699EF00639990 /* Sources */,
+				5DEF048D2E3699EF00639990 /* Frameworks */,
+				5DEF048E2E3699EF00639990 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5DEF04922E3699EF00639990 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				5DEF04932E3699EF00639990 /* PolyPalTests */,
+			);
+			name = PolyPalTests;
+			productName = PolyPalTests;
+			productReference = 5DEF04902E3699EF00639990 /* PolyPalTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5DEF04992E3699EF00639990 /* PolyPalUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DEF04AA2E3699EF00639990 /* Build configuration list for PBXNativeTarget "PolyPalUITests" */;
+			buildPhases = (
+				5DEF04962E3699EF00639990 /* Sources */,
+				5DEF04972E3699EF00639990 /* Frameworks */,
+				5DEF04982E3699EF00639990 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5DEF049C2E3699EF00639990 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				5DEF049D2E3699EF00639990 /* PolyPalUITests */,
+			);
+			name = PolyPalUITests;
+			productName = PolyPalUITests;
+			productReference = 5DEF049A2E3699EF00639990 /* PolyPalUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		DD000000MA000000000000001 /* Project object */ = {
+		5DEF047A2E3699ED00639990 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
 				TargetAttributes = {
-					DD0000007BA000000000000001 = {
-						CreatedOnToolsVersion = 15.0;
-						TestTargetID = DD000000NA000000000000001;
+					5DEF04812E3699ED00639990 = {
+						CreatedOnToolsVersion = 16.4;
 					};
-					DD000000NA000000000000001 = {
-						CreatedOnToolsVersion = 15.0;
+					5DEF048F2E3699EF00639990 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 5DEF04812E3699ED00639990;
+					};
+					5DEF04992E3699EF00639990 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 5DEF04812E3699ED00639990;
 					};
 				};
 			};
-			buildConfigurationList = DD000000CBA000000000000001 /* Build configuration list for PBXProject "PolyPal" */;
-			compatibilityVersion = "Xcode 14.0";
+			buildConfigurationList = 5DEF047D2E3699ED00639990 /* Build configuration list for PBXProject "PolyPal" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = DD000000SA000000000000001;
-			productRefGroup = DD000000VA000000000000001 /* Products */;
+			mainGroup = 5DEF04792E3699ED00639990;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 5DEF04832E3699ED00639990 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DD000000NA000000000000001 /* PolyPal */,
-				DD0000007BA000000000000001 /* PolyPalTests */,
+				5DEF04812E3699ED00639990 /* PolyPal */,
+				5DEF048F2E3699EF00639990 /* PolyPalTests */,
+				5DEF04992E3699EF00639990 /* PolyPalUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		DD0000006BA000000000000001 /* Resources */ = {
+		5DEF04802E3699ED00639990 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD0000007A000000000000001 /* Preview Assets.xcassets in Resources */,
-				DD0000005A000000000000001 /* Assets.xcassets in Resources */,
-				DD0000004CA000000000000001 /* Images in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DD000000ABA000000000000001 /* Resources */ = {
+		5DEF048E2E3699EF00639990 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DEF04982E3699EF00639990 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -436,46 +290,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0E4172032CB8E9EEBE216175 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PolyPal/Pods-PolyPal-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PolyPal/Pods-PolyPal-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PolyPal/Pods-PolyPal-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C26C7C0AFE0133197A385288 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PolyPalTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F4F239AD7460612C0B477477 /* [CP] Check Pods Manifest.lock */ = {
+		7E856374FC8EA26423FEF525 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -497,82 +312,86 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D532EB3DA54B50546F8583CC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PolyPalTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7A90AFC35388A4EF7948D17 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PolyPal/Pods-PolyPal-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PolyPal/Pods-PolyPal-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PolyPal/Pods-PolyPal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		DD0000005BA000000000000001 /* Sources */ = {
+		5DEF047E2E3699ED00639990 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD0000003A000000000000001 /* ContentView.swift in Sources */,
-				DD000000DA000000000000001 /* AuthenticationViewModel.swift in Sources */,
-				DD000000BA000000000000001 /* User.swift in Sources */,
-				DD0000001A000000000000001 /* PolyPalApp.swift in Sources */,
-				DD0000009A000000000000001 /* AuthenticationState.swift in Sources */,
-				DD000000NA000000000000002 /* WelcomeView.swift in Sources */,
-				DD000000PA000000000000002 /* LoginView.swift in Sources */,
-				DD000000TA000000000000002 /* RegisterView.swift in Sources */,
-				DD000000VA000000000000003 /* CustomTextFieldStyle.swift in Sources */,
-				DD000000XA000000000000003 /* MFAView.swift in Sources */,
-				DD000000ZA000000000000003 /* PasswordResetView.swift in Sources */,
-				DD000000HHA000000000000003 /* MainViewModel.swift in Sources */,
-				DD000000LLA000000000000004 /* MainTabView.swift in Sources */,
-				DD000000NNA000000000000004 /* BuyView.swift in Sources */,
-				DD000000PPA000000000000004 /* SellView.swift in Sources */,
-				DD000000RRA000000000000004 /* MessagesView.swift in Sources */,
-				DD000000TTA000000000000004 /* FavoritesView.swift in Sources */,
-				DD000000VVA000000000000004 /* AccountView.swift in Sources */,
-				C9E8B2A52C4F123400A1B2E5 /* UserProfile.swift in Sources */,
-				C9E8B2A72C4F123400A1B2E5 /* ProfileViewModel.swift in Sources */,
-				C9E8B2A92C4F123400A1B2E5 /* ProfileCreationWizardView.swift in Sources */,
-				C9E8B2B12C4F123400A1B2E5 /* Profile in Sources */,
-				C9E8B2B32C4F123400A1B2E5 /* ProfileEditView.swift in Sources */,
-				C9E8B2B72C4F123400A1B2E5 /* AccountSettingsView.swift in Sources */,
-				C9E8B2BD2C4F123400A1B2E5 /* MFAManager.swift in Sources */,
-				C9E8B2C12C4F123400A1B2E5 /* BackupCodeManager.swift in Sources */,
-				C9E8B2C52C4F123400A1B2E5 /* QRCodeManager.swift in Sources */,
-				C9E8B2CB2C4F123400A1B2E5 /* MFASetupView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DD0000009BA000000000000001 /* Sources */ = {
+		5DEF048C2E3699EF00639990 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD000000FA000000000000001 /* AuthenticationStateTests.swift in Sources */,
-				DD000000HA000000000000001 /* UserTests.swift in Sources */,
-				DD000000JA000000000000001 /* AuthenticationViewModelTests.swift in Sources */,
-				DD000000LA000000000000002 /* AuthenticationFlowTests.swift in Sources */,
-				DD000000RA000000000000002 /* LoginViewTests.swift in Sources */,
-				DD000000BBA000000000000003 /* MFAViewTests.swift in Sources */,
-				DD000000DDA000000000000003 /* PasswordResetViewTests.swift in Sources */,
-				DD000000FFA000000000000003 /* NavigationCoordinationTests.swift in Sources */,
-				DD000000JJA000000000000003 /* MainViewModelTests.swift in Sources */,
-				C9E8B2AB2C4F123400A1B2E5 /* UserProfileTests.swift in Sources */,
-				C9E8B2AD2C4F123400A1B2E5 /* ProfileViewModelTests.swift in Sources */,
-				C9E8B2AF2C4F123400A1B2E5 /* ProfileCreationTests.swift in Sources */,
-				C9E8B2B52C4F123400A1B2E5 /* ProfileDisplayViewTests.swift in Sources */,
-				C9E8B2B92C4F123400A1B2E5 /* AccountSettingsViewTests.swift in Sources */,
-				C9E8B2BB2C4F123400A1B2E5 /* IntegrationTests.swift in Sources */,
-				C9E8B2BF2C4F123400A1B2E5 /* MFAManagerTests.swift in Sources */,
-				C9E8B2C32C4F123400A1B2E5 /* BackupCodeManagerTests.swift in Sources */,
-				C9E8B2C72C4F123400A1B2E5 /* QRCodeManagerTests.swift in Sources */,
-				C9E8B2C92C4F123400A1B2E5 /* MFASetupViewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DEF04962E3699EF00639990 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		DD000000BBA000000000000001 /* PBXTargetDependency */ = {
+		5DEF04922E3699EF00639990 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DD000000NA000000000000001 /* PolyPal */;
-			targetProxy = DD000000LA000000000000001 /* PBXContainerItemProxy */;
+			target = 5DEF04812E3699ED00639990 /* PolyPal */;
+			targetProxy = 5DEF04912E3699EF00639990 /* PBXContainerItemProxy */;
+		};
+		5DEF049C2E3699EF00639990 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5DEF04812E3699ED00639990 /* PolyPal */;
+			targetProxy = 5DEF049B2E3699EF00639990 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		DD000000DBA000000000000001 /* Debug */ = {
+		5DEF04A22E3699EF00639990 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -605,6 +424,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = P;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -624,18 +444,16 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		DD000000EBA000000000000001 /* Release */ = {
+		5DEF04A32E3699EF00639990 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -668,6 +486,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = P;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -681,151 +500,235 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		DD000000FBA000000000000001 /* Debug */ = {
+		5DEF04A52E3699EF00639990 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB03E03AB3CB93D2A66C5649 /* Pods-PolyPal.debug.xcconfig */;
+			baseConfigurationReference = 707E17C620B83F0BE2570845 /* Pods-PolyPal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PolyPal/PolyPal.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"PolyPal/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/local-pods",
+					"$(PROJECT_DIR)/local-pods/ZohoPortalAuth",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/local-pods",
+				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.polypal.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = ICERecycling.PolyPal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
-		DD000000GBA000000000000001 /* Release */ = {
+		5DEF04A62E3699EF00639990 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8319BA118D41A1B318E57732 /* Pods-PolyPal.release.xcconfig */;
+			baseConfigurationReference = FB9D083D88EBE77FE5E7B7AF /* Pods-PolyPal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PolyPal/PolyPal.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"PolyPal/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/local-pods",
+					"$(PROJECT_DIR)/local-pods/ZohoPortalAuth",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/local-pods",
+				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.polypal.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = ICERecycling.PolyPal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
-		DD000000HBA000000000000001 /* Debug */ = {
+		5DEF04A82E3699EF00639990 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 40C46C91F0B643D895E47F66 /* Pods-PolyPalTests.debug.xcconfig */;
+			baseConfigurationReference = 53BF8C1A3C06E47896E19939 /* Pods-PolyPalTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.polypal.ios.PolyPalTests;
+				PRODUCT_BUNDLE_IDENTIFIER = ICERecycling.PolyPalTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PolyPal.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PolyPal";
+				XROS_DEPLOYMENT_TARGET = 2.5;
 			};
 			name = Debug;
 		};
-		DD000000IBA000000000000001 /* Release */ = {
+		5DEF04A92E3699EF00639990 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 909DA4AD18DF0F919DAE075E /* Pods-PolyPalTests.release.xcconfig */;
+			baseConfigurationReference = D7CAEB1FFB76567D6A9EB485 /* Pods-PolyPalTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.polypal.ios.PolyPalTests;
+				PRODUCT_BUNDLE_IDENTIFIER = ICERecycling.PolyPalTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PolyPal.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PolyPal";
+				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Release;
+		};
+		5DEF04AB2E3699EF00639990 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ICERecycling.PolyPalUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_TARGET_NAME = PolyPal;
+				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Debug;
+		};
+		5DEF04AC2E3699EF00639990 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ICERecycling.PolyPalUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_TARGET_NAME = PolyPal;
+				XROS_DEPLOYMENT_TARGET = 2.5;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DD0000004BA000000000000001 /* Build configuration list for PBXNativeTarget "PolyPal" */ = {
+		5DEF047D2E3699ED00639990 /* Build configuration list for PBXProject "PolyPal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DD000000FBA000000000000001 /* Debug */,
-				DD000000GBA000000000000001 /* Release */,
+				5DEF04A22E3699EF00639990 /* Debug */,
+				5DEF04A32E3699EF00639990 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DD0000008BA000000000000001 /* Build configuration list for PBXNativeTarget "PolyPalTests" */ = {
+		5DEF04A42E3699EF00639990 /* Build configuration list for PBXNativeTarget "PolyPal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DD000000HBA000000000000001 /* Debug */,
-				DD000000IBA000000000000001 /* Release */,
+				5DEF04A52E3699EF00639990 /* Debug */,
+				5DEF04A62E3699EF00639990 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DD000000CBA000000000000001 /* Build configuration list for PBXProject "PolyPal" */ = {
+		5DEF04A72E3699EF00639990 /* Build configuration list for PBXNativeTarget "PolyPalTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DD000000DBA000000000000001 /* Debug */,
-				DD000000EBA000000000000001 /* Release */,
+				5DEF04A82E3699EF00639990 /* Debug */,
+				5DEF04A92E3699EF00639990 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5DEF04AA2E3699EF00639990 /* Build configuration list for PBXNativeTarget "PolyPalUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DEF04AB2E3699EF00639990 /* Debug */,
+				5DEF04AC2E3699EF00639990 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = DD000000MA000000000000001 /* Project object */;
+	rootObject = 5DEF047A2E3699ED00639990 /* Project object */;
 }

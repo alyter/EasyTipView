@@ -186,8 +186,9 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${PODS_ROOT}/SQLite.Wrapper/SQLiteWrapper.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework"
-  install_framework "${PODS_ROOT}/ZCCoreFramework/ZCCoreFramework.framework"
-  install_framework "${PODS_ROOT}/ZCUIFramework/ZCUIFramework.framework"
+  install_framework "${PODS_ROOT}/../local-pods/ZCCoreFramework/ZCCoreFramework.framework"
+  install_framework "${PODS_ROOT}/../local-pods/ZCUIFramework/ZCUIFramework.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ZIPFoundation/ZIPFoundation.framework"
   install_framework "${PODS_ROOT}/ZMLKit/ZMLKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Zip/Zip.framework"
 fi
@@ -202,8 +203,9 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${PODS_ROOT}/SQLite.Wrapper/SQLiteWrapper.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework"
-  install_framework "${PODS_ROOT}/ZCCoreFramework/ZCCoreFramework.framework"
-  install_framework "${PODS_ROOT}/ZCUIFramework/ZCUIFramework.framework"
+  install_framework "${PODS_ROOT}/../local-pods/ZCCoreFramework/ZCCoreFramework.framework"
+  install_framework "${PODS_ROOT}/../local-pods/ZCUIFramework/ZCUIFramework.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ZIPFoundation/ZIPFoundation.framework"
   install_framework "${PODS_ROOT}/ZMLKit/ZMLKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Zip/Zip.framework"
 fi

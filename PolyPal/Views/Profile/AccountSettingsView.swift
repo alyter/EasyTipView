@@ -313,42 +313,24 @@ struct AccountSettingsView: View {
         VStack(alignment: .leading) {
           Text("Multi-Factor Authentication")
             .font(.headline)
-          Text(viewModel.getMFAStatusText())
+          Text("MFA temporarily unavailable")
             .font(.caption)
-            .foregroundColor(viewModel.profile.mfaSettings.isEnabled ? .green : .secondary)
+            .foregroundColor(.secondary)
         }
         Spacer()
         
-        if viewModel.profile.mfaSettings.isEnabled {
-          Image(systemName: "checkmark.shield.fill")
-            .foregroundColor(.green)
-            .font(.title2)
-        } else {
-          Image(systemName: "shield")
-            .foregroundColor(.secondary)
-            .font(.title2)
-        }
+        // Placeholder: MFA settings temporarily unavailable
+        Image(systemName: "shield")
+          .foregroundColor(.secondary)
+          .font(.title2)
       }
       .padding(.vertical, 4)
       
-      // MFA Enable/Disable Button
-      if viewModel.profile.mfaSettings.isEnabled {
-        mfaEnabledView
-      } else {
-        mfaDisabledView
-      }
+      // MFA Enable/Disable Button - Placeholder: MFA temporarily disabled
+      mfaDisabledView
       
-      // Backup Codes Warning
-      if viewModel.shouldShowBackupCodeWarning() {
-        HStack {
-          Image(systemName: "exclamationmark.triangle.fill")
-            .foregroundColor(.orange)
-          Text("Low backup codes remaining. Consider regenerating.")
-            .font(.caption)
-            .foregroundColor(.orange)
-        }
-        .padding(.vertical, 4)
-      }
+      // Backup Codes Warning - Placeholder: MFA temporarily disabled
+      // (Warning hidden while MFA is unavailable)
     }
   }
   
@@ -356,7 +338,7 @@ struct AccountSettingsView: View {
     VStack(alignment: .leading, spacing: 8) {
       // Backup Codes Status
       HStack {
-        Text(viewModel.getBackupCodesStatusText())
+        Text("Backup codes: MFA temporarily unavailable")
           .font(.caption)
           .foregroundColor(.secondary)
         Spacer()
@@ -425,67 +407,18 @@ struct AccountSettingsView: View {
   // MARK: - MFA Actions
   
   private func enableMFA() {
-    Task {
-      await viewModel.enableMFA { success in
-        if success {
-          print("MFA enabled successfully")
-          // In a real app, this might navigate to MFA setup view
-          viewModel.isShowingMFASetup = true
-        } else {
-          print("Failed to enable MFA")
-        }
-      }
-    }
+    print("MFA functionality is temporarily unavailable")
+    // TODO: Re-implement MFA functionality when services are restored
   }
   
   private func disableMFA() {
-    // Show confirmation alert
-    let alert = UIAlertController(
-      title: "Disable Multi-Factor Authentication",
-      message: "Are you sure you want to disable MFA? This will make your account less secure.",
-      preferredStyle: .alert
-    )
-    
-    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-    alert.addAction(UIAlertAction(title: "Disable", style: .destructive) { _ in
-      Task {
-        await viewModel.disableMFA { success in
-          if success {
-            print("MFA disabled successfully")
-          } else {
-            print("Failed to disable MFA")
-          }
-        }
-      }
-    })
-    
-    // Present alert (in a real app, this would use proper SwiftUI alert)
-    print("Would show disable MFA confirmation alert")
-    
-    // For now, directly disable (in real app, this would be in the alert action)
-    Task {
-      await viewModel.disableMFA { success in
-        if success {
-          print("MFA disabled successfully")
-        } else {
-          print("Failed to disable MFA")
-        }
-      }
-    }
+    print("MFA functionality is temporarily unavailable")
+    // TODO: Re-implement MFA functionality when services are restored
   }
   
   private func regenerateBackupCodes() {
-    Task {
-      await viewModel.regenerateBackupCodes { success, newCodes in
-        if success, let codes = newCodes {
-          print("Backup codes regenerated successfully")
-          // In a real app, this might show the new codes to the user
-          viewModel.isShowingBackupCodeRegeneration = true
-        } else {
-          print("Failed to regenerate backup codes")
-        }
-      }
-    }
+    print("MFA functionality is temporarily unavailable")
+    // TODO: Re-implement MFA functionality when services are restored
   }
 }
 

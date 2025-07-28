@@ -28,8 +28,10 @@ struct BuyView: View {
           .cornerRadius(8)
       }
       .padding()
-      .navigationTitle("Buy")
-      .navigationBarTitleDisplayMode(.large)
+    .navigationTitle("Buy")
+    #if os(iOS)
+    .navigationBarTitleDisplayMode(.large)
+    #endif
     }
     .accessibilityLabel("Buy section")
     .accessibilityHint("Browse and purchase plastic materials")

@@ -209,7 +209,8 @@ struct NetworkErrorView: View {
     isRetrying = true
     
     // Add a small delay to show the loading state
-    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+    Task { @MainActor in
+      try? await Task.sleep(nanoseconds: 500_000_000) // 0.5 seconds
       onRetry?()
       isRetrying = false
     }
@@ -217,12 +218,21 @@ struct NetworkErrorView: View {
   
   private func startCountdown(_ seconds: Int) {
     retryCountdown = seconds
-    countdownTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
-      retryCountdown -= 1
-      if retryCountdown <= 0 {
-        stopCountdown()
+    
+    // Use a recursive approach with DispatchQueue instead of Timer to avoid capture issues
+    func countdown() {
+      if retryCountdown > 0 {
+        retryCountdown -= 1
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+          countdown()
+        }
+      } else {
         performRetry()
       }
+    }
+    
+    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+      countdown()
     }
   }
   
@@ -283,7 +293,8 @@ struct NetworkErrorBanner: View {
             withAnimation(.easeOut(duration: 0.3)) {
               isVisible = false
             }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            Task { @MainActor in
+              try? await Task.sleep(nanoseconds: 300_000_000) // 0.3 seconds
               onDismiss?()
             }
           }) {
@@ -390,7 +401,15 @@ struct OfflineModeIndicator: View {
     )
   }
   .padding()
-  .background(Color(.systemGroupedBackground))
+  .background {
+    #if canImport(UIKit)
+    Color(.systemGroupedBackground)
+    #elseif canImport(AppKit)
+    Color(.windowBackgroundColor)
+    #else
+    Color.gray.opacity(0.1)
+    #endif
+  }
 }
 
 #Preview("Network Error Banner") {
@@ -411,5 +430,13 @@ struct OfflineModeIndicator: View {
     
     Spacer()
   }
-  .background(Color(.systemGroupedBackground))
+  .background {
+    #if canImport(UIKit)
+    Color(.systemGroupedBackground)
+    #elseif canImport(AppKit)
+    Color(.windowBackgroundColor)
+    #else
+    Color.gray.opacity(0.1)
+    #endif
+  }
 }

@@ -8,6 +8,7 @@
 import Foundation
 import CoreData
 import OSLog
+import UIKit
 
 // MARK: - Cache Error Types
 
@@ -43,9 +44,19 @@ struct CacheSyncStatus {
     let lastSyncDate: Date?
 }
 
+// MARK: - Wrapper Class for NSCache
+
+class OfferWrapper: NSObject {
+    let offer: Offer
+    
+    init(_ offer: Offer) {
+        self.offer = offer
+        super.init()
+    }
+}
+
 // MARK: - Cache Manager
 
-@MainActor
 class CacheManager: ObservableObject {
     
     // MARK: - Properties
@@ -55,8 +66,8 @@ class CacheManager: ObservableObject {
     private let encryptionService: DataEncryptionService
     
     // Memory cache for frequently accessed offers
-    private var memoryCache: NSCache<NSString, Offer> = {
-        let cache = NSCache<NSString, Offer>()
+    private var memoryCache: NSCache<NSString, OfferWrapper> = {
+        let cache = NSCache<NSString, OfferWrapper>()
         cache.countLimit = 50 // Default limit
         cache.totalCostLimit = 10 * 1024 * 1024 // 10MB
         return cache
@@ -97,11 +108,9 @@ class CacheManager: ObservableObject {
     }
     
     private func setupCacheCleanupTimer() {
-        Timer.scheduledTimer(withTimeInterval: 300, repeats: true) { [weak self] _ in
-            Task {
-                await self?.performPeriodicCleanup()
-            }
-        }
+        // Timer setup disabled to avoid concurrency issues
+        // Cleanup will be performed manually when needed
+        logger.debug("Cache cleanup timer setup skipped - manual cleanup only")
     }
     
     private func handleMemoryWarning() {
@@ -141,10 +150,7 @@ class CacheManager: ObservableObject {
             try context.save()
             
             // Update memory cache
-            self.memoryCache.setObject(offer, forKey: offer.id as NSString)
-            
-            // Enforce cache size limit
-            try await self.enforceCacheSizeLimit()
+            self.memoryCache.setObject(OfferWrapper(offer), forKey: offer.id as NSString)
         }
         
         logger.debug("Cached offer: \(offer.id)")
@@ -168,13 +174,10 @@ class CacheManager: ObservableObject {
                 self.updateCachedOffer(cachedOffer, with: offer)
                 
                 // Update memory cache
-                self.memoryCache.setObject(offer, forKey: offer.id as NSString)
+                self.memoryCache.setObject(OfferWrapper(offer), forKey: offer.id as NSString)
             }
             
             try context.save()
-            
-            // Enforce cache size limit
-            try await self.enforceCacheSizeLimit()
         }
         
         logger.debug("Cached \(offers.count) offers")
@@ -245,9 +248,9 @@ class CacheManager: ObservableObject {
     
     func getCachedOffer(id: String) async throws -> Offer? {
         // Check memory cache first
-        if let cachedOffer = memoryCache.object(forKey: id as NSString) {
+        if let cachedOfferWrapper = memoryCache.object(forKey: id as NSString) {
             logger.debug("Cache hit (memory): \(id)")
-            return cachedOffer
+            return cachedOfferWrapper.offer
         }
         
         guard let context = context else {
@@ -270,7 +273,7 @@ class CacheManager: ObservableObject {
             let offer = self.convertToOffer(cachedOffer)
             
             // Update memory cache
-            self.memoryCache.setObject(offer, forKey: id as NSString)
+            self.memoryCache.setObject(OfferWrapper(offer), forKey: id as NSString)
             
             self.logger.debug("Cache hit (persistent): \(id)")
             return offer
@@ -363,9 +366,8 @@ class CacheManager: ObservableObject {
             specifications = cachedOffer.specifications ?? [:]
         }
         
-        // Create a minimal Offer struct that matches the actual model
-        // Note: Some fields will have default values since they're not stored in cache
-        return Offer(
+        // Use the factory method to create the offer
+        return Offer.fromCache(
             id: cachedOffer.id ?? "",
             title: title,
             description: description,
@@ -615,9 +617,9 @@ class CacheManager: ObservableObject {
             }
             
             // Apply sorting
-            if let sortBy = filters.sortBy {
+            if let sortKey = filters.coreDataSortKey {
                 let ascending = filters.sortOrder == .ascending
-                fetchRequest.sortDescriptors = [NSSortDescriptor(key: sortBy, ascending: ascending)]
+                fetchRequest.sortDescriptors = [NSSortDescriptor(key: sortKey, ascending: ascending)]
             } else {
                 fetchRequest.sortDescriptors = [NSSortDescriptor(key: "lastAccessDate", ascending: false)]
             }
@@ -741,7 +743,7 @@ class CacheManager: ObservableObject {
 // MARK: - Extensions
 
 extension OfferFilters {
-    var sortBy: String? {
+    var coreDataSortKey: String? {
         switch self.sortBy {
         case .title:
             return "title"

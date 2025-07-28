@@ -42,7 +42,7 @@ public extension Promise {
       }
     }))
     // Keep Swift wrapper alive for chained promise until `ObjCPromise` counterpart is resolved.
-    objCPromise.__pendingObjects?.add(promise)
+    objCPromise.__addPendingObject(promise)
     return promise
   }
 
@@ -64,13 +64,14 @@ public extension Promise {
       }
       do {
         let value = try work(value)
-        return value as? NSError ?? Promise<Result>.asAnyObject(value)
+        return type(of: value) is NSError.Type
+          ? value as! NSError : Promise<Result>.asAnyObject(value)
       } catch let error {
         return error as NSError
       }
     }))
     // Keep Swift wrapper alive for chained promise until `ObjCPromise` counterpart is resolved.
-    objCPromise.__pendingObjects?.add(promise)
+    objCPromise.__addPendingObject(promise)
     return promise
   }
 
@@ -98,7 +99,7 @@ public extension Promise {
       }
     }))
     // Keep Swift wrapper alive for chained promise until `ObjCPromise` counterpart is resolved.
-    objCPromise.__pendingObjects?.add(promise)
+    objCPromise.__addPendingObject(promise)
     return promise
   }
 }

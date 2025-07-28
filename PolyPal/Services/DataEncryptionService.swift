@@ -168,8 +168,8 @@ class DataEncryptionService {
                     iv.withUnsafeBytes { ivBytes in
                         CCCrypt(
                             operation,
-                            algorithm,
-                            options,
+                            CCAlgorithm(algorithm),
+                            CCOptions(options),
                             keyBytes.baseAddress, keySize,
                             ivBytes.baseAddress,
                             dataBytes.baseAddress, data.count,

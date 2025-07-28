@@ -14,7 +14,6 @@ struct User: Codable, Identifiable, Equatable {
   var firstName: String?
   var lastName: String?
   var isEmailVerified: Bool
-  var isMFAEnabled: Bool
   var createdAt: Date
   var updatedAt: Date
   
@@ -35,7 +34,6 @@ struct User: Codable, Identifiable, Equatable {
     firstName: String? = nil,
     lastName: String? = nil,
     isEmailVerified: Bool = false,
-    isMFAEnabled: Bool = false,
     createdAt: Date = Date(),
     updatedAt: Date = Date()
   ) {
@@ -45,7 +43,6 @@ struct User: Codable, Identifiable, Equatable {
     self.firstName = firstName
     self.lastName = lastName
     self.isEmailVerified = isEmailVerified
-    self.isMFAEnabled = isMFAEnabled
     self.createdAt = createdAt
     self.updatedAt = updatedAt
   }

@@ -28,8 +28,10 @@ struct SellView: View {
           .cornerRadius(8)
       }
       .padding()
-      .navigationTitle("Sell")
-      .navigationBarTitleDisplayMode(.large)
+    .navigationTitle("Sell")
+    #if os(iOS)
+    .navigationBarTitleDisplayMode(.large)
+    #endif
     }
     .accessibilityLabel("Sell section")
     .accessibilityHint("List and sell your plastic materials")

@@ -6,12 +6,11 @@
 //
 
 import Foundation
-import ZohoPortalAuth
 import ZCUIFramework
 import Combine
 
 /// Service for interacting with Zoho Creator APIs
-class ZohoCreatorService: ObservableObject {
+class ZohoCreatorService: ObservableObject, @unchecked Sendable {
     
     // MARK: - Properties
     
@@ -38,10 +37,15 @@ class ZohoCreatorService: ObservableObject {
     
     // MARK: - Initialization
     
-    init(configuration: ZohoConfiguration = ZohoConfiguration.shared, 
+    init(configuration: ZohoConfiguration? = nil, 
          session: URLSession? = nil,
          enableCertificatePinning: Bool = true) {
-        self.configuration = configuration
+        if let configuration = configuration {
+            self.configuration = configuration
+        } else {
+            // Create new configuration instance to avoid main actor isolation issues
+            self.configuration = ZohoConfiguration()
+        }
         self.certificatePinningManager = CertificatePinningManager(enablePinning: enableCertificatePinning)
         
         if let session = session {
@@ -63,7 +67,7 @@ class ZohoCreatorService: ObservableObject {
     // MARK: - Rate Limiting and Retry Logic
     
     /// Executes a network request with rate limiting and exponential backoff retry
-    private func executeWithRetry<T>(_ operation: @escaping () -> AnyPublisher<T, Error>) -> AnyPublisher<T, Error> {
+    private func executeWithRetry<T>(_ operation: @escaping @Sendable () -> AnyPublisher<T, Error>) -> AnyPublisher<T, Error> {
         return operation()
             .catch { error -> AnyPublisher<T, Error> in
                 if self.shouldRetry(error: error) {
@@ -76,39 +80,26 @@ class ZohoCreatorService: ObservableObject {
     }
     
     /// Retries an operation with exponential backoff
-    private func retryWithExponentialBackoff<T>(_ operation: @escaping () -> AnyPublisher<T, Error>, attempt: Int) -> AnyPublisher<T, Error> {
+    private func retryWithExponentialBackoff<T>(_ operation: @escaping @Sendable () -> AnyPublisher<T, Error>, attempt: Int) -> AnyPublisher<T, Error> {
         guard attempt <= maxRetries else {
             return Fail(error: ZohoCreatorError.maxRetriesExceeded).eraseToAnyPublisher()
         }
         
         let delay = min(baseDelay * pow(2.0, Double(attempt - 1)), maxDelay)
         
-        return Future<T, Error> { promise in
-            DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+        return Just(())
+            .delay(for: .seconds(delay), scheduler: DispatchQueue.main)
+            .flatMap { _ in
                 operation()
-                    .sink(
-                        receiveCompletion: { completion in
-                            if case .failure(let error) = completion {
-                                if self.shouldRetry(error: error) && attempt < self.maxRetries {
-                                    self.retryWithExponentialBackoff(operation, attempt: attempt + 1)
-                                        .sink(
-                                            receiveCompletion: { promise(.failure($0.error ?? error)) },
-                                            receiveValue: { promise(.success($0)) }
-                                        )
-                                        .store(in: &self.cancellables)
-                                } else {
-                                    promise(.failure(error))
-                                }
-                            }
-                        },
-                        receiveValue: { value in
-                            promise(.success(value))
+                    .catch { error -> AnyPublisher<T, Error> in
+                        if self.shouldRetry(error: error) && attempt < self.maxRetries {
+                            return self.retryWithExponentialBackoff(operation, attempt: attempt + 1)
+                        } else {
+                            return Fail(error: error).eraseToAnyPublisher()
                         }
-                    )
-                    .store(in: &self.cancellables)
+                    }
             }
-        }
-        .eraseToAnyPublisher()
+            .eraseToAnyPublisher()
     }
     
     /// Determines if an error should trigger a retry
@@ -132,24 +123,14 @@ class ZohoCreatorService: ObservableObject {
     
     /// Enforces rate limiting between requests
     private func enforceRateLimit() -> AnyPublisher<Void, Never> {
-        return Future<Void, Never> { promise in
-            self.requestQueue.async {
+        return Just(())
+            .handleEvents(receiveOutput: { _ in
                 let now = Date()
                 let timeSinceLastRequest = now.timeIntervalSince(self.lastRequestTime)
-                
-                if timeSinceLastRequest < self.minimumRequestInterval {
-                    let delay = self.minimumRequestInterval - timeSinceLastRequest
-                    DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
-                        self.lastRequestTime = Date()
-                        promise(.success(()))
-                    }
-                } else {
-                    self.lastRequestTime = now
-                    promise(.success(()))
-                }
-            }
-        }
-        .eraseToAnyPublisher()
+                self.lastRequestTime = now
+            })
+            .delay(for: .seconds(max(0, minimumRequestInterval - Date().timeIntervalSince(lastRequestTime))), scheduler: DispatchQueue.main)
+            .eraseToAnyPublisher()
     }
     
     // MARK: - Authentication
@@ -162,30 +143,31 @@ class ZohoCreatorService: ObservableObject {
         // 2. Handling the callback with authorization code
         // 3. Exchanging code for access token
         
-        return Future<String, Error> { promise in
-            // For now, return a mock token
-            // In real implementation, this would handle the OAuth flow
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+        return Just(())
+            .delay(for: .seconds(1.0), scheduler: DispatchQueue.main)
+            .tryMap { _ -> String in
                 let mockToken = "mock_access_token_\(Date().timeIntervalSince1970)"
-                self.authToken = mockToken
-                self.isAuthenticated = true
-                promise(.success(mockToken))
+                Task { @MainActor in
+                    self.authToken = mockToken
+                    self.isAuthenticated = true
+                }
+                return mockToken
             }
-        }
-        .eraseToAnyPublisher()
+            .eraseToAnyPublisher()
     }
     
     /// Refresh the authentication token
     func refreshToken() -> AnyPublisher<String, Error> {
-        return Future<String, Error> { promise in
-            // Mock implementation
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        return Just(())
+            .delay(for: .seconds(0.5), scheduler: DispatchQueue.main)
+            .tryMap { _ -> String in
                 let refreshedToken = "refreshed_token_\(Date().timeIntervalSince1970)"
-                self.authToken = refreshedToken
-                promise(.success(refreshedToken))
+                Task { @MainActor in
+                    self.authToken = refreshedToken
+                }
+                return refreshedToken
             }
-        }
-        .eraseToAnyPublisher()
+            .eraseToAnyPublisher()
     }
     
     // MARK: - Data Operations
@@ -208,30 +190,35 @@ class ZohoCreatorService: ObservableObject {
     
     /// Internal method to perform the actual fetch records request
     private func performFetchRecords(formName: String, criteria: String?, token: String) -> AnyPublisher<[ZohoRecord], Error> {
-        var urlComponents = URLComponents()
-        urlComponents.scheme = "https"
-        let configData = try! configuration.loadConfiguration()
-        urlComponents.host = configData.creatorDomain
-        urlComponents.path = "/api/v2/\(configData.appOwnerName)/\(configData.appLinkName)/report/\(formName)"
-        
-        if let criteria = criteria {
-            urlComponents.queryItems = [URLQueryItem(name: "criteria", value: criteria)]
-        }
-        
-        guard let url = urlComponents.url else {
-            return Fail(error: ZohoCreatorError.invalidURL)
-                .eraseToAnyPublisher()
-        }
-        
-        var request = URLRequest(url: url)
-        request.setValue("Zoho-oauthtoken \(token)", forHTTPHeaderField: "Authorization")
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        return session.dataTaskPublisher(for: request)
-            .map(\.data)
-            .decode(type: ZohoRecordsResponse.self, decoder: JSONDecoder())
-            .map(\.data)
-            .receive(on: DispatchQueue.main)
+        return Just(())
+            .tryMap { _ -> URLRequest in
+                let configData = try self.configuration.loadConfiguration()
+                var urlComponents = URLComponents()
+                urlComponents.scheme = "https"
+                urlComponents.host = configData.creatorDomain
+                urlComponents.path = "/api/v2/\(configData.appOwnerName)/\(configData.appLinkName)/report/\(formName)"
+                
+                if let criteria = criteria {
+                    urlComponents.queryItems = [URLQueryItem(name: "criteria", value: criteria)]
+                }
+                
+                guard let url = urlComponents.url else {
+                    throw ZohoCreatorError.invalidURL
+                }
+                
+                var request = URLRequest(url: url)
+                request.setValue("Zoho-oauthtoken \(token)", forHTTPHeaderField: "Authorization")
+                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                
+                return request
+            }
+            .flatMap { request in
+                self.session.dataTaskPublisher(for: request)
+                    .map(\.data)
+                    .decode(type: ZohoRecordsResponse.self, decoder: JSONDecoder())
+                    .map(\.data)
+                    .receive(on: DispatchQueue.main)
+            }
             .eraseToAnyPublisher()
     }
     
@@ -242,35 +229,35 @@ class ZohoCreatorService: ObservableObject {
                 .eraseToAnyPublisher()
         }
         
-        var urlComponents = URLComponents()
-        urlComponents.scheme = "https"
-        let configData = try! configuration.loadConfiguration()
-        urlComponents.host = configData.creatorDomain
-        urlComponents.path = "/api/v2/\(configData.appOwnerName)/\(configData.appLinkName)/form/\(formName)"
-        
-        guard let url = urlComponents.url else {
-            return Fail(error: ZohoCreatorError.invalidURL)
-                .eraseToAnyPublisher()
-        }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("Zoho-oauthtoken \(token)", forHTTPHeaderField: "Authorization")
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        do {
-            let requestData = ZohoCreateRequest(data: data)
-            request.httpBody = try JSONEncoder().encode(requestData)
-        } catch {
-            return Fail(error: error)
-                .eraseToAnyPublisher()
-        }
-        
-        return session.dataTaskPublisher(for: request)
-            .map(\.data)
-            .decode(type: ZohoCreateResponse.self, decoder: JSONDecoder())
-            .map(\.data)
-            .receive(on: DispatchQueue.main)
+        return Just(())
+            .tryMap { _ -> URLRequest in
+                let configData = try self.configuration.loadConfiguration()
+                var urlComponents = URLComponents()
+                urlComponents.scheme = "https"
+                urlComponents.host = configData.creatorDomain
+                urlComponents.path = "/api/v2/\(configData.appOwnerName)/\(configData.appLinkName)/form/\(formName)"
+                
+                guard let url = urlComponents.url else {
+                    throw ZohoCreatorError.invalidURL
+                }
+                
+                var request = URLRequest(url: url)
+                request.httpMethod = "POST"
+                request.setValue("Zoho-oauthtoken \(token)", forHTTPHeaderField: "Authorization")
+                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                
+                let requestData = ZohoCreateRequest(data: data)
+                request.httpBody = try JSONEncoder().encode(requestData)
+                
+                return request
+            }
+            .flatMap { request in
+                self.session.dataTaskPublisher(for: request)
+                    .map(\.data)
+                    .decode(type: ZohoCreateResponse.self, decoder: JSONDecoder())
+                    .map(\.data)
+                    .receive(on: DispatchQueue.main)
+            }
             .eraseToAnyPublisher()
     }
     
@@ -281,35 +268,35 @@ class ZohoCreatorService: ObservableObject {
                 .eraseToAnyPublisher()
         }
         
-        var urlComponents = URLComponents()
-        urlComponents.scheme = "https"
-        let configData = try! configuration.loadConfiguration()
-        urlComponents.host = configData.creatorDomain
-        urlComponents.path = "/api/v2/\(configData.appOwnerName)/\(configData.appLinkName)/report/\(formName)/\(recordId)"
-        
-        guard let url = urlComponents.url else {
-            return Fail(error: ZohoCreatorError.invalidURL)
-                .eraseToAnyPublisher()
-        }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "PATCH"
-        request.setValue("Zoho-oauthtoken \(token)", forHTTPHeaderField: "Authorization")
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        do {
-            let requestData = ZohoUpdateRequest(data: data)
-            request.httpBody = try JSONEncoder().encode(requestData)
-        } catch {
-            return Fail(error: error)
-                .eraseToAnyPublisher()
-        }
-        
-        return session.dataTaskPublisher(for: request)
-            .map(\.data)
-            .decode(type: ZohoUpdateResponse.self, decoder: JSONDecoder())
-            .map(\.data)
-            .receive(on: DispatchQueue.main)
+        return Just(())
+            .tryMap { _ -> URLRequest in
+                let configData = try self.configuration.loadConfiguration()
+                var urlComponents = URLComponents()
+                urlComponents.scheme = "https"
+                urlComponents.host = configData.creatorDomain
+                urlComponents.path = "/api/v2/\(configData.appOwnerName)/\(configData.appLinkName)/report/\(formName)/\(recordId)"
+                
+                guard let url = urlComponents.url else {
+                    throw ZohoCreatorError.invalidURL
+                }
+                
+                var request = URLRequest(url: url)
+                request.httpMethod = "PATCH"
+                request.setValue("Zoho-oauthtoken \(token)", forHTTPHeaderField: "Authorization")
+                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                
+                let requestData = ZohoUpdateRequest(data: data)
+                request.httpBody = try JSONEncoder().encode(requestData)
+                
+                return request
+            }
+            .flatMap { request in
+                self.session.dataTaskPublisher(for: request)
+                    .map(\.data)
+                    .decode(type: ZohoUpdateResponse.self, decoder: JSONDecoder())
+                    .map(\.data)
+                    .receive(on: DispatchQueue.main)
+            }
             .eraseToAnyPublisher()
     }
     
@@ -320,27 +307,32 @@ class ZohoCreatorService: ObservableObject {
                 .eraseToAnyPublisher()
         }
         
-        var urlComponents = URLComponents()
-        urlComponents.scheme = "https"
-        let configData = try! configuration.loadConfiguration()
-        urlComponents.host = configData.creatorDomain
-        urlComponents.path = "/api/v2/\(configData.appOwnerName)/\(configData.appLinkName)/report/\(formName)/\(recordId)"
-        
-        guard let url = urlComponents.url else {
-            return Fail(error: ZohoCreatorError.invalidURL)
-                .eraseToAnyPublisher()
-        }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "DELETE"
-        request.setValue("Zoho-oauthtoken \(token)", forHTTPHeaderField: "Authorization")
-        
-        return session.dataTaskPublisher(for: request)
-            .map { response in
-                return (response.response as? HTTPURLResponse)?.statusCode == 200
+        return Just(())
+            .tryMap { _ -> URLRequest in
+                let configData = try self.configuration.loadConfiguration()
+                var urlComponents = URLComponents()
+                urlComponents.scheme = "https"
+                urlComponents.host = configData.creatorDomain
+                urlComponents.path = "/api/v2/\(configData.appOwnerName)/\(configData.appLinkName)/report/\(formName)/\(recordId)"
+                
+                guard let url = urlComponents.url else {
+                    throw ZohoCreatorError.invalidURL
+                }
+                
+                var request = URLRequest(url: url)
+                request.httpMethod = "DELETE"
+                request.setValue("Zoho-oauthtoken \(token)", forHTTPHeaderField: "Authorization")
+                
+                return request
             }
-            .mapError { $0 as Error }
-            .receive(on: DispatchQueue.main)
+            .flatMap { request in
+                self.session.dataTaskPublisher(for: request)
+                    .map { response in
+                        return (response.response as? HTTPURLResponse)?.statusCode == 200
+                    }
+                    .mapError { $0 as Error }
+                    .receive(on: DispatchQueue.main)
+            }
             .eraseToAnyPublisher()
     }
 }

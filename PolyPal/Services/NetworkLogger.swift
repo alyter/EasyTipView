@@ -9,11 +9,11 @@ import Foundation
 import os.log
 
 /// Network logging and monitoring service
-class NetworkLogger {
+class NetworkLogger: @unchecked Sendable {
   
   // MARK: - Singleton
   
-  static let shared = NetworkLogger()
+  nonisolated(unsafe) static let shared = NetworkLogger()
   
   // MARK: - Private Properties
   
@@ -111,7 +111,7 @@ class NetworkLogger {
     }
     
     // Log analytics event
-    analyticsLogger.info("Offline mode changed: offline=\(isOffline), reason=\(reason)")
+    analyticsLogger.info("Offline mode changed: offline=\(isOffline), reason=\(reason.displayName)")
   }
   
   /// Log cache operation
