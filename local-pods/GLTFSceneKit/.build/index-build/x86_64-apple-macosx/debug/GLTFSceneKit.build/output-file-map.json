@@ -1,0 +1,299 @@
+{
+  "": {
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/master.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/GLTFErrors.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFErrors.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFErrors.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFErrors~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFErrors.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/GLTFFunctions.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFFunctions.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFFunctions.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFFunctions~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFFunctions.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/GLTFSceneKit+BundleFinder.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFSceneKit+BundleFinder.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFSceneKit+BundleFinder.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFSceneKit+BundleFinder~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFSceneKit+BundleFinder.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/GLTFSceneSource.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFSceneSource.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFSceneSource.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFSceneSource~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFSceneSource.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/GLTFTypes.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFTypes.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFTypes.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFTypes~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFTypes.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/GLTFUnarchiver.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFUnarchiver.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFUnarchiver.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFUnarchiver~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFUnarchiver.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/GLTFAccessor.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAccessor.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAccessor.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAccessor~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAccessor.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/GLTFAccessorSparse.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAccessorSparse.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAccessorSparse.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAccessorSparse~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAccessorSparse.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/GLTFAccessorSparseIndices.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAccessorSparseIndices.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAccessorSparseIndices.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAccessorSparseIndices~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAccessorSparseIndices.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/GLTFAccessorSparseValues.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAccessorSparseValues.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAccessorSparseValues.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAccessorSparseValues~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAccessorSparseValues.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/GLTFAnimation.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAnimation.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAnimation.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAnimation~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAnimation.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/GLTFAnimationChannel.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAnimationChannel.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAnimationChannel.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAnimationChannel~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAnimationChannel.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/GLTFAnimationChannelTarget.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAnimationChannelTarget.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAnimationChannelTarget.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAnimationChannelTarget~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAnimationChannelTarget.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/GLTFAnimationSampler.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAnimationSampler.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAnimationSampler.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAnimationSampler~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAnimationSampler.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/GLTFAsset.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAsset.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAsset.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAsset~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFAsset.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/GLTFBuffer.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFBuffer.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFBuffer.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFBuffer~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFBuffer.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/GLTFBufferView.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFBufferView.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFBufferView.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFBufferView~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFBufferView.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/GLTFCamera.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFCamera.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFCamera.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFCamera~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFCamera.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/GLTFCameraOrthographic.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFCameraOrthographic.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFCameraOrthographic.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFCameraOrthographic~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFCameraOrthographic.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/GLTFCameraPerspective.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFCameraPerspective.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFCameraPerspective.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFCameraPerspective~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFCameraPerspective.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/GLTFExtension.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFExtension.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFExtension.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFExtension~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFExtension.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/GLTFExtras.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFExtras.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFExtras.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFExtras~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFExtras.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/GLTFExtrasTargetNames.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFExtrasTargetNames.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFExtrasTargetNames.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFExtrasTargetNames~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFExtrasTargetNames.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/GLTFGlTF.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFGlTF.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFGlTF.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFGlTF~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFGlTF.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/GLTFGlTFChildOfRootProperty.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFGlTFChildOfRootProperty.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFGlTFChildOfRootProperty.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFGlTFChildOfRootProperty~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFGlTFChildOfRootProperty.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/GLTFGlTFProperty.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFGlTFProperty.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFGlTFProperty.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFGlTFProperty~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFGlTFProperty.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/GLTFGlTFid.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFGlTFid.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFGlTFid.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFGlTFid~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFGlTFid.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/GLTFImage.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFImage.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFImage.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFImage~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFImage.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/GLTFMaterial.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFMaterial.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFMaterial.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFMaterial~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFMaterial.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/GLTFMaterialNormalTextureInfo.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFMaterialNormalTextureInfo.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFMaterialNormalTextureInfo.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFMaterialNormalTextureInfo~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFMaterialNormalTextureInfo.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/GLTFMaterialOcclusionTextureInfo.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFMaterialOcclusionTextureInfo.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFMaterialOcclusionTextureInfo.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFMaterialOcclusionTextureInfo~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFMaterialOcclusionTextureInfo.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/GLTFMaterialPbrMetallicRoughness.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFMaterialPbrMetallicRoughness.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFMaterialPbrMetallicRoughness.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFMaterialPbrMetallicRoughness~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFMaterialPbrMetallicRoughness.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/GLTFMesh.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFMesh.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFMesh.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFMesh~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFMesh.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/GLTFMeshPrimitive.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFMeshPrimitive.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFMeshPrimitive.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFMeshPrimitive~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFMeshPrimitive.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/GLTFNode.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFNode.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFNode.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFNode~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFNode.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/GLTFSampler.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFSampler.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFSampler.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFSampler~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFSampler.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/GLTFScene.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFScene.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFScene.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFScene~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFScene.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/GLTFSkin.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFSkin.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFSkin.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFSkin~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFSkin.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/GLTFTexture.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFTexture.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFTexture.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFTexture~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFTexture.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/GLTFTextureInfo.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFTextureInfo.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFTextureInfo.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFTextureInfo~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFTextureInfo.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/extensions/ExtensionList.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/ExtensionList.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/ExtensionList.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/ExtensionList~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/ExtensionList.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/extensions/KHR_materials_common/GLTFKHRMaterialsCommon_GLTFKHRMaterialsCommon.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFKHRMaterialsCommon_GLTFKHRMaterialsCommon.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFKHRMaterialsCommon_GLTFKHRMaterialsCommon.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFKHRMaterialsCommon_GLTFKHRMaterialsCommon~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFKHRMaterialsCommon_GLTFKHRMaterialsCommon.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/extensions/KHR_materials_pbrSpecularGlossiness/GLTFKHRMaterialsPbrSpecularGlossiness_GLTFKHRMaterialsPbrSpecularGlossiness.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFKHRMaterialsPbrSpecularGlossiness_GLTFKHRMaterialsPbrSpecularGlossiness.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFKHRMaterialsPbrSpecularGlossiness_GLTFKHRMaterialsPbrSpecularGlossiness.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFKHRMaterialsPbrSpecularGlossiness_GLTFKHRMaterialsPbrSpecularGlossiness~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFKHRMaterialsPbrSpecularGlossiness_GLTFKHRMaterialsPbrSpecularGlossiness.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/extensions/VRM/GLTFVRM_VRM.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFVRM_VRM.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFVRM_VRM.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFVRM_VRM~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFVRM_VRM.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/extensions/VRM/GLTFVRM_VRMSpringBone.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFVRM_VRMSpringBone.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFVRM_VRMSpringBone.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFVRM_VRMSpringBone~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFVRM_VRMSpringBone.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/extensions/VRM/GLTFVRM_VRMSpringBoneLogic.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFVRM_VRMSpringBoneLogic.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFVRM_VRMSpringBoneLogic.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFVRM_VRMSpringBoneLogic~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFVRM_VRMSpringBoneLogic.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/extensions/VRM/GLTFVRM_VRMState.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFVRM_VRMState.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFVRM_VRMState.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFVRM_VRMState~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFVRM_VRMState.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/Sources/GLTFSceneKit/schema/extensions/VRM/GLTFVRM_VRMTypes.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFVRM_VRMTypes.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFVRM_VRMTypes.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFVRM_VRMTypes~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFVRM_VRMTypes.swiftdeps"
+  },
+  "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/DerivedSources/resource_bundle_accessor.swift": {
+    "dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/resource_bundle_accessor.d",
+    "object": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/resource_bundle_accessor.swift.o",
+    "swiftmodule": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/resource_bundle_accessor~partial.swiftmodule",
+    "swift-dependencies": "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/resource_bundle_accessor.swiftdeps"
+  }
+}

@@ -1,0 +1,4 @@
+module GLTFSceneKit {
+    header "/Users/craiglovelace/PolyPal/local-pods/GLTFSceneKit/.build/index-build/x86_64-apple-macosx/debug/GLTFSceneKit.build/GLTFSceneKit-Swift.h"
+    requires objc
+}
